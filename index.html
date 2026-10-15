@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iván Pascual López — Junior AI &amp; FullStack Developer</title>
+<meta name="description" content="Portafolio de Iván Pascual López, Junior AI &amp; FullStack Developer: Reservly, Cuaderno, laboratorio, stack y formación.">
+<meta name="theme-color" content="#04050A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Iván Pascual López — Junior AI &amp; FullStack Developer">
+<meta property="og:description" content="Proyectos, laboratorio, stack y formación.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+<style>
+/* La intro es una pieza oscura por diseño: los tokens valen igual en tema claro y oscuro. */
+:root{
+  --fondo:#04050A; --tinta:#E6E9F0; --tenue:rgba(230,233,240,.46); --hielo:#96C4E8; --acento:#96C4E8;
+  --acento-a:rgba(150,196,232,.5);
+  --panel:rgba(12,16,28,.92); --borde:rgba(255,255,255,.1);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--fondo:#04050A;--tinta:#E8ECF5;--tenue:rgba(232,236,245,.45);--hielo:#7FD4FF}
+}
+:root[data-theme="dark"]{--fondo:#04050A;--tinta:#E8ECF5;--tenue:rgba(232,236,245,.45);--hielo:#7FD4FF}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--tinta);
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--hielo);outline-offset:3px;border-radius:6px}
+
+#gl{position:fixed;inset:0;z-index:1;width:100%;height:100%;display:block;touch-action:manipulation}
+
+/* ===== Telón: el fondo que cambia con la sección elegida ===== */
+.telon{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--fondo)}
+.capa{position:absolute;inset:-4%;opacity:0;background-size:cover;background-position:center;
+  filter:blur(3px) saturate(1.02) brightness(1.04);transform:scale(1.06);
+  transition:opacity 1.1s cubic-bezier(.3,.7,.3,1),transform 3.4s cubic-bezier(.2,.6,.2,1),filter 1.1s ease}
+.capa.viva{opacity:1;transform:scale(1.03)}
+.capa.maqueta{filter:blur(2px) saturate(1) brightness(1.08)}
+.telon::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(24% 20% at 50% 52%,rgba(4,5,10,.82),rgba(4,5,10,.3) 62%,rgba(4,5,10,.06) 100%),
+             linear-gradient(180deg,rgba(4,5,10,.34),rgba(4,5,10,.1) 45%,rgba(4,5,10,.42))}
+.hueco-foto{position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(140deg,#0B111C,#05070D 60%,#04050A);color:rgba(230,233,240,.28);
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+
+/* Maquetas de fondo: no son capturas, están construidas aquí con datos inventados */
+.maq{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column;gap:3%;
+  font-family:"Archivo",system-ui,sans-serif;color:#E8ECF5}
+.maq .cab{display:flex;align-items:center;justify-content:space-between;font-size:max(1.6vw,13px)}
+.maq .cab b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
+.maq .cab span{opacity:.55;font-size:max(1.1vw,10px);letter-spacing:.2em;text-transform:uppercase}
+.maq h3{margin:0;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+  line-height:1;letter-spacing:-.03em;max-width:62%;font-size:max(4.4vw,30px)}
+.maq .rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6%;margin-top:auto}
+.maq .tarjeta{border:1px solid rgba(255,255,255,.14);border-radius:1.4vw;padding:1.8vw;background:rgba(255,255,255,.05)}
+.maq .tarjeta small{display:block;font-size:max(.95vw,9px);letter-spacing:.16em;text-transform:uppercase;opacity:.5}
+.maq .tarjeta b{display:block;margin-top:.6vw;font-size:max(2.6vw,18px);font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.maq .tarjeta i{font-style:normal;font-size:1vw;opacity:.45}
+.maq .tabla{margin-top:1.6%;border:1px solid rgba(255,255,255,.12);border-radius:1.2vw;overflow:hidden}
+.maq .tabla div{display:flex;justify-content:space-between;padding:1.1vw 1.6vw;font-size:max(1.25vw,11px);
+  border-top:1px solid rgba(255,255,255,.1)}
+.maq .tabla div:first-child{border-top:0;opacity:.5;font-size:.95vw;letter-spacing:.16em;text-transform:uppercase}
+.maq.verde{background:linear-gradient(150deg,#06241A,#04050A 62%)}
+.maq.azul{background:linear-gradient(150deg,#0A1B3A,#04050A 62%)}
+.maq .pista{position:absolute;right:7%;top:16%;width:26%;border:1px solid rgba(255,255,255,.14);border-radius:1.2vw;
+  padding:1.4vw;background:rgba(255,255,255,.05);font-size:max(1.1vw,11px);line-height:1.7}
+.maq .pista em{font-style:normal;opacity:.5}
+
+.app{position:fixed;top:0;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;align-items:center;
+  padding:calc(env(safe-area-inset-top,0px) + 26px) 16px calc(env(safe-area-inset-bottom,0px) + 18px);
+  pointer-events:none}
+.lista-ui .app{pointer-events:auto}
+
+.marca{text-align:center;flex:none}
+.marca h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:clamp(28px,7.2vw,52px);font-weight:700;
+  line-height:1;letter-spacing:-.03em;margin:0;color:var(--tinta);text-shadow:0 2px 14px rgba(3,5,10,.85)}
+.marca p{margin:12px 0 0;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--tenue);
+  text-shadow:0 1px 8px rgba(3,5,10,.9)}
+@media (min-width:900px){.marca p{font-size:13px;margin-top:14px}}
+
+.escena{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+.orbita{position:relative;width:min(92vw,60vh,520px);aspect-ratio:1;touch-action:none;
+  -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.dial{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.gajo-forma{fill:url(#relleno);stroke:rgba(255,255,255,.055);stroke-width:.22;transition:fill .25s ease,stroke .25s ease}
+.gajo-forma.on{fill:url(#rellenoOn);stroke:var(--acento-a)}
+.eje{fill:rgba(3,5,10,.66);stroke:rgba(255,255,255,.1);stroke-width:.22}
+
+.gajo{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:rgba(230,233,240,.52);pointer-events:none;opacity:0;transition:color .25s ease}
+.gajo-fila{display:flex;align-items:center;gap:2px}
+.gajo-btn{display:grid;place-items:center;background:none;border:0;padding:4px;border-radius:10px;color:inherit;
+  font:inherit;cursor:pointer;pointer-events:none}
+.gajo svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;
+  transition:color .25s ease,transform .3s cubic-bezier(.34,1.4,.64,1)}
+.gajo-lab{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;
+  text-shadow:0 1px 6px rgba(3,5,10,.9),0 0 2px rgba(3,5,10,.8)}
+.gajo.on{color:var(--tinta)}
+.gajo.on .gajo-btn svg{color:var(--acento);transform:scale(1.1)}
+.flecha{width:30px;height:30px;display:grid;place-items:center;background:none;border:0;padding:0;border-radius:50%;
+  color:var(--acento);cursor:pointer;pointer-events:none;opacity:0;transition:opacity .2s ease,transform .15s ease}
+.flecha svg{width:14px;height:14px;stroke-width:2}
+.gajo.on.multi .flecha{opacity:1;pointer-events:auto}
+.flecha:active{transform:scale(.88)}
+.puntos{display:flex;gap:4px;height:4px}
+.puntos i{width:4px;height:4px;border-radius:50%;background:rgba(230,233,240,.22);transition:background .2s ease}
+.puntos i.on{background:var(--acento)}
+.nucleo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42%;text-align:center;pointer-events:none}
+.nucleo small{display:block;margin-bottom:5px;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--acento)}
+.nucleo small:empty{display:none}
+.nucleo b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:clamp(15px,4.2vw,21px);font-weight:700;
+  line-height:1.1;letter-spacing:-.02em;color:var(--tinta);text-shadow:0 1px 8px rgba(3,5,10,.95)}
+.nucleo span{display:block;margin-top:5px;font-size:clamp(10.5px,2.9vw,12.5px);line-height:1.35;color:rgba(230,233,240,.72);
+  text-shadow:0 1px 6px rgba(3,5,10,.9)}
+.nucleo em{display:block;margin-top:7px;font-style:normal;font-size:clamp(10px,2.6vw,11.5px);color:rgba(232,236,245,.66)}
+.estados{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin-top:8px}
+.estados:empty{display:none}
+.estados i{font-style:normal;font-size:8.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;
+  padding:3px 7px;border-radius:999px;border:1px solid var(--acento-a);color:var(--acento)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;margin-top:8px}
+.chips:empty{display:none}
+.chips span{margin:0;font-size:9.5px;font-weight:600;line-height:1.2;padding:2px 6px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.13);color:rgba(230,233,240,.82);white-space:nowrap}
+.nucleo em:empty{display:none}
+@media (max-width:420px){
+  .gajo{gap:4px}
+  .gajo svg{width:21px;height:21px}
+  .gajo-lab{font-size:8.5px;letter-spacing:.11em}
+  .flecha{width:26px;height:26px}
+  .nucleo{width:46%}
+  .nucleo b{font-size:15px}
+  .chips span{font-size:8.5px;padding:2px 5px}
+}
+.anuncio{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-height:560px){
+  .marca h1{font-size:clamp(30px,8vh,52px)}
+  .marca p{margin-top:8px;font-size:12px}
+  .orbita{width:min(92vw,54vh,520px)}
+  .pistas{display:none}
+}
+.pistas{flex:none;margin:18px 0 0;font-size:12.5px;color:rgba(233,236,242,.45);text-align:center;
+  text-shadow:0 1px 6px rgba(3,5,10,.9)}
+
+/* Aparición escalonada de la interfaz al final de la intro */
+.marca,.nucleo,.pistas{opacity:0;translate:0 7px;
+  transition:opacity .8s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1),color .25s ease}
+.lista-ui .marca{opacity:1;translate:0 0}
+.lista-ui .nucleo{opacity:1;translate:0 0;transition-delay:.18s}
+.lista-ui .pistas{opacity:1;translate:0 0;transition-delay:.4s}
+
+.control{position:fixed;z-index:5;display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:10.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(230,233,240,.56);background:transparent;
+  border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:9px 14px;cursor:pointer;
+  transition:opacity .4s ease,color .2s ease,border-color .2s ease;-webkit-tap-highlight-color:transparent}
+.control:hover{color:var(--tinta);border-color:rgba(255,255,255,.22)}
+.saltar,.repetir{right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);opacity:0;pointer-events:none}
+.saltar.visible{opacity:1;pointer-events:auto}
+.lista-ui .repetir{opacity:1;pointer-events:auto;transition-delay:.6s}
+.sonido{left:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+.fotos{left:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 62px);opacity:0;pointer-events:none}
+.lista-ui .fotos{opacity:1;pointer-events:auto;transition-delay:.7s}
+.sonido svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sonido .ondas{display:none}
+.sonido.on{color:var(--tinta)}
+.sonido.on .ondas{display:inline}
+.sonido.on .mudo{display:none}
+
+.velo{position:fixed;inset:0;z-index:8;display:grid;place-items:center;padding:20px;
+  background:rgba(4,5,10,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.velo[hidden]{display:none}
+.tarjeta{width:min(100%,500px);max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow-y:auto;background:var(--panel);border:1px solid var(--borde);border-radius:20px;padding:22px 22px}
+.tarjeta h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.tarjeta p{margin:0 0 18px;color:var(--tenue);font-size:15px;line-height:1.5}
+.tarjeta .nota{font-size:13px;color:rgba(232,236,245,.38)}
+.tarjeta .detalle{margin:-4px 0 12px;font-size:13.5px;line-height:1.55;color:rgba(233,236,242,.74)}
+#veloTexto{font-size:13.5px;margin-bottom:10px}
+/* Ventanita con la pantalla del proyecto, arriba de la ficha */
+#veloVista{margin:2px 0 0}
+.vp-ventana{border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;background:#04050A;box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.vp-barra{display:flex;align-items:center;gap:5px;padding:7px 10px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.1)}
+.vp-barra i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22)}
+.vp-barra span{margin-left:8px;flex:1;min-width:0;font-size:10px;letter-spacing:.04em;color:rgba(233,236,242,.5);background:rgba(0,0,0,.28);
+  border-radius:999px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vp-enlace{display:block;width:100%;padding:0;margin:0;border:0;background:none;font:inherit;text-align:left;color:inherit;cursor:zoom-in;border-radius:12px;transition:transform .2s ease}
+.tarjeta .vp-enlace{display:block;width:100%;padding:0;margin:0;border:0;border-radius:12px;background:none;color:inherit;font:inherit;letter-spacing:normal;text-transform:none;text-align:left;box-shadow:none;cursor:zoom-in}
+.tarjeta .vp-enlace:hover{background:none;transform:translateY(-2px)}
+.tarjeta .vp-enlace .vp-ventana{width:100%}
+.vp-enlace:hover{transform:translateY(-2px)}
+.vp-enlace:hover .vp-ventana{border-color:var(--acento)}
+.vp-img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center}
+.vp-cuerpo{container-type:inline-size;aspect-ratio:16/9;overflow:hidden}
+.vp-int{height:100%;display:flex;flex-direction:column;gap:2.4cqw;padding:4cqw 4.4cqw;color:#E8ECF5;font-family:"Archivo",system-ui,sans-serif}
+.vp-cab{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-size:max(9px,3.1cqw)}
+.vp-cab b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
+.vp-cab span{opacity:.5;font-size:7px;font-size:max(7px,2.1cqw);letter-spacing:.16em;text-transform:uppercase}
+.vp-int h4{margin:0;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.03em;font-size:16px;font-size:max(13px,5.4cqw)}
+.vp-rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin-top:auto}
+.vp-rejilla div{border:1px solid rgba(255,255,255,.14);border-radius:2cqw;padding:2cqw 2.2cqw;background:rgba(255,255,255,.05)}
+.vp-rejilla small{display:block;font-size:7px;font-size:max(6.5px,1.9cqw);letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+.vp-rejilla b{display:block;margin-top:.6cqw;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:13px;font-size:max(12px,4.2cqw)}
+.vp-tabla{border:1px solid rgba(255,255,255,.12);border-radius:2cqw;overflow:hidden}
+.vp-tabla div{display:flex;justify-content:space-between;padding:1.3cqw 2.4cqw;font-size:8px;font-size:max(7.5px,2.3cqw);border-top:1px solid rgba(255,255,255,.1)}
+.vp-tabla div:first-child{border-top:0}
+.vp-verde{background:linear-gradient(150deg,#06241A,#04050A 62%)}
+.vp-azul{background:linear-gradient(150deg,#0A1B3A,#04050A 62%)}
+.vp-pie{margin:8px 2px 14px;font-size:11px;line-height:1.4;color:rgba(233,236,242,.42)}
+.tarjeta p{margin-bottom:14px}
+.tarjeta .enlaces a{padding:10px 14px;font-size:14px}
+.tarjeta .enlaces{gap:7px;margin-bottom:14px}
+/* ===== Visor: la landing del proyecto a pantalla grande ===== */
+.visor-ld{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:clamp(0px,2.5vw,28px);background:rgba(2,3,7,.84);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.visor-ld[hidden]{display:none}
+.vl-marco{width:min(100%,1180px);height:100%;display:flex;flex-direction:column;overflow:hidden;background:#04050A;
+  border:1px solid rgba(255,255,255,.14);border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.vl-barra{display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.1)}
+.vl-barra > i{flex:none;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22)}
+.vl-dir{flex:1;min-width:0;margin:0 6px;padding:5px 12px;border-radius:999px;background:rgba(0,0,0,.3);font-size:12px;letter-spacing:.03em;
+  color:rgba(233,236,242,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vl-btn{flex:none;display:inline-flex;align-items:center;font:inherit;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(233,236,242,.78);text-decoration:none;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 12px;cursor:pointer}
+.vl-btn:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.vl-btn[hidden]{display:none}
+.vl-tabs{display:flex;gap:6px;padding:8px 12px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08)}
+.vl-tabs[hidden]{display:none}
+.vl-tab{font:inherit;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(233,236,242,.6);background:transparent;border:1px solid transparent;border-radius:999px;padding:6px 14px;cursor:pointer}
+.vl-tab:hover{color:#fff}
+.vl-tab[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.vl-cuerpo{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.vl-img{display:block;width:100%;height:auto}
+.vl-cuerpo.vivo{overflow:hidden;display:flex;background:#04050A}
+.vl-iframe{flex:1;width:100%;height:100%;border:0;background:#04050A}
+/* Miniatura en vivo dentro de la ventanita: una pantalla de escritorio de 1280×720 reducida */
+.vp-vivo{position:relative;aspect-ratio:16/9;overflow:hidden;background:#04050A}
+.vp-vivo iframe{position:absolute;left:0;top:0;width:1280px;height:720px;border:0;background:#04050A;transform-origin:0 0;transform:scale(var(--k,.35));pointer-events:none}
+@media (max-width:720px){
+  .visor-ld{padding:0}
+  .vl-marco{border-radius:0;border:0}
+  .vl-barra{padding-top:max(10px,env(safe-area-inset-top))}
+  .vl-barra > i{display:none}
+  .vl-dir{margin:0}
+}
+
+/* Las landings de ejemplo (Reservly y Cuaderno) */
+.ld{--ac:#34C98A;--f1:#06241A;color:#E8ECF5;font-family:"Archivo",system-ui,sans-serif;min-height:100%;
+  background:linear-gradient(180deg,var(--f1),#04050A 560px)}
+.ld-azul{--ac:#6C9CF2;--f1:#0A1B3A}
+.ld-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(18px,5vw,56px)}
+.ld-logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.ld-logo b{color:var(--ac)}
+.ld-links{display:flex;gap:22px;font-size:13px;color:rgba(232,236,245,.55)}
+.ld-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,4vw,52px);align-items:center;padding:clamp(22px,5vw,64px) clamp(18px,5vw,56px)}
+.ld-eyebrow{margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ac)}
+.ld-hero h1{margin:0;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(32px,5.2vw,58px);line-height:1;letter-spacing:-.035em}
+.ld-sub{margin:18px 0 0;font-size:clamp(14px,1.5vw,17px);line-height:1.6;color:rgba(232,236,245,.66);max-width:46ch}
+.ld-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.ld-btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#E8ECF5}
+.ld-btn:hover{border-color:rgba(255,255,255,.5)}
+.ld-btn.pri{background:var(--ac);border-color:var(--ac);color:#04070D}
+.ld-aviso{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-size:12px;letter-spacing:.06em;color:rgba(232,236,245,.7)}
+.ld-panel{border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px;background:rgba(255,255,255,.04);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.ld-ph{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-size:15px}
+.ld-ph span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.5}
+.ld-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ld-kpis div{border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:12px;background:rgba(255,255,255,.04)}
+.ld-kpis small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+.ld-kpis b{display:block;margin-top:6px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:clamp(18px,2.4vw,26px);color:#fff}
+.ld-tabla{margin-top:12px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden}
+.ld-tabla div{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;font-size:13px;border-top:1px solid rgba(255,255,255,.1)}
+.ld-tabla div:first-child{border-top:0}
+.ld-tabla div span:last-child{color:var(--ac)}
+.ld-nota{margin:12px 2px 0;font-size:11px;color:rgba(232,236,245,.4)}
+.ld-seccion{padding:clamp(22px,5vw,52px) clamp(18px,5vw,56px)}
+.ld-seccion h2{margin:0 0 22px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,36px);letter-spacing:-.03em}
+.ld-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ld-card{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px;background:rgba(255,255,255,.035)}
+.ld-n{font-size:12px;font-weight:700;color:var(--ac)}
+.ld-card h3{margin:12px 0 8px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:20px;letter-spacing:-.01em}
+.ld-card p{margin:0;font-size:14px;line-height:1.6;color:rgba(232,236,245,.66)}
+.ld-tech p{margin:0;padding:18px 22px;border:1px solid rgba(255,255,255,.12);border-radius:16px;font-size:14px;line-height:1.6;color:rgba(232,236,245,.66)}
+.ld-tech b{color:#fff}
+.ld-pie{padding:26px clamp(18px,5vw,56px) 40px;font-size:12px;line-height:1.5;color:rgba(232,236,245,.4);border-top:1px solid rgba(255,255,255,.08)}
+@media (max-width:720px){
+  .ld-hero{grid-template-columns:1fr}
+  .ld-grid{grid-template-columns:1fr}
+  .ld-links{display:none}
+}
+
+.tarjeta small{display:block;margin-bottom:8px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--acento)}
+.tarjeta .chips{justify-content:flex-start;margin:0 0 16px}
+.tarjeta .chips span{font-size:12px;padding:4px 10px}
+.tarjeta .enlaces{display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.tarjeta .enlaces a{color:var(--tinta);text-decoration:none;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;font-size:15px}
+.tarjeta .enlaces a:hover{border-color:var(--acento)}
+.tarjeta button{font:inherit;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:0;
+  border-radius:999px;padding:12px 22px;background:var(--tinta);color:#04050A;cursor:pointer}
+
+/* Sin WebGL: el menú se dibuja con CSS y no hay intro */
+.sin-gl .orbita::before{content:"";position:absolute;inset:3%;border-radius:50%;border:1px solid rgba(127,212,255,.35)}
+</style>
+</head>
+<body>
+<div class="telon" id="telon" aria-hidden="true">
+  <!-- Maquetas construidas aquí, con datos inventados: no son capturas de nada -->
+  <div class="capa maqueta" data-clave="reservly">
+    <div class="maq verde">
+      <div class="cab"><b>Reservly</b><span>Panel del negocio</span></div>
+      <h3>Reservas, TPV y stock en una sola pantalla.</h3>
+      <div class="pista">Hoy<br><em>14 reservas · 8 recogidas</em><br><br>Caja<br><em>642,80 €</em></div>
+      <div class="rejilla">
+        <div class="tarjeta"><small>Reservas</small><b>14</b><i>3 sin confirmar</i></div>
+        <div class="tarjeta"><small>Ticket medio</small><b>24,60 €</b><i>+8 % semana</i></div>
+        <div class="tarjeta"><small>Stock bajo</small><b>6</b><i>referencias</i></div>
+      </div>
+      <div class="tabla">
+        <div><span>Cliente</span><span>Estado</span></div>
+        <div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div>
+        <div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div>
+        <div><span>Jorge Lasaosa · 19:15</span><span>Confirmada</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="capa maqueta" data-clave="cuaderno">
+    <div class="maq azul">
+      <div class="cab"><b>Cuaderno</b><span>Alevín · jornada 6</span></div>
+      <h3>Los minutos, repartidos con criterio.</h3>
+      <div class="pista">Convocados<br><em>14 de 16</em><br><br>Media de minutos<br><em>31,5 min</em></div>
+      <div class="rejilla">
+        <div class="tarjeta"><small>Asistencia</small><b>92 %</b><i>últimas 4 semanas</i></div>
+        <div class="tarjeta"><small>Minutos mínimos</small><b>24</b><i>garantizados</i></div>
+        <div class="tarjeta"><small>Informes</small><b>16</b><i>uno por jugador</i></div>
+      </div>
+      <div class="tabla">
+        <div><span>Jugador</span><span>Minutos</span></div>
+        <div><span>Dorsal 7</span><span>38</span></div>
+        <div><span>Dorsal 11</span><span>34</span></div>
+        <div><span>Dorsal 4</span><span>29</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="capa" data-clave="evolve" data-foto="1"></div>
+  <div class="capa" data-clave="daw" data-foto="1"></div>
+  <div class="capa" data-clave="practicas" data-foto="1"></div>
+  <div class="capa" data-clave="cantera" data-foto="1"></div>
+  <div class="capa" data-clave="sobremi" data-foto="1"></div>
+  <div class="capa" data-clave="contacto" data-foto="1"></div>
+  <div class="capa" data-clave="laboratorio" data-foto="1"></div>
+  <div class="capa" data-clave="stack" data-foto="1"></div>
+</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<div class="app" id="app">
+  <header class="marca">
+    <h1>Iván Pascual López</h1>
+    <p>Junior AI &amp; FullStack Developer</p>
+  </header>
+  <main class="escena">
+    <div class="orbita" id="orbita">
+      <svg class="dial" id="dial" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <radialGradient id="relleno" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="47">
+            <stop offset=".5" stop-color="#05070D" stop-opacity=".52"/>
+            <stop offset="1" stop-color="#0A0E18" stop-opacity=".42"/>
+          </radialGradient>
+          <radialGradient id="rellenoOn" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="47">
+            <stop offset=".5" stop-color="#0E1422" stop-opacity=".72"/>
+            <stop offset="1" stop-color="#162034" stop-opacity=".62"/>
+          </radialGradient>
+        </defs>
+        <circle class="eje" id="eje" cx="50" cy="50" r="22.8"/>
+      </svg>
+      <div class="nucleo" id="nucleo"><small></small><b>Portafolio</b><span></span><em></em><div class="chips"></div><div class="estados"></div></div>
+    </div>
+    <p class="pistas" id="pistas"></p>
+    <p class="anuncio" id="anuncio" aria-live="polite"></p>
+  </main>
+</div>
+
+<button class="control saltar" id="saltar" type="button">Saltar intro</button>
+<button class="control fotos" id="btnFotos" type="button">Mis fotos</button>
+<button class="control sonido" id="sonido" type="button" aria-pressed="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path class="ondas" d="M15.5 9a4 4 0 0 1 0 6M18.2 6.6a7.5 7.5 0 0 1 0 10.8"/><path class="mudo" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>Sonido
+</button>
+<button class="control repetir" id="repetir" type="button">Ver intro otra vez</button>
+
+<div class="velo" id="veloFotos" hidden>
+  <div class="tarjeta" role="dialog" aria-modal="true" aria-labelledby="tituloFotos">
+    <h2 id="tituloFotos">Fondos con tus fotos</h2>
+    <p>Elige una imagen para cada sección. Se quedan guardadas en este dispositivo y no se suben a ningún sitio.</p>
+    <div class="enlaces" id="ranuras"></div>
+    <p class="nota">En Reservly y Cuaderno, tu captura sustituye a la maqueta de ejemplo. Hazla con la pantalla completa y sin barras del navegador. Si salen menores en una foto, usa una en la que no se les reconozca.</p>
+    <button type="button" id="cerrarFotos">Listo</button>
+  </div>
+</div>
+<div class="visor-ld" id="visorLd" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto" hidden>
+  <div class="vl-marco">
+    <div class="vl-barra">
+      <i></i><i></i><i></i>
+      <span class="vl-dir" id="vlDir"></span>
+      <a class="vl-btn" id="vlCodigo" target="_blank" rel="noopener" hidden>Código ↗</a>
+      <a class="vl-btn" id="vlAbrir" target="_blank" rel="noopener" aria-label="Abrir en otra pestaña" hidden>Abrir ↗</a>
+      <button class="vl-btn" id="vlCerrar" type="button">Cerrar</button>
+    </div>
+    <div class="vl-tabs" id="vlTabs" role="tablist" aria-label="Proyectos" hidden></div>
+    <div class="vl-cuerpo" id="vlCuerpo"></div>
+  </div>
+</div>
+
+<template id="ld-reservly">
+  <div class="ld">
+    <nav class="ld-nav">
+      <span class="ld-logo">Reservly<b>.</b></span>
+      <span class="ld-links"><span>Reservas</span><span>TPV</span><span>Stock</span><span>Clientes</span></span>
+    </nav>
+    <header class="ld-hero">
+      <div>
+        <p class="ld-eyebrow">Para pequeños negocios</p>
+        <h1>Reservas, TPV y stock en una sola pantalla.</h1>
+        <p class="ld-sub">Reservas, ventas, inventario y clientes en una sola herramienta, pensada para usarse desde el móvil en el propio negocio.</p>
+        <div class="ld-cta">
+          <a class="ld-btn pri" href="https://github.com/Ivan-Pascual/reservly" target="_blank" rel="noopener">Ver el código</a>
+        </div>
+      </div>
+      <div class="ld-panel" aria-hidden="true">
+        <div class="ld-ph"><b>Hoy</b><span>Panel del negocio</span></div>
+        <div class="ld-kpis"><div><small>Reservas</small><b>14</b></div><div><small>Ticket medio</small><b>24,60 €</b></div><div><small>Stock bajo</small><b>6</b></div></div>
+        <div class="ld-tabla"><div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div><div><span>Jorge Lasaosa · 19:15</span><span>Confirmada</span></div></div>
+        <p class="ld-nota">Datos ficticios.</p>
+      </div>
+    </header>
+    <section class="ld-seccion">
+      <h2>Todo el negocio, en una pantalla</h2>
+      <div class="ld-grid">
+        <article class="ld-card"><span class="ld-n">01</span><h3>Reservas</h3><p>Gestiona las reservas del negocio desde la misma herramienta con la que vendes.</p></article>
+        <article class="ld-card"><span class="ld-n">02</span><h3>TPV</h3><p>Cobra con lector de códigos de barras. Cada venta descuenta el inventario automáticamente.</p></article>
+        <article class="ld-card"><span class="ld-n">03</span><h3>Stock</h3><p>Control de stock de tus productos, integrado con el TPV.</p></article>
+        <article class="ld-card"><span class="ld-n">04</span><h3>Clientes</h3><p>Segmenta a tus clientes y consulta estadísticas con filtros por cliente.</p></article>
+      </div>
+    </section>
+    <section class="ld-seccion ld-tech"><p>Hecho con <b>React 18</b> y <b>Supabase</b> (PostgreSQL), desplegado en <b>Vercel</b>. Interfaz totalmente responsive.</p></section>
+    <footer class="ld-pie">Proyecto personal de Iván Pascual López · Pantalla de ejemplo con datos ficticios.</footer>
+  </div>
+</template>
+
+<template id="ld-cuaderno">
+  <div class="ld ld-azul">
+    <nav class="ld-nav">
+      <span class="ld-logo">Cuaderno<b>.</b></span>
+      <span class="ld-links"><span>Minutos</span><span>Sin conexión</span><span>Documentos</span><span>Privacidad</span></span>
+    </nav>
+    <header class="ld-hero">
+      <div>
+        <p class="ld-eyebrow">Cuerpo técnico · Cantera</p>
+        <h1>Los minutos, repartidos con criterio.</h1>
+        <p class="ld-sub">App web para el cuerpo técnico de un equipo de la cantera: reparto de minutos, alineaciones y documentos en PDF, también sin conexión.</p>
+        <p class="ld-aviso">Uso real en la cantera · sin demo pública</p>
+      </div>
+      <div class="ld-panel" aria-hidden="true">
+        <div class="ld-ph"><b>Alevín · jornada 6</b><span>Resumen</span></div>
+        <div class="ld-kpis"><div><small>Asistencia</small><b>92 %</b></div><div><small>Mínimo</small><b>24 min</b></div><div><small>Informes</small><b>16</b></div></div>
+        <div class="ld-tabla"><div><span>Dorsal 7</span><span>38 min</span></div><div><span>Dorsal 11</span><span>34 min</span></div><div><span>Dorsal 4</span><span>29 min</span></div></div>
+        <p class="ld-nota">Datos ficticios.</p>
+      </div>
+    </header>
+    <section class="ld-seccion">
+      <h2>Pensada para el banquillo</h2>
+      <div class="ld-grid">
+        <article class="ld-card"><span class="ld-n">01</span><h3>Reparto de minutos</h3><p>El 50 % a partes iguales y el otro 50 % ponderado por participación, asistencia y notas.</p></article>
+        <article class="ld-card"><span class="ld-n">02</span><h3>Sin conexión</h3><p>Funciona sin conexión y sincroniza entre dispositivos, resolviendo los conflictos por marca temporal.</p></article>
+        <article class="ld-card"><span class="ld-n">03</span><h3>Documentos</h3><p>26 pantallas y 10 documentos PDF generados desde la propia app.</p></article>
+        <article class="ld-card"><span class="ld-n">04</span><h3>Privacidad</h3><p>Cifrado AES-256 con PIN, y exportación y borrado completo de los datos (RGPD).</p></article>
+      </div>
+    </section>
+    <section class="ld-seccion ld-tech"><p>Hecho con <b>JavaScript</b>, <b>HTML5</b> y <b>CSS3</b>, con <b>Service Worker</b> y <b>Google Sheets</b>, y desplegado en <b>Netlify</b>.</p></section>
+    <footer class="ld-pie">Sin demo pública porque la aplicación maneja datos de menores. Los datos de esta pantalla son ficticios.</footer>
+  </div>
+</template>
+
+<input type="file" id="ficheroFondo" accept="image/*" style="display:none">
+
+<div class="velo" id="velo" hidden>
+  <div class="tarjeta" role="dialog" aria-modal="true" aria-labelledby="veloTitulo">
+    <small id="veloSeccion"></small>
+    <h2 id="veloTitulo"></h2>
+    <div id="veloVista"></div>
+    <p id="veloTexto"></p>
+    <p class="detalle" id="veloDetalle" hidden></p>
+    <div class="chips" id="veloChips"></div>
+    <div class="enlaces" id="veloEnlaces"></div>
+    <p class="nota" id="veloNota" hidden></p>
+    <button type="button" id="veloCerrar">Volver</button>
+  </div>
+</div>
+
+<script id="vs-pantalla" type="x-shader/x-vertex">#version 300 es
+layout(location = 0) in vec2 aPos;
+void main(){ gl_Position = vec4(aPos, 0.0, 1.0); }
+</script>
+
+<script id="fs-escena" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+out vec4 fragColor;
+
+uniform vec2 uRes;
+uniform vec2 uCenter;
+uniform float uTanHalf;
+uniform vec3 uCamPos;
+uniform vec3 uCamRight;
+uniform vec3 uCamUp;
+uniform vec3 uCamFwd;
+uniform float uFocus;
+uniform float uTime;
+uniform int uSteps;
+uniform float uMaxStep;
+uniform float uHead;
+uniform vec3 uHeadPos;
+uniform float uArc;
+uniform float uClose;
+uniform float uCool;
+uniform float uTube;
+uniform float uSelS;
+uniform vec3 uSelCol;
+uniform float uSelAmp;
+uniform vec3 uLightCol[6];
+uniform float uLightAmp[6];
+uniform float uLightMix[6];
+uniform float uLightSize[6];
+uniform float uPulse;
+uniform float uPulseAmp;
+uniform vec3 uTint;
+uniform vec3 uBgA;
+uniform vec3 uBgB;
+uniform float uBgK;
+uniform float uTintAmp;
+uniform float uBgMix;
+uniform float uOpaco;   // 1 durante la intro, 0 cuando se ve el telón
+uniform float uExposure;
+uniform float uFade;
+uniform float uGrain;
+
+const float PI = 3.14159265359;
+const float TAU = 6.28318530718;
+const vec3 ICE = vec3(0.311, 0.561, 0.813);   // acento #96C4E8 en espacio lineal
+const vec3 ARC = vec3(0.80, 0.91, 1.0);
+const vec3 EMBER = vec3(1.0, 0.50, 0.20);
+const float FOG = 0.35;
+
+float hash12(vec2 p){
+  vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+  p3 += dot(p3, p3.yzx + 33.33);
+  return fract((p3.x + p3.y) * p3.z);
+}
+float hash13(vec3 p3){
+  p3 = fract(p3 * 0.1031);
+  p3 += dot(p3, p3.zyx + 31.32);
+  return fract((p3.x + p3.y) * p3.z);
+}
+float noise3(vec3 p){
+  vec3 i = floor(p);
+  vec3 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  float a = hash13(i);
+  float b = hash13(i + vec3(1.0, 0.0, 0.0));
+  float c = hash13(i + vec3(0.0, 1.0, 0.0));
+  float d = hash13(i + vec3(1.0, 1.0, 0.0));
+  float e = hash13(i + vec3(0.0, 0.0, 1.0));
+  float g = hash13(i + vec3(1.0, 0.0, 1.0));
+  float h = hash13(i + vec3(0.0, 1.0, 1.0));
+  float k = hash13(i + vec3(1.0, 1.0, 1.0));
+  return mix(mix(mix(a, b, f.x), mix(c, d, f.x), f.y),
+             mix(mix(e, g, f.x), mix(h, k, f.x), f.y), f.z);
+}
+
+/* Color del metal según su temperatura (0 frío, 1 al rojo blanco) */
+vec3 blackbody(float T){
+  vec3 c = mix(vec3(0.55, 0.04, 0.0), vec3(1.0, 0.32, 0.04), smoothstep(0.0, 0.35, T));
+  c = mix(c, vec3(1.0, 0.72, 0.32), smoothstep(0.3, 0.65, T));
+  return mix(c, vec3(1.0, 0.96, 0.88), smoothstep(0.65, 1.0, T));
+}
+
+vec3 aces(vec3 x){
+  return clamp((x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14), 0.0, 1.0);
+}
+
+/* El aro vive en el plano XY con radio 1. s recorre el aro en sentido horario desde arriba. */
+vec3 ringPoint(float s){
+  float th = 0.5 * PI - s;
+  return vec3(cos(th), sin(th), 0.0);
+}
+float arcParam(vec3 p){
+  return mod(0.5 * PI - atan(p.y, p.x), TAU);
+}
+
+float pulseAt(float s){
+  float behind = mod(uPulse - s, TAU);
+  float ahead = mod(s - uPulse, TAU);
+  return uPulseAmp * (exp(-behind * 4.0) + exp(-ahead * 30.0));
+}
+
+/* Emisión del cordón: calor detrás del arco y, al final, el aro "digital" azul hielo */
+vec3 beadEmission(float s){
+  if (uHead <= 0.0 || s > uHead) return vec3(0.0);
+  float T = exp(-(uHead - s) / 0.35);
+  if (uClose > 0.0) T *= exp(-uClose / 0.3);
+  vec3 e = blackbody(T) * pow(T, 2.0) * 3.2;
+  e += ICE * uCool * (0.12 + 2.0 * pulseAt(s));
+  /* El borde del sector elegido se enciende con su color */
+  float ds = abs(mod(s - uSelS + PI, TAU) - PI);
+  e += uSelCol * uSelAmp * smoothstep(0.50, 0.40, ds) * 1.8;
+  return e;
+}
+
+float sdBead(vec3 p, float s, out float sN){
+  sN = clamp(s, 0.0, uHead);
+  if (uHead <= 0.0) return 1e3;
+  if (s <= uHead){
+    vec2 q = vec2(length(p.xy) - 1.0, p.z);
+    return length(q) - uTube;
+  }
+  float d0 = length(p - ringPoint(0.0));
+  float d1 = length(p - ringPoint(uHead));
+  sN = d0 < d1 ? 0.0 : uHead;
+  return min(d0, d1) - uTube;
+}
+
+vec3 pointLight(vec3 p, vec3 n, vec3 v, vec3 lp, vec3 lc, float I, vec3 alb, float shin){
+  vec3 L = lp - p;
+  float dist = length(L);
+  L /= dist;
+  float att = I / (1.0 + dist * dist * 6.0);
+  float diff = max(dot(n, L), 0.0);
+  vec3 h = normalize(L + v);
+  float nh = max(dot(n, h), 0.0);
+  float spec = (pow(nh, shin) * (shin + 8.0) / 25.0 + pow(nh, 8.0) * 0.15) * smoothstep(0.0, 0.12, dot(n, L));
+  return lc * att * (alb * diff * 4.0 + spec * 0.5);
+}
+
+bool hitSphere(vec3 ro, vec3 rd, float r, out float a, out float b){
+  float bb = dot(ro, rd);
+  float c = dot(ro, ro) - r * r;
+  float h = bb * bb - c;
+  if (h < 0.0) return false;
+  h = sqrt(h);
+  a = -bb - h;
+  b = -bb + h;
+  return true;
+}
+bool hitSlab(vec3 ro, vec3 rd, float h, out float a, out float b){
+  if (abs(rd.z) < 1e-5){ a = -1e9; b = 1e9; return abs(ro.z) < h; }
+  float t0 = (-h - ro.z) / rd.z;
+  float t1 = (h - ro.z) / rd.z;
+  a = min(t0, t1);
+  b = max(t0, t1);
+  return true;
+}
+float rayPointDist(vec3 ro, vec3 rd, vec3 c, out float tt){
+  tt = max(dot(c - ro, rd), 0.0);
+  return length(ro + rd * tt - c);
+}
+
+void main(){
+  vec2 fc = gl_FragCoord.xy;
+  vec2 nd = (fc - uCenter) / (0.5 * uRes.y);
+  vec3 rd = normalize(uCamFwd + nd.x * uTanHalf * uCamRight + nd.y * uTanHalf * uCamUp);
+  vec3 ro = uCamPos;
+
+  vec3 col = uTint * uTintAmp * exp(-dot(nd, nd) * 3.0);
+  vec3 glow = vec3(0.0);
+
+  bool hit = false;
+  float tHit = 0.0;
+  float sHit = 0.0;
+  float ta, tb, za, zb;
+  if (hitSphere(ro, rd, 1.25, ta, tb) && hitSlab(ro, rd, 0.16, za, zb)){
+    float t = max(max(ta, za), 0.0);
+    float tEnd = min(tb, zb);
+    for (int i = 0; i < 120; i++){
+      if (i >= uSteps || t > tEnd) break;
+      vec3 p = ro + rd * t;
+      float s = arcParam(p);
+      float sN;
+      float dB = sdBead(p, s, sN);
+      float d = dB;
+      float fog = exp(-max(t - uFocus, 0.0) * FOG);
+      glow += beadEmission(sN) * exp(-max(dB, 0.0) * 85.0) * clamp(d, 0.002, uMaxStep) * fog * 0.9;
+      if (d < 0.00045 * t){ hit = true; tHit = t; sHit = sN; break; }
+      t += min(d * 0.92, uMaxStep);
+    }
+  }
+
+  if (hit){
+    vec3 p = ro + rd * tHit;
+    vec3 v = -rd;
+    vec3 cp = vec3(normalize(p.xy), 0.0);
+    vec3 n = normalize(p - cp);
+    vec3 alb = vec3(0.06, 0.062, 0.07);
+    vec3 lit = alb * ICE * 0.02 + pointLight(p, n, v, uHeadPos, ARC, uArc * 2.6, alb, 48.0);
+    float fog = exp(-max(tHit - uFocus, 0.0) * FOG);
+    col += (lit + beadEmission(sHit)) * fog;
+  }
+  col += glow;
+
+  /* Arco: núcleo físico y resplandor en espacio de pantalla, como el de una lente */
+  if (uArc > 0.0){
+    float tt;
+    float d = rayPointDist(ro, rd, uHeadPos, tt);
+    float a = d / max(tt, 1e-3);
+    float fog = exp(-max(tt - uFocus, 0.0) * FOG);
+    float g = 1.4 * exp(-d * d * 9000.0) + 0.35 / (1.0 + pow(a * 70.0, 2.0)) + 0.05 / (1.0 + pow(a * 12.0, 2.0));
+    col += ARC * g * uArc * fog;
+  }
+
+  /* Puntos de soldadura que se convierten en las luces del menú */
+  for (int i = 0; i < 6; i++){
+    if (uLightAmp[i] <= 0.001) continue;
+    vec3 lp = ringPoint(float(i) * PI / 3.0);
+    float tt;
+    float d = rayPointDist(ro, rd, lp, tt);
+    float fog = exp(-max(tt - uFocus, 0.0) * FOG);
+    vec3 lc = mix(EMBER, uLightCol[i], uLightMix[i]);
+    float sz = uLightSize[i];
+    float core = smoothstep(0.034 * sz, 0.022 * sz, d);
+    float halo = exp(-d * d / (0.0045 * sz * sz)) * 0.55 + 0.12 / (1.0 + pow(d / (0.05 * sz), 2.0));
+    vec3 coreCol = mix(lc, vec3(0.94, 0.97, 1.0), 0.75 * uLightMix[i]);
+    col += (coreCol * core * 1.4 + lc * halo) * uLightAmp[i] * fog;
+  }
+
+  /* Cabeza del pulso que recorre el aro */
+  if (uPulseAmp > 0.0){
+    float tt;
+    float d = rayPointDist(ro, rd, ringPoint(uPulse), tt);
+    col += ICE * uCool * uPulseAmp * (0.5 * exp(-d * d * 2500.0) + 0.08 / (1.0 + pow(d * 18.0, 2.0)));
+  }
+
+  col = aces(col * uExposure);
+  col = pow(col, vec3(1.0 / 2.2));
+
+  vec2 sc = (fc - 0.5 * uRes) / (0.5 * uRes.y);
+  vec3 base = vec3(0.0157, 0.0196, 0.0392);
+  vec2 topv = (fc / uRes - vec2(0.5, 1.1)) / vec2(1.2, 0.9);
+  base = mix(base, vec3(0.03, 0.042, 0.075), uBgMix * (1.0 - smoothstep(0.0, 0.62, length(topv))));
+  float vig = smoothstep(1.9, 0.35, length(sc));
+  col = base * mix(1.0, vig, 0.6) * uOpaco + col;
+  /* Fondo difuminado con los colores de la app seleccionada */
+  vec2 pa = nd - vec2(-0.45, 0.35);
+  vec2 pb = nd - vec2(0.5, -0.35);
+  col += (uBgA * exp(-dot(pa, pa) * 1.6) + uBgB * exp(-dot(pb, pb) * 1.6)) * uBgK * 0.32;
+  col += (hash12(fc + fract(uTime * 7.13) * 91.7) - 0.5) * uGrain;
+  col = max(col, 0.0) * uFade;
+  /* Con telón detrás, sólo lo iluminado tapa la foto: el resto queda transparente */
+  float alfa = max(uOpaco, clamp(max(max(col.r, col.g), col.b) * 1.7, 0.0, 1.0));
+  fragColor = vec4(col, alfa);
+}
+</script>
+
+<script id="vs-chispas" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+layout(location = 0) in float aCorner;
+layout(location = 1) in vec4 aSeed;
+layout(location = 2) in float aBirth;
+uniform mat4 uVP;
+uniform vec2 uRes;
+uniform float uTime;
+uniform float uLapStart;
+uniform float uLapDur;
+uniform float uThick;
+out vec3 vCol;
+out float vA;
+out float vSide;
+const float PI = 3.14159265359;
+const float TAU = 6.28318530718;
+
+vec3 blackbody(float T){
+  vec3 c = mix(vec3(0.55, 0.04, 0.0), vec3(1.0, 0.32, 0.04), smoothstep(0.0, 0.35, T));
+  c = mix(c, vec3(1.0, 0.72, 0.32), smoothstep(0.3, 0.65, T));
+  return mix(c, vec3(1.0, 0.96, 0.88), smoothstep(0.65, 1.0, T));
+}
+
+/* Trayectoria con rozamiento y gravedad, en forma cerrada: no hace falta simular paso a paso */
+vec3 sparkPos(vec3 p0, vec3 v0, float a){
+  const float k = 2.6;
+  const vec3 g = vec3(0.0, -2.4, 0.0);
+  float e = exp(-k * a);
+  return p0 + v0 * (1.0 - e) / k + g * (a / k - (1.0 - e) / (k * k));
+}
+
+void main(){
+  vCol = vec3(0.0);
+  vA = 0.0;
+  vSide = 0.0;
+  float age = uTime - aBirth;
+  float life = mix(0.35, 0.95, aSeed.w);
+  if (age < 0.0 || age > life){ gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
+
+  float u = clamp((aBirth - uLapStart) / uLapDur, 0.0, 1.0);
+  float s = u * u * (3.0 - 2.0 * u) * TAU;
+  float th = 0.5 * PI - s;
+  vec3 outw = vec3(cos(th), sin(th), 0.0);
+  vec3 tang = vec3(sin(th), -cos(th), 0.0);
+  float closeT = uLapStart + uLapDur;
+  float burst = step(abs(aBirth - closeT - 0.015), 0.05);
+  vec3 jit = vec3(fract(aSeed.x * 17.31), fract(aSeed.y * 23.17), fract(aSeed.z * 11.93)) * 2.0 - 1.0;
+  vec3 dir = normalize(outw * (0.3 + 0.7 * aSeed.x) + tang * (-1.0 + 1.2 * aSeed.y) * (1.0 - burst)
+                     + vec3(0.0, 0.0, 0.2 + 0.8 * aSeed.z) + jit * (0.35 + 0.6 * burst));
+  float speed = mix(0.8, 2.4, fract(aSeed.w * 7.31)) * (1.0 + 0.5 * burst);
+  vec3 p0 = outw * (1.0 + 0.01 * jit.x);
+  vec3 v0 = dir * speed;
+
+  vec3 pa = sparkPos(p0, v0, age);
+  vec3 pb = sparkPos(p0, v0, max(age - 0.024, 0.0));
+  vec4 ca = uVP * vec4(pa, 1.0);
+  vec4 cb = uVP * vec4(pb, 1.0);
+  if (ca.w < 0.02 || cb.w < 0.02){ gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
+
+  /* Estela orientada a la velocidad: desenfoque de movimiento simulado */
+  vec2 sa = ca.xy / ca.w * 0.5 * uRes;
+  vec2 sb = cb.xy / cb.w * 0.5 * uRes;
+  vec2 dv = sa - sb;
+  float len = length(dv);
+  vec2 dirPx = len > 1e-3 ? dv / len : vec2(1.0, 0.0);
+  vec2 nrm = vec2(-dirPx.y, dirPx.x);
+  float thick = uThick * mix(1.0, 0.55, age / life);
+  float along = aCorner >= 1.5 ? 1.0 : 0.0;
+  float side = (aCorner == 0.0 || aCorner == 2.0) ? -1.0 : 1.0;
+  vec2 px = mix(sb - dirPx * thick * 0.5, sa + dirPx * thick * 0.5, along) + nrm * side * thick * 0.5;
+  float w = mix(cb.w, ca.w, along);
+  gl_Position = vec4(px / (0.5 * uRes) * w, 0.0, w);
+
+  float T = exp(-age / 0.2);
+  vCol = blackbody(max(T, 0.05));
+  vA = pow(1.0 - age / life, 1.4) * (0.55 + 0.45 * T);
+  vSide = side;
+}
+</script>
+
+<script id="fs-chispas" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+in vec3 vCol;
+in float vA;
+in float vSide;
+uniform float uFade;
+uniform float uGain;
+out vec4 fragColor;
+void main(){
+  float edge = 1.0 - abs(vSide);
+  float a = vA * smoothstep(0.0, 0.8, edge) * uFade * uGain;
+  fragColor = vec4(vCol * a, a);
+}
+</script>
+
+<script>
+(() => {
+'use strict';
+
+/* ===================== Configuración ===================== */
+/* Iconos de trazo, 24×24, dibujados para el portafolio */
+const ICONOS = {
+  calendario: '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 14.8l2.2 2.2 4.3-4.6"/>',
+  campo: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M3 9.5h2.8v5H3M21 9.5h-2.8v5H21"/><circle cx="12" cy="12" r="2.6"/>',
+  matraz: '<path d="M9.5 3h5M10.5 3v6L5 19a1.5 1.5 0 0 0 1.3 2.2h11.4A1.5 1.5 0 0 0 19 19l-5.5-10V3"/><path d="M7.4 15h9.2"/>',
+  diana: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/>',
+  grafica: '<path d="M4 4v16h16"/><path d="M7.5 15l3.5-4 3 3 5-6"/>',
+  movil: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+  capas: '<path d="M12 3.5l8.5 4.5-8.5 4.5L3.5 8 12 3.5z"/><path d="M3.5 12l8.5 4.5 8.5-4.5"/><path d="M3.5 16l8.5 4.5 8.5-4.5"/>',
+  birrete: '<path d="M2.5 9L12 4.5 21.5 9 12 13.5 2.5 9z"/><path d="M6.5 11.2v4.3c1.5 1.4 3.5 2.1 5.5 2.1s4-.7 5.5-2.1v-4.3M21.5 9v5"/>',
+  persona: '<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.8 3.6-5.8 7-5.8s6.2 2 7 5.8"/>',
+  silbato: '<circle cx="9" cy="14.5" r="5"/><path d="M12.8 11.2L21 8.5v4.3l-5 1.2M9 14.5h.01"/><path d="M6 9.8C6 6.5 8 4.5 11 4.5"/>',
+  sobre: '<rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="M3.8 7l8.2 6.2L20.2 7"/>'
+};
+
+/* Cada sector tiene una o varias fichas; con varias, se cambian con las flechas del propio sector.
+   "tema" tiñe toda la escena con el color de la app mientras está seleccionada. */
+/* Color de todos los sectores: cobre. `acento` es el color de la interfaz y `fondo` las dos manchas suaves del fondo.
+   Reservly y Cuaderno conservan el color de su app (verde, y azul y grana del club). */
+const TEMA_COBRE = { acento: [232, 160, 96], fondo: [[196, 112, 50], [150, 50, 72]] };   // cobre y vino
+
+/* Landing REAL de Reservly, la que se enseña en vivo dentro de la página.
+   Dirección completa (https://...) de la página de presentación, NO la de la app (login o panel).
+   Mientras esté vacía se enseña la landing de ejemplo. */
+const LANDING_RESERVLY = 'https://getreservly.com';
+/* false: el primer toque selecciona el proyecto (se ve su nombre en el centro) y la landing se abre al pulsar ahí, como en el resto del menú.
+   true: la landing se abre ya con el primer toque en el sector. En escritorio no cambia nada: el ratón selecciona al pasar y abre al hacer clic. */
+const PROYECTO_A_LA_PRIMERA = false;
+const vivoValido = u => /^https:\/\//.test(u || '');
+function hostDe(u) {
+  try { const x = new URL(u); return x.host + (x.pathname !== '/' ? x.pathname : ''); } catch (e) { return u; }
+}
+
+const SECCIONES = [
+  { id: 'proyectos', lab: 'Proyectos', icono: ICONOS.calendario, items: [
+    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, dominio: LANDING_RESERVLY ? hostDe(LANDING_RESERVLY) : 'Reservly · ejemplo', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
+      stack: 'React 18 · Supabase', estado: 'Desplegada · En desarrollo',
+      detalle: 'Aplicación full stack para pequeños negocios: reservas, TPV con lector de códigos de barras y descuento automático de inventario, control de stock, segmentación de clientes y estadísticas. Interfaz responsive, pensada para usarse desde el móvil.',
+      enlaces: [...(vivoValido(LANDING_RESERVLY) ? [['Ver la landing · ' + hostDe(LANDING_RESERVLY), LANDING_RESERVLY]] : []),
+                ['Código · github.com/Ivan-Pascual/reservly', 'https://github.com/Ivan-Pascual/reservly']],
+      tema: { acento: [52, 201, 138], fondo: [[20, 120, 78], [12, 84, 60]] } },
+    { nombre: 'Cuaderno', telon: 'cuaderno', vista: 'cuaderno', codigo: 'https://github.com/Ivan-Pascual/gestor-deportivo', dominio: 'cuaderno · versión privada', icono: ICONOS.campo, des: 'Gestión de un equipo de la cantera de la SD Huesca',
+      stack: 'JavaScript · Funciona sin conexión', estado: 'En producción',
+      detalle: 'App web instalable (PWA) para el cuerpo técnico de un equipo de la cantera: 26 pantallas y 10 documentos PDF. Reparto de minutos (50 % a partes iguales y 50 % según participación, asistencia y notas), sincronización entre dispositivos con resolución de conflictos, modo sin conexión y cifrado AES-256 con PIN, con exportación y borrado de datos.',
+      nota: 'Sin demo pública: la aplicación maneja datos de menores.',
+      tema: { acento: [86, 136, 230], fondo: [[34, 84, 180], [150, 28, 50]] } }   // azul y grana del club
+  ] },
+  { id: 'laboratorio', lab: 'Laboratorio', icono: ICONOS.matraz, items: [
+    { nombre: 'ScoutVision', telon: 'laboratorio', captura: 'captura-scoutvision.jpg', tema: TEMA_COBRE, icono: ICONOS.diana, des: 'Análisis de partidos con visión por computador',
+      stack: 'Python · YOLO · ByteTrack · OSNet', estado: 'En funcionamiento',
+      detalle: 'Detecta y sigue a los jugadores en el vídeo de un partido y los re-identifica a lo largo del mismo, para extraer las jugadas de un jugador concreto. El siguiente paso es seguir a los 22 a la vez durante todo el partido.' },
+    { nombre: 'ARCHIVO 90', telon: 'laboratorio', captura: 'captura-archivo90.jpg', tema: TEMA_COBRE, des: 'Tienda online ficticia de camisetas retro de fútbol',
+      stack: 'React · Vite', estado: 'En desarrollo',
+      detalle: 'Tienda ficticia de camisetas retro de fútbol con un vestidor virtual. De momento, el front con React y Vite.' },
+    { nombre: 'El Alcoraz City', telon: 'laboratorio', captura: 'captura-alcoraz.jpg', tema: TEMA_COBRE, des: 'Simulación isométrica del SD Huesca',
+      stack: 'Isométrico · 3D', estado: 'En desarrollo',
+      detalle: 'Simulación isométrica, tipo videojuego, del club: estadio, ciudad deportiva y residencia. Se está pasando a 3D real por fases: escenario, personas y partido, e interiores.' },
+    { nombre: 'Pascual SL', telon: 'laboratorio', captura: 'captura-pascual.jpg', tema: TEMA_COBRE, des: 'Panel de empresa tipo videojuego con ciudad isométrica',
+      stack: 'Demo interactiva', estado: 'En desarrollo',
+      detalle: 'Demo de una empresa ficticia, Pascual SL (webs y apps a medida), presentada como un panel tipo videojuego con su propia ciudad isométrica.' },
+    { nombre: 'Orgatwo', telon: 'laboratorio', captura: 'captura-orgatwo.jpg', tema: TEMA_COBRE, icono: ICONOS.movil, des: 'App móvil de organización personal y compartida',
+      stack: 'App iOS', estado: 'En diseño',
+      detalle: 'App para iPhone para organizarse en pareja, en familia o en un piso compartido. El nombre es provisional y ahora mismo está en fase de diseño.' },
+    { nombre: 'Modelo predictivo', telon: 'laboratorio', captura: 'captura-modelo.jpg', tema: TEMA_COBRE, icono: ICONOS.grafica, des: 'Predicción de resultados de fútbol con aprendizaje automático',
+      stack: 'Python · scikit-learn', estado: 'Experimento',
+      detalle: 'Modelo de predicción de resultados de fútbol con scikit-learn: imputación de datos y regresión logística, evaluados con backtesting.' },
+    { nombre: 'App de rutinas', telon: 'laboratorio', captura: 'captura-rutinas.jpg', tema: TEMA_COBRE, icono: ICONOS.movil, des: 'App móvil para organizar la rutina diaria',
+      stack: 'React Native · Expo · TypeScript', estado: 'En desarrollo',
+      detalle: 'App móvil de rutina diaria, minimalista y en tema oscuro. Estado con Zustand y navegación con React Navigation.' }
+  ] },
+  { id: 'stack', lab: 'Stack', icono: ICONOS.capas, items: [
+    { nombre: 'Lenguajes', telon: 'stack', tema: TEMA_COBRE, chips: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL', 'HTML5', 'CSS3'] },
+    { nombre: 'Frontend', telon: 'stack', tema: TEMA_COBRE, chips: ['React 18', 'Vite', 'React Native', 'Expo', 'Zustand', 'React Navigation', 'PWA', 'Service Workers'] },
+    { nombre: 'Gráficos y audio', telon: 'stack', tema: TEMA_COBRE, chips: ['WebGL 2', 'GLSL', 'CSS 3D', 'SVG', 'Canvas', 'Web Audio API', 'Canva'] },
+    { nombre: 'Backend y datos', telon: 'stack', tema: TEMA_COBRE, chips: ['Supabase', 'PostgreSQL', 'MySQL', 'Spring Framework', 'Google Sheets'] },
+    { nombre: 'IA y automatización', telon: 'stack', tema: TEMA_COBRE, chips: ['YOLO', 'ByteTrack', 'OSNet', 'scikit-learn', 'ReportLab', 'Claude'] },
+    { nombre: 'CMS y e-commerce', telon: 'stack', tema: TEMA_COBRE, chips: ['WordPress', 'Odoo', 'Shopify', 'Liquid'] },
+    { nombre: 'Herramientas', telon: 'stack', tema: TEMA_COBRE, chips: ['Git', 'GitHub', 'GitHub Pages', 'VS Code', 'npm', 'Vercel', 'Netlify', 'RunPod', 'NacSport'] },
+    { nombre: 'Seguridad y sistemas', telon: 'stack', tema: TEMA_COBRE, chips: ['Cifrado AES-256', 'RGPD', 'TPV', 'Redes Wi-Fi', 'Soporte técnico'] }
+  ] },
+  { id: 'formacion', lab: 'Formación', icono: ICONOS.birrete, items: [
+    { nombre: 'Máster · Evolve', telon: 'evolve', des: 'Product Engineering & AI', stack: 'Oct 2026 – May 2027', estado: 'En curso',
+      detalle: 'Formación orientada al desarrollo de producto con inteligencia artificial.', tema: TEMA_COBRE },
+    { nombre: 'Técnico Superior DAW', telon: 'daw', des: 'Desarrollo de Aplicaciones Web · FP Pirámide, Huesca', stack: '2021 – 2023',
+      detalle: 'Ciclo formativo de grado superior. Las prácticas las realicé en IZTIDATA.', tema: TEMA_COBRE },
+    { nombre: 'Prácticas · IZTIDATA', telon: 'practicas', des: 'Programador web en las prácticas del DAW',
+      stack: 'React · WordPress · Odoo · MySQL · Python', estado: 'Mar – Jun 2023',
+      detalle: 'Desarrollo y mantenimiento de aplicaciones web con React, sitios con WordPress, adaptación de funcionalidades en Odoo, consultas y vistas en MySQL, scripts de automatización con Python y puesta en marcha de TPV, redes y equipos.', tema: TEMA_COBRE }
+  ] },
+  { id: 'sobremi', lab: 'Sobre mí', icono: ICONOS.persona, items: [
+    { nombre: 'Iván Pascual López', telon: 'sobremi', icono: ICONOS.persona,
+      des: 'Técnico Superior en DAW, de Huesca.',
+      stack: 'Huesca, Aragón',
+      detalle: 'Mi camino hasta el desarrollo de producto no está siendo en línea recta: he pasado por el reparto, una granja y un taller de ferralla, y en paralelo no he dejado de programar. Tres años de formación autodidacta convertida en proyectos propios.', tema: TEMA_COBRE },
+    { nombre: 'Cantera SD Huesca', telon: 'cantera', icono: ICONOS.silbato, des: 'Tres temporadas como entrenador en la cantera, en distintos cargos',
+      stack: 'Licencia UEFA C · Máster en Fútbol de Alto Rendimiento (UCAV)', estado: 'Desde 2024',
+      detalle: 'El fútbol es mi pasión de siempre. En la cantera he aprendido a planificar, a trabajar dentro de la metodología de un club y a hacerme entender por un grupo de niños. Además, curso de analista táctico.', tema: TEMA_COBRE }
+  ] },
+  { id: 'contacto', lab: 'Contacto', icono: ICONOS.sobre, items: [
+    { nombre: 'Contacto', telon: 'contacto', des: 'Escríbeme por LinkedIn o por correo', stack: 'LinkedIn · Correo · GitHub · CV', sinChips: true,
+      enlaces: [['LinkedIn · linkedin.com/in/ivanpascuallopez', 'https://www.linkedin.com/in/ivanpascuallopez'],
+                ['Correo · ivanpascual100@gmail.com', 'mailto:ivanpascual100@gmail.com'],
+                ['GitHub · github.com/Ivan-Pascual', 'https://github.com/Ivan-Pascual'],
+                ['Descargar CV (PDF)', 'CV_Ivan_Pascual.pdf']],
+      tema: TEMA_COBRE }
+  ] }
+];
+
+/* Tiempos de la secuencia, en segundos. Toda la intro se deriva de aquí. */
+const TL = {
+  ignite: 0.60,        // se enciende el arco
+  lapStart: 0.70,      // el arco empieza a recorrer el aro
+  lapDur: 2.60,        // vuelta completa: cierra en 3.30
+  arcOff: 3.38,        // el arco se apaga
+  camStart: 1.10,      // la cámara empieza a retirarse
+  camEnd: 4.00,        // la cámara llega al encuadre del menú
+  reveal: 3.42,        // los puntos toman el color de su sección
+  tackStagger: 0.07,
+  tackDur: 0.35,
+  heroStart: 4.00,
+  heroEnd: 4.70,
+  unfoldStart: 4.30,   // los sectores del dial se despliegan desde el aro
+  unfoldStagger: 0.06,
+  unfoldDur: 0.55,
+  uiStart: 4.90,       // aparece la interfaz
+  end: 5.60
+};
+
+const CAM = { target0: [0.06, 0.99, 0.0], az0: -1.36, el0: 0.14, roll0: -0.12, dist0: 0.62 };
+const FOV_Y = 35 * Math.PI / 180;
+const TAN_HALF = Math.tan(FOV_Y / 2);
+const RING_FRAC = 0.47;              // el aro es el borde exterior del dial
+const R_OUT = 46.2, R_IN = 23.6;     // radios de los sectores, en unidades del viewBox (0-100)
+const R_MID = (R_OUT + R_IN) / 2;
+const GAP = 1.5;                     // separación entre sectores, de ancho constante
+const PULSE_IDLE = 1.15;             // rad/s, igual que el portafolio actual
+const PULSE_A = 5.3;
+const PULSE_TAU = 0.25;
+const ACENTO = [150, 196, 232];      // único color de acento (#96C4E8)
+const N_SPARKS = 1600;
+
+const TIERS = {
+  high:   { scale: 2.0, steps: 84, maxStep: 0.08, sparks: 1.0 },
+  medium: { scale: 1.5, steps: 62, maxStep: 0.10, sparks: 0.6 },
+  low:    { scale: 1.0, steps: 44, maxStep: 0.13, sparks: 0.3 }
+};
+const ORDER = ['low', 'medium', 'high'];
+
+/* En la vista previa la intro se ve siempre. En producción se recuerda si ya se vio. */
+const PREVIEW = false;
+const STORAGE_KEY = 'intro-vista';
+
+/* ===================== Utilidades ===================== */
+const TAU = Math.PI * 2;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (e0, e1, x) => { const t = clamp((x - e0) / (e1 - e0)); return t * t * (3 - 2 * t); };
+const ease = {
+  inOutCubic: t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2),
+  outCubic: t => 1 - Math.pow(1 - t, 3),
+  inOutSine: t => -(Math.cos(Math.PI * t) - 1) / 2
+};
+const v3 = {
+  add: (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]],
+  sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+  scale: (a, s) => [a[0] * s, a[1] * s, a[2] * s],
+  dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+  cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+  norm: a => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; },
+  lerp: (a, b, t) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)]
+};
+function hash1(n) { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+function noise1(x) { const i = Math.floor(x); const f = x - i; const u = f * f * (3 - 2 * f); return lerp(hash1(i), hash1(i + 1), u); }
+function mulberry32(a) {
+  return () => {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function ringPoint(s) { const th = Math.PI / 2 - s; return [Math.cos(th), Math.sin(th), 0]; }
+function heroEnv(t) {
+  const u = t - TL.heroStart;
+  if (u < 0) return 0;
+  return u < 0.08 ? u / 0.08 : Math.exp(-(u - 0.08) / 0.22);
+}
+function mat4Mul(a, b) {
+  const o = new Float32Array(16);
+  for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) {
+    let s = 0;
+    for (let k = 0; k < 4; k++) s += a[k * 4 + r] * b[c * 4 + k];
+    o[c * 4 + r] = s;
+  }
+  return o;
+}
+
+/* ===================== Sonido ===================== */
+/* Todo sintetizado en el momento: no hay archivos que descargar. Apagado por defecto;
+   los navegadores no dejan sonar nada hasta que el usuario toca la página. */
+const Sonido = (() => {
+  let ctx = null, salida = null, ruido = null, siseo = null, zumbido = null, activo = false;
+  function crear() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    ctx = new AC();
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -20;
+    comp.ratio.value = 4;
+    salida = ctx.createGain();
+    salida.gain.value = 0.6;
+    salida.connect(comp);
+    comp.connect(ctx.destination);
+    ruido = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
+    const d = ruido.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    const fuente = ctx.createBufferSource();
+    fuente.buffer = ruido;
+    fuente.loop = true;
+    const banda = ctx.createBiquadFilter();
+    banda.type = 'bandpass';
+    banda.frequency.value = 4200;
+    banda.Q.value = 0.8;
+    siseo = ctx.createGain();
+    siseo.gain.value = 0;
+    fuente.connect(banda); banda.connect(siseo); siseo.connect(salida);
+    fuente.start();
+    const osc = ctx.createOscillator();
+    osc.type = 'sawtooth';
+    osc.frequency.value = 100;
+    const grave = ctx.createBiquadFilter();
+    grave.type = 'lowpass';
+    grave.frequency.value = 700;
+    zumbido = ctx.createGain();
+    zumbido.gain.value = 0;
+    osc.connect(grave); grave.connect(zumbido); zumbido.connect(salida);
+    osc.start();
+    return true;
+  }
+  function envolvente(g, t0, pico, ataque, caida) {
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(pico, t0 + ataque);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + ataque + caida);
+  }
+  function tono(tipo, f0, f1, pico, ataque, caida, retraso = 0) {
+    const t0 = ctx.currentTime + retraso;
+    const o = ctx.createOscillator();
+    o.type = tipo;
+    o.frequency.setValueAtTime(f0, t0);
+    if (f1 !== f0) o.frequency.exponentialRampToValueAtTime(f1, t0 + ataque + caida);
+    const g = ctx.createGain();
+    envolvente(g, t0, pico, ataque, caida);
+    o.connect(g); g.connect(salida);
+    o.start(t0); o.stop(t0 + ataque + caida + 0.05);
+  }
+  function rafaga(tipo, fc, q, pico, ataque, caida) {
+    const t0 = ctx.currentTime;
+    const src = ctx.createBufferSource();
+    src.buffer = ruido;
+    const f = ctx.createBiquadFilter();
+    f.type = tipo;
+    f.frequency.value = fc;
+    f.Q.value = q;
+    const g = ctx.createGain();
+    envolvente(g, t0, pico, ataque, caida);
+    src.connect(f); f.connect(g); g.connect(salida);
+    src.start(t0, Math.random() * 0.5); src.stop(t0 + ataque + caida + 0.05);
+  }
+  const si = fn => (...args) => { if (activo && ctx) fn(...args); };
+  return {
+    activo: () => activo,
+    activar() { if (!ctx && !crear()) return false; ctx.resume(); activo = true; return true; },
+    desactivar() {
+      activo = false;
+      if (!ctx) return;
+      siseo.gain.setTargetAtTime(0, ctx.currentTime, 0.02);
+      zumbido.gain.setTargetAtTime(0, ctx.currentTime, 0.02);
+    },
+    arco(v) {
+      if (!ctx) return;
+      const k = activo ? v : 0;
+      siseo.gain.setTargetAtTime(k * 0.16, ctx.currentTime, 0.012);
+      zumbido.gain.setTargetAtTime(k * 0.03, ctx.currentTime, 0.03);
+    },
+    ambiente: si(() => { tono('sine', 42, 38, 0.12, 0.5, 1.2); rafaga('lowpass', 180, 0.7, 0.05, 0.5, 1.0); }),
+    encendido: si(() => { rafaga('bandpass', 2600, 0.6, 0.5, 0.004, 0.28); tono('sine', 95, 42, 0.35, 0.005, 0.35); }),
+    punto: si(() => { rafaga('highpass', 3500, 0.7, 0.06, 0.002, 0.03); tono('sine', 1500, 1500, 0.025, 0.002, 0.05); }),
+    cierre: si(() => { tono('triangle', 2350, 2350, 0.05, 0.003, 0.6); tono('triangle', 3310, 3310, 0.035, 0.003, 0.45); tono('sine', 70, 48, 0.3, 0.004, 0.45); }),
+    hero: si(() => { tono('sine', 55, 60, 0.22, 0.12, 0.9); tono('sine', 880, 880, 0.016, 0.05, 0.9); tono('sine', 1318.5, 1318.5, 0.011, 0.05, 0.9); }),
+    gajo: si(i => { tono('sine', 1100 + i * 70, 1100 + i * 70, 0.02, 0.002, 0.05); }),
+    tick: si(() => { tono('sine', 1900, 1900, 0.018, 0.002, 0.035); }),
+    cambio: si(() => { tono('sine', 1500, 1500, 0.02, 0.002, 0.03); tono('sine', 2100, 2100, 0.016, 0.002, 0.03, 0.035); }),
+    abrir: si(() => { tono('sine', 660, 660, 0.03, 0.004, 0.08); tono('sine', 990, 990, 0.03, 0.004, 0.12, 0.07); })
+  };
+})();
+
+/* ===================== Parámetros de la URL ===================== */
+const params = new URLSearchParams(location.search);
+const frozenAt = params.has('t') ? parseFloat(params.get('t')) : null;
+const forcedTier = params.get('q');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches && !params.has('movimiento');
+
+/* ===================== Interfaz ===================== */
+const root = document.documentElement;
+const app = document.getElementById('app');
+const orbita = document.getElementById('orbita');
+const nucleo = document.getElementById('nucleo');
+const btnSaltar = document.getElementById('saltar');
+const btnRepetir = document.getElementById('repetir');
+const velo = document.getElementById('velo');
+let hover = -1;
+let selIdx = 0, selAmp = 0;
+let tintK = 0.3;
+let opacoFondo = 1;
+const itemSel = SECCIONES.map(() => 0);
+const itemDe = i => SECCIONES[i].items[itemSel[i]];
+const TACTIL = matchMedia('(hover: none)').matches;
+const svgNS = 'http://www.w3.org/2000/svg';
+const dial = document.getElementById('dial');
+const eje = document.getElementById('eje');
+const anuncio = document.getElementById('anuncio');
+
+/* Tema: acento y fondo difuminado; cambian con la app seleccionada y se animan en el bucle */
+let acc = ACENTO.slice(), accObj = ACENTO.slice();
+let fondoA = [0, 0, 0], fondoB = [0, 0, 0], fondoK = 0;
+let fondoObjA = [0, 0, 0], fondoObjB = [0, 0, 0], fondoObjK = 0;
+function aplicarTema() {
+  const tema = hover >= 0 ? itemDe(hover).tema : null;
+  accObj = tema ? tema.acento : ACENTO;
+  if (tema && tema.fondo) { fondoObjA = tema.fondo[0]; fondoObjB = tema.fondo[1]; fondoObjK = 1; } else fondoObjK = 0;
+  pedirFrame();
+}
+function pintarAcento() {
+  const c = acc.map(Math.round).join(',');
+  root.style.setProperty('--acento', 'rgb(' + c + ')');
+  root.style.setProperty('--acento-a', 'rgba(' + c + ',.5)');
+}
+const accLin = () => acc.map(c => Math.pow(c / 255, 2.2));
+
+document.getElementById('pistas').textContent = TACTIL
+  ? 'Toca un sector para ver su ficha, usa sus flechas para cambiar y vuelve a tocarlo para abrirlo.'
+  : 'Pasa por un sector para ver su ficha y haz clic para abrirlo. Con el teclado: ← → cambian dentro del sector, ↑ ↓ entre sectores.';
+
+/* Sector anular con huecos de ancho constante, como las separaciones de un dial de juego */
+function sector(i, rOut, rIn) {
+  const c = -90 + i * 60;
+  const dO = Math.asin(Math.min(1, GAP / 2 / rOut)) * 180 / Math.PI;
+  const dI = Math.asin(Math.min(1, GAP / 2 / Math.max(rIn, GAP))) * 180 / Math.PI;
+  const P = (r, a) => (50 + r * Math.cos(a * Math.PI / 180)).toFixed(3) + ' ' + (50 + r * Math.sin(a * Math.PI / 180)).toFixed(3);
+  return 'M' + P(rOut, c - 30 + dO) + 'A' + rOut + ' ' + rOut + ' 0 0 1 ' + P(rOut, c + 30 - dO) +
+         'L' + P(rIn, c + 30 - dI) + 'A' + rIn.toFixed(3) + ' ' + rIn.toFixed(3) + ' 0 0 0 ' + P(rIn, c - 30 + dI) + 'Z';
+}
+
+const formas = SECCIONES.map(() => {
+  const f = document.createElementNS(svgNS, 'path');
+  f.setAttribute('class', 'gajo-forma');
+  dial.insertBefore(f, eje);
+  return f;
+});
+
+const FLECHA_IZQ = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg>';
+const FLECHA_DER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg>';
+
+/* Cada sector: botón real para teclado y lectores de pantalla, y flechas para cambiar de ficha */
+const gajos = SECCIONES.map((sec, i) => {
+  const a = (-90 + i * 60) * Math.PI / 180;
+  const multi = sec.items.length > 1;
+  const g = document.createElement('div');
+  g.className = 'gajo' + (multi ? ' multi' : '');
+  g.style.left = (50 + Math.cos(a) * R_MID) + '%';
+  g.style.top = (50 + Math.sin(a) * R_MID) + '%';
+  g.innerHTML = '<div class="gajo-fila">' +
+    (multi ? '<button type="button" class="flecha" tabindex="-1" aria-label="Ficha anterior">' + FLECHA_IZQ + '</button>' : '') +
+    '<button type="button" class="gajo-btn"><svg viewBox="0 0 24 24" aria-hidden="true"></svg></button>' +
+    (multi ? '<button type="button" class="flecha" tabindex="-1" aria-label="Ficha siguiente">' + FLECHA_DER + '</button>' : '') +
+    '</div><span class="gajo-lab"></span>' +
+    (multi ? '<span class="puntos" aria-hidden="true">' + sec.items.map(() => '<i></i>').join('') + '</span>' : '');
+  g.querySelector('.gajo-lab').textContent = sec.lab;
+  const btn = g.querySelector('.gajo-btn');
+  btn.addEventListener('focus', () => marcar(i));
+  btn.addEventListener('click', () => abrir(i));
+  g.querySelectorAll('.flecha').forEach((f, k) => f.addEventListener('click', e => {
+    e.stopPropagation();
+    cambiarItem(i, k === 0 ? -1 : 1);
+  }));
+  orbita.appendChild(g);
+  return { g, btn };
+});
+
+function pintarGajo(i) {
+  const sec = SECCIONES[i];
+  const it = itemDe(i);
+  gajos[i].g.querySelector('.gajo-btn svg').innerHTML = it.icono || sec.icono;
+  gajos[i].btn.setAttribute('aria-label', sec.lab + ': ' + it.nombre + '. ' + (it.des || (it.chips || []).join(', ')));
+  gajos[i].g.querySelectorAll('.puntos i').forEach((p, k) => p.classList.toggle('on', k === itemSel[i]));
+}
+SECCIONES.forEach((_, i) => pintarGajo(i));
+
+function cambiarItem(i, dir) {
+  const n = SECCIONES[i].items.length;
+  if (n < 2) return;
+  itemSel[i] = (itemSel[i] + dir + n) % n;
+  pintarGajo(i);
+  if (hover === i) { pintarNucleo(i); aplicarTema(); ponerTelon(itemDe(i).telon || null); }
+  anuncio.textContent = itemDe(i).nombre;
+  Sonido.cambio();
+  pedirFrame();
+}
+
+function actualizarDial(t) {
+  for (let i = 0; i < SECCIONES.length; i++) {
+    const p = clamp((t - (TL.unfoldStart + i * TL.unfoldStagger)) / TL.unfoldDur);
+    formas[i].setAttribute('d', sector(i, R_OUT, lerp(R_OUT - 0.05, R_IN, ease.outCubic(p))));
+    formas[i].style.opacity = smooth(0, 0.25, p);
+    const q = clamp((p - 0.35) / 0.65);
+    gajos[i].g.style.opacity = q;
+    gajos[i].g.style.translate = '0 ' + ((1 - ease.outCubic(q)) * 6).toFixed(2) + 'px';
+  }
+  eje.style.opacity = smooth(TL.unfoldStart + 0.2, TL.unfoldStart + 0.8, t);
+}
+
+function pintarNucleo(i) {
+  const [sm, b, d, e, chips, x] = nucleo.children;
+  chips.textContent = '';
+  x.textContent = '';
+  if (i < 0) {
+    sm.textContent = '';
+    b.textContent = 'Portafolio';
+    d.textContent = TACTIL ? 'Toca un sector' : 'Elige un sector';
+    e.textContent = '';
+    return;
+  }
+  const sec = SECCIONES[i];
+  const it = itemDe(i);
+  sm.textContent = it.nombre === sec.lab ? '' : sec.lab;
+  b.textContent = it.nombre;
+  d.textContent = it.des || '';
+  e.textContent = it.stack || '';
+  (it.chips || []).forEach(c => { const el = document.createElement('span'); el.textContent = c; chips.appendChild(el); });
+  (it.estado ? it.estado.split(' · ') : []).forEach(t => { const el = document.createElement('i'); el.textContent = t; x.appendChild(el); });
+}
+
+function marcar(i) {
+  if (i === hover) return;
+  if (i >= 0 && hover >= 0) selAmp = 0.35;   // al cambiar de sector, destello corto del borde
+  hover = i;
+  if (i >= 0) { selIdx = i; Sonido.tick(); }
+  formas.forEach((f, j) => f.classList.toggle('on', j === i));
+  gajos.forEach((g, j) => g.g.classList.toggle('on', j === i));
+  pintarNucleo(i);
+  aplicarTema();
+  ponerTelon(i >= 0 ? (itemDe(i).telon || null) : null);
+  pedirFrame();
+}
+
+/* ===== Telón: fondo por ficha, con las fotos que cargue el usuario ===== */
+const telon = document.getElementById('telon');
+const capas = new Map();
+telon.querySelectorAll('.capa').forEach(c => capas.set(c.dataset.clave, c));
+const RANURAS = [
+  ['reservly', 'Proyectos · Reservly'], ['cuaderno', 'Proyectos · Cuaderno'],
+  ['evolve', 'Formación · Máster Evolve'], ['daw', 'Formación · DAW'], ['practicas', 'Formación · Prácticas'],
+  ['cantera', 'Sobre mí · Cantera'], ['sobremi', 'Sobre mí · Quién soy'], ['contacto', 'Contacto'], ['laboratorio', 'Laboratorio'], ['stack', 'Stack']
+];
+let opacoObjetivo = 1;
+
+const EDITAR = new URLSearchParams(location.search).has('editar');
+const ficheroDe = clave => 'fondo-' + clave + '.jpg';
+const conArchivo = new Set();   // claves cuyo fondo-<clave>.jpg existe de verdad junto al index.html
+
+/* Sin foto ni maqueta, cada ficha con tema se queda con dos manchas suaves de su color.
+   La posición cambia con la ficha, para que se note al pasar de una a otra con las flechas. */
+const temaDeCapa = new Map();   // clave del telón → [tema, posición dentro de su sector]
+SECCIONES.forEach(sec => sec.items.forEach((it, k) => {
+  if (it.telon && it.tema && it.tema.fondo && !temaDeCapa.has(it.telon)) temaDeCapa.set(it.telon, [it.tema, k]);
+}));
+function degradado(clave) {
+  const par = temaDeCapa.get(clave);
+  if (!par) return '';
+  const [tema, k] = par, [c1, c2] = tema.fondo;
+  const x1 = 22 + k * 16, y1 = 30 + (k % 2) * 14, x2 = 80 - k * 14, y2 = 74 - (k % 2) * 16;
+  return 'radial-gradient(60% 72% at ' + x1 + '% ' + y1 + '%, rgba(' + c1.join(',') + ',.62), transparent 72%),' +
+         'radial-gradient(56% 66% at ' + x2 + '% ' + y2 + '%, rgba(' + c2.join(',') + ',.5), transparent 72%),' +
+         'linear-gradient(165deg, rgba(' + c1.join(',') + ',.12), rgba(4,5,10,0) 62%)';
+}
+
+function guardadas() {
+  try { return JSON.parse(localStorage.getItem('fondos') || '{}'); } catch (e) { return {}; }
+}
+function aplicarFoto(capa, url) {
+  capa.style.backgroundImage = 'url("' + url + '")';
+  capa.classList.remove('maqueta');
+  const maqueta = capa.querySelector('.maq');
+  if (maqueta) maqueta.style.display = 'none';
+  const hueco = capa.querySelector('.hueco-foto');
+  if (hueco) hueco.remove();
+}
+function pintarFondos() {
+  const g = EDITAR ? guardadas() : {};          // las pruebas en el navegador sólo cuentan con ?editar
+  for (const [clave, capa] of capas) {
+    const maqueta = capa.querySelector('.maq');
+    if (g[clave]) { aplicarFoto(capa, g[clave]); continue; }
+    if (conArchivo.has(clave)) { aplicarFoto(capa, ficheroDe(clave)); continue; }
+    capa.style.backgroundImage = maqueta ? '' : degradado(clave);
+    if (maqueta) { maqueta.style.display = ''; capa.classList.add('maqueta'); continue; }
+    if (EDITAR && capa.dataset.foto && !capa.firstElementChild) {
+      const h = document.createElement('div');
+      h.className = 'hueco-foto';
+      h.textContent = 'Tu foto aquí';
+      capa.appendChild(h);
+    }
+  }
+}
+/* Busca los fondos que hayas subido: fondo-reservly.jpg, fondo-cantera.jpg... Si no existe, no pasa nada. */
+for (const clave of capas.keys()) {
+  const sonda = new Image();
+  sonda.onload = () => { conArchivo.add(clave); pintarFondos(); };
+  sonda.src = ficheroDe(clave);
+}
+function ponerTelon(clave) {
+  let hay = false;
+  for (const [k, capa] of capas) {
+    const viva = k === clave;
+    capa.classList.toggle('viva', viva);
+    /* sólo se aparta el fondo del lienzo si esa ficha tiene de verdad algo que enseñar detrás */
+    if (viva && (capa.style.backgroundImage || capa.querySelector('.maq'))) hay = true;
+  }
+  opacoObjetivo = hay ? 0.06 : 1;
+  pedirFrame();
+}
+if (!EDITAR) document.getElementById('btnFotos').style.display = 'none';
+
+/* Qué hay bajo el puntero: sector (0-5), centro (-2) o nada (-1) */
+function zonaEn(e) {
+  const r = orbita.getBoundingClientRect();
+  const dx = e.clientX - (r.left + r.width / 2);
+  const dy = e.clientY - (r.top + r.height / 2);
+  const dist = Math.hypot(dx, dy) / r.width * 100;
+  if (dist < R_IN) return -2;
+  if (dist > R_OUT * 1.12) return -1;
+  const ang = (Math.atan2(dy, dx) * 180 / Math.PI + 90 + 360) % 360;
+  return Math.round(ang / 60) % SECCIONES.length;
+}
+
+const enFlecha = e => !!(e.target.closest && e.target.closest('.flecha'));
+let previa = -1, arrastre = false, inicio = null;
+orbita.addEventListener('pointerdown', e => {
+  if (enFlecha(e)) return;                    // las flechas se gestionan solas
+  previa = hover;
+  arrastre = false;
+  inicio = [e.clientX, e.clientY];
+  const z = zonaEn(e);
+  if (z >= 0) marcar(z);
+  orbita.setPointerCapture(e.pointerId);
+});
+orbita.addEventListener('pointermove', e => {
+  const z = zonaEn(e);
+  if (inicio) {
+    if (Math.hypot(e.clientX - inicio[0], e.clientY - inicio[1]) > 8) arrastre = true;
+    if (z >= 0) marcar(z);                    // arrastrando se elige por ángulo, como con un joystick
+  } else if (e.pointerType === 'mouse') {
+    marcar(z >= 0 ? z : -1);
+  }
+});
+orbita.addEventListener('pointerup', e => {
+  if (!inicio) return;
+  const z = zonaEn(e);
+  if (!arrastre) {
+    if (z >= 0 && (e.pointerType === 'mouse' || previa === z || (PROYECTO_A_LA_PRIMERA && itemDe(z).vista))) abrir(z);
+    else if (z === -2 && hover >= 0) abrir(hover);
+  }
+  inicio = null;
+});
+orbita.addEventListener('pointercancel', () => { inicio = null; });
+orbita.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && !inicio) marcar(-1); });
+
+/* ===== Vista previa del proyecto en la ficha =====
+   Reservly y Cuaderno enseñan una pantalla de ejemplo con datos ficticios; si subes tu captura
+   (fondo-reservly.jpg, fondo-cuaderno.jpg) se usa esa. El resto de proyectos sólo la enseñan
+   si subes su captura (captura-*.jpg): no se inventa una pantalla de algo que no existe. */
+const VISTAS = {
+  reservly:
+    '<div class="vp-cuerpo vp-verde" aria-hidden="true"><div class="vp-int">' +
+    '<div class="vp-cab"><b>Reservly</b><span>Panel del negocio</span></div>' +
+    '<h4>Reservas, TPV y stock<br>en una sola pantalla.</h4>' +
+    '<div class="vp-rejilla"><div><small>Reservas</small><b>14</b></div><div><small>Ticket</small><b>24,60 €</b></div><div><small>Stock bajo</small><b>6</b></div></div>' +
+    '<div class="vp-tabla"><div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div></div>' +
+    '</div></div>',
+  cuaderno:
+    '<div class="vp-cuerpo vp-azul" aria-hidden="true"><div class="vp-int">' +
+    '<div class="vp-cab"><b>Cuaderno</b><span>Alevín · jornada 6</span></div>' +
+    '<h4>Los minutos, repartidos<br>con criterio.</h4>' +
+    '<div class="vp-rejilla"><div><small>Asistencia</small><b>92 %</b></div><div><small>Mínimo</small><b>24</b></div><div><small>Informes</small><b>16</b></div></div>' +
+    '<div class="vp-tabla"><div><span>Dorsal 7</span><span>38 min</span></div><div><span>Dorsal 11</span><span>34 min</span></div></div>' +
+    '</div></div>'
+};
+const capturasOk = new Set();   // capturas sueltas que existen de verdad junto al index.html
+SECCIONES.forEach(sec => sec.items.forEach(it => {
+  if (!it.captura) return;
+  const sonda = new Image();
+  sonda.onload = () => capturasOk.add(it.captura);
+  sonda.src = it.captura;
+}));
+function fotoDe(clave) {
+  const g = EDITAR ? guardadas() : {};
+  return g[clave] || (conArchivo.has(clave) ? ficheroDe(clave) : null);
+}
+function vistaPrevia(it) {
+  let cuerpo = '', pie = '';
+  if (it.vista && vivoValido(it.vivo)) {
+    cuerpo = '<div class="vp-vivo"><iframe src="' + it.vivo + '" tabindex="-1" aria-hidden="true" title="" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe></div>';
+    pie = 'Landing real, en vivo.';
+  } else if (it.vista) {
+    const foto = fotoDe(it.telon);
+    if (foto) { cuerpo = '<img class="vp-img" src="' + foto + '" alt="Captura de ' + it.nombre + '">'; pie = 'Captura de la aplicación.'; }
+    else { cuerpo = VISTAS[it.vista]; pie = 'Ejemplo con datos ficticios.'; }
+  } else if (it.captura && capturasOk.has(it.captura)) {
+    cuerpo = '<img class="vp-img" src="' + it.captura + '" alt="Captura de ' + it.nombre + '">';
+    pie = 'Captura de la aplicación.';
+  } else {
+    return '';
+  }
+  const ventana = '<div class="vp-ventana"><div class="vp-barra"><i></i><i></i><i></i><span>' + (it.dominio || it.nombre) + '</span></div>' + cuerpo + '</div>';
+  const envuelta = '<button type="button" class="vp-enlace vp-ampliar" aria-label="Ampliar la vista de ' + it.nombre + '">' + ventana + '</button>';
+  return envuelta + '<p class="vp-pie">' + pie + ' Pulsa para ampliar.</p>';
+}
+
+let ultimoFoco = null;
+let itemFicha = null;   // proyecto que muestra la ficha abierta
+let tFichaAbierta = 0;  // para ignorar el clic fantasma del toque que la abre
+function abrir(i) {
+  Sonido.abrir();
+  ultimoFoco = document.activeElement;
+  const sec = SECCIONES[i];
+  const it = itemDe(i);
+  if (it.vista) { abrirVisor(it, i); return; }   // los proyectos con landing saltan la ficha
+  itemFicha = it;
+  document.getElementById('veloSeccion').textContent = it.nombre === sec.lab ? '' : sec.lab;
+  document.getElementById('veloTitulo').textContent = it.nombre;
+  document.getElementById('veloVista').innerHTML = vistaPrevia(it);
+  document.getElementById('veloTexto').textContent = (it.des || '') + (it.estado ? ' · ' + it.estado : '');
+  const chips = document.getElementById('veloChips');
+  chips.textContent = '';
+  (it.chips || (it.sinChips ? [] : (it.stack || '').split(' · ').filter(Boolean))).forEach(c => {
+    const el = document.createElement('span');
+    el.textContent = c;
+    chips.appendChild(el);
+  });
+  const enlaces = document.getElementById('veloEnlaces');
+  enlaces.textContent = '';
+  (it.enlaces || []).forEach(([texto, url]) => {
+    const a = document.createElement('a');
+    a.href = url;
+    a.textContent = texto;
+    if (url.startsWith('http') || url.endsWith('.pdf')) { a.target = '_blank'; a.rel = 'noopener'; }
+    enlaces.appendChild(a);
+  });
+  const det = document.getElementById('veloDetalle');
+  det.textContent = it.detalle || '';
+  det.hidden = !it.detalle;
+  const nota = document.getElementById('veloNota');
+  nota.textContent = it.nota || '';
+  nota.hidden = !it.nota;
+  tFichaAbierta = performance.now();
+  velo.hidden = false;
+  ajustarVivo();
+  document.querySelector('#velo .tarjeta').scrollTop = 0;
+  document.getElementById('veloCerrar').focus({ preventScroll: true });
+}
+function cerrar() {
+  velo.hidden = true;
+  if (ultimoFoco && ultimoFoco !== document.body) ultimoFoco.focus();
+}
+
+/* ===== Visor: la landing del proyecto a pantalla grande =====
+   Muestra tu captura completa si la has subido; si no, la landing de ejemplo (plantillas #ld-reservly y #ld-cuaderno). */
+const visorLd = document.getElementById('visorLd');
+const vlCuerpo = document.getElementById('vlCuerpo');
+const vlAbrir = document.getElementById('vlAbrir');
+let focoAntesVisor = null;
+/* La miniatura en vivo es una pantalla de 1280 px reducida al ancho de la ventanita */
+function ajustarVivo() {
+  const caja = document.querySelector('#veloVista .vp-vivo');
+  if (caja) caja.style.setProperty('--k', (caja.clientWidth / 1280).toFixed(4));
+}
+addEventListener('resize', ajustarVivo);
+let tVisorAbierto = 0;
+/* En móvil, el toque que abre una capa genera un clic que cae sobre lo que acaba de aparecer bajo el dedo:
+   se ignoran los clics de los primeros 0,4 s para que no pulse sin querer un enlace ni abra el visor. */
+velo.addEventListener('click', e => { if (performance.now() - tFichaAbierta < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
+visorLd.addEventListener('click', e => { if (performance.now() - tVisorAbierto < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
+function contenidoVisor(it) {
+  if (it.vista && vivoValido(it.vivo)) return '<iframe class="vl-iframe" src="' + it.vivo + '" title="Landing de ' + it.nombre + '" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>';
+  if (it.vista) {
+    const foto = fotoDe(it.telon);
+    if (foto) return '<img class="vl-img" src="' + foto + '" alt="Captura completa de ' + it.nombre + '">';
+    const plantilla = document.getElementById('ld-' + it.vista);
+    return plantilla ? plantilla.innerHTML : '';
+  }
+  if (it.captura && capturasOk.has(it.captura)) return '<img class="vl-img" src="' + it.captura + '" alt="Captura completa de ' + it.nombre + '">';
+  return '';
+}
+const vlTabs = document.getElementById('vlTabs');
+const vlCodigo = document.getElementById('vlCodigo');
+const tieneLanding = it => !!(it.vista || (it.captura && capturasOk.has(it.captura)));
+function cargarVisor(it) {
+  const html = contenidoVisor(it);
+  document.getElementById('vlDir').textContent = it.dominio || it.nombre;
+  vlCuerpo.innerHTML = html;
+  vlCuerpo.classList.toggle('vivo', html.startsWith('<iframe'));
+  vlCuerpo.scrollTop = 0;
+  const fuera = vivoValido(it.vivo) ? it.vivo : it.vistaUrl;
+  if (fuera) { vlAbrir.href = fuera; vlAbrir.hidden = false; } else { vlAbrir.hidden = true; }
+  if (it.codigo) { vlCodigo.href = it.codigo; vlCodigo.hidden = false; } else { vlCodigo.hidden = true; }
+  visorLd.setAttribute('aria-label', 'Landing de ' + it.nombre);
+}
+/* Elegir un proyecto desde el visor deja el dial con ese mismo proyecto seleccionado */
+function elegirItem(i, k) {
+  itemSel[i] = k;
+  pintarGajo(i);
+  if (hover === i) { pintarNucleo(i); aplicarTema(); ponerTelon(itemDe(i).telon || null); }
+  anuncio.textContent = itemDe(i).nombre;
+  pedirFrame();
+}
+function pintarTabs(i) {
+  vlTabs.textContent = '';
+  const con = i >= 0 ? SECCIONES[i].items.map((it, k) => [it, k]).filter(([it]) => tieneLanding(it)) : [];
+  vlTabs.hidden = con.length < 2;
+  con.forEach(([it, k]) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'vl-tab';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', k === itemSel[i] ? 'true' : 'false');
+    b.textContent = it.nombre;
+    b.addEventListener('click', () => { elegirItem(i, k); cargarVisor(it); pintarTabs(i); Sonido.cambio(); });
+    vlTabs.appendChild(b);
+  });
+}
+function abrirVisor(it, i = -1) {
+  if (!tieneLanding(it)) return;
+  focoAntesVisor = document.activeElement;
+  cargarVisor(it);
+  pintarTabs(i);
+  tVisorAbierto = performance.now();
+  visorLd.hidden = false;
+  document.getElementById('vlCerrar').focus({ preventScroll: true });
+}
+function cerrarVisor() {
+  visorLd.hidden = true;
+  vlCuerpo.innerHTML = '';
+  if (focoAntesVisor && document.contains(focoAntesVisor)) focoAntesVisor.focus({ preventScroll: true });
+}
+document.getElementById('veloVista').addEventListener('click', e => {
+  if (e.target.closest('.vp-ampliar') && itemFicha) abrirVisor(itemFicha);
+});
+document.getElementById('vlCerrar').addEventListener('click', cerrarVisor);
+visorLd.addEventListener('click', e => { if (e.target === visorLd) cerrarVisor(); });
+/* En fase de captura: con el visor abierto, el teclado es suyo (Escape lo cierra a él, no a la ficha de debajo) */
+window.addEventListener('keydown', e => {
+  if (visorLd.hidden) return;
+  if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cerrarVisor(); return; }
+  if (e.key === 'Tab') {
+    const f = [...visorLd.querySelectorAll('button, a[href]')].filter(x => !x.hidden && x.offsetParent !== null);
+    if (!f.length) return;
+    const primero = f[0], ultimo = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+    else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+    return;
+  }
+  const paso = { ArrowDown: 80, ArrowUp: -80, PageDown: vlCuerpo.clientHeight * 0.9, PageUp: -vlCuerpo.clientHeight * 0.9 }[e.key];
+  if (paso !== undefined) { e.preventDefault(); e.stopPropagation(); vlCuerpo.scrollBy({ top: paso }); }
+  else if (e.key === 'Home') { e.preventDefault(); vlCuerpo.scrollTo({ top: 0 }); }
+  else if (e.key === 'End') { e.preventDefault(); vlCuerpo.scrollTo({ top: vlCuerpo.scrollHeight }); }
+  else if (e.key.startsWith('Arrow')) { e.stopPropagation(); }
+}, true);
+document.getElementById('veloCerrar').addEventListener('click', cerrar);
+velo.addEventListener('click', e => { if (e.target === velo) cerrar(); });
+
+document.addEventListener('keydown', e => {
+  if (!velo.hidden) { if (e.key === 'Escape') cerrar(); return; }
+  if (!root.classList.contains('lista-ui')) { if (e.key === 'Escape') saltar(); return; }
+  const n = SECCIONES.length;
+  const base = d => (hover < 0 ? (d > 0 ? -1 : 0) : hover);
+  if (e.key === 'ArrowDown') { e.preventDefault(); gajos[(base(1) + 1 + n) % n].btn.focus(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); gajos[(base(-1) - 1 + n) % n].btn.focus(); }
+  else if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && hover >= 0) {
+    e.preventDefault();
+    cambiarItem(hover, e.key === 'ArrowRight' ? 1 : -1);
+  }
+});
+
+function mostrarUI(on) {
+  root.classList.toggle('lista-ui', on);
+  app.inert = !on;
+}
+
+/* ===================== WebGL ===================== */
+const canvas = document.getElementById('gl');
+const gl = canvas.getContext('webgl2', {
+  antialias: false, alpha: true, depth: false, stencil: false,
+  premultipliedAlpha: false, powerPreference: 'high-performance'
+});
+
+function sinWebGL() {
+  root.classList.add('sin-gl');
+  canvas.style.display = 'none';
+  btnSaltar.hidden = true;
+  btnRepetir.hidden = true;
+  actualizarDial(TL.end);
+  pintarNucleo(-1);
+  mostrarUI(true);
+}
+
+if (!gl) { sinWebGL(); return; }
+
+function compilar(tipo, id) {
+  const sh = gl.createShader(tipo);
+  gl.shaderSource(sh, document.getElementById(id).textContent.trim());
+  gl.compileShader(sh);
+  if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) throw new Error(id + ': ' + gl.getShaderInfoLog(sh));
+  return sh;
+}
+function programa(vs, fs) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compilar(gl.VERTEX_SHADER, vs));
+  gl.attachShader(p, compilar(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+  const cache = {};
+  return { p, u: name => (name in cache ? cache[name] : (cache[name] = gl.getUniformLocation(p, name))) };
+}
+
+let escena, chispas, vaoPantalla, vaoChispas;
+try {
+  escena = programa('vs-pantalla', 'fs-escena');
+  chispas = programa('vs-chispas', 'fs-chispas');
+} catch (err) {
+  console.error(err);
+  sinWebGL();
+  return;
+}
+
+vaoPantalla = gl.createVertexArray();
+gl.bindVertexArray(vaoPantalla);
+const bufPantalla = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, bufPantalla);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+gl.enableVertexAttribArray(0);
+gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+
+/* Chispas: una tira de 4 vértices instanciada; el nacimiento de cada chispa es aleatorio,
+   así dibujar sólo las primeras N instancias da un subconjunto uniforme para la calidad baja. */
+vaoChispas = gl.createVertexArray();
+gl.bindVertexArray(vaoChispas);
+const bufEsquinas = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, bufEsquinas);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 1, 2, 3]), gl.STATIC_DRAW);
+gl.enableVertexAttribArray(0);
+gl.vertexAttribPointer(0, 1, gl.FLOAT, false, 0, 0);
+const datos = new Float32Array(N_SPARKS * 5);
+{
+  const rnd = mulberry32(20260922);
+  const closeT = TL.lapStart + TL.lapDur;
+  for (let i = 0; i < N_SPARKS; i++) {
+    const r = rnd();
+    let birth;
+    if (r < 0.07) birth = TL.ignite + rnd() * 0.12;
+    else if (r < 0.2) birth = closeT - 0.02 + rnd() * 0.07;
+    else birth = TL.lapStart + rnd() * TL.lapDur;
+    datos.set([rnd(), rnd(), rnd(), rnd(), birth], i * 5);
+  }
+}
+const bufInst = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, bufInst);
+gl.bufferData(gl.ARRAY_BUFFER, datos, gl.STATIC_DRAW);
+gl.enableVertexAttribArray(1);
+gl.vertexAttribPointer(1, 4, gl.FLOAT, false, 20, 0);
+gl.vertexAttribDivisor(1, 1);
+gl.enableVertexAttribArray(2);
+gl.vertexAttribPointer(2, 1, gl.FLOAT, false, 20, 16);
+gl.vertexAttribDivisor(2, 1);
+gl.bindVertexArray(null);
+
+/* ===================== Calidad ===================== */
+function detectarNivel() {
+  if (forcedTier && TIERS[forcedTier]) return forcedTier;
+  const mem = navigator.deviceMemory || 4;
+  const cores = navigator.hardwareConcurrency || 4;
+  const corto = Math.min(screen.width, screen.height);
+  if (mem <= 2 || cores <= 2) return 'low';
+  if (corto < 500 || mem <= 4) return 'medium';
+  return 'high';
+}
+let nivel = detectarNivel();
+let tier = TIERS[nivel];
+let muestras = [];
+
+/* ===================== Tamaño y encuadre ===================== */
+let W = 1, H = 1, escala = 1, centro = [0, 0], D = 8;
+let caja = { x: 0, y: 0, w: 1, h: 1 };
+function medir() {
+  const dpr = window.devicePixelRatio || 1;
+  escala = Math.min(dpr, tier.scale);
+  const c = canvas.getBoundingClientRect();
+  caja = { x: c.left, y: c.top, w: Math.max(1, c.width), h: Math.max(1, c.height) };
+  W = Math.max(1, Math.round(caja.w * escala));
+  H = Math.max(1, Math.round(caja.h * escala));
+  canvas.width = W;
+  canvas.height = H;
+  const r = orbita.getBoundingClientRect();
+  /* centro del dial en coordenadas del lienzo, no de la ventana */
+  centro = [r.left + r.width / 2 - caja.x, r.top + r.height / 2 - caja.y];
+  const rpx = r.width * RING_FRAC;
+  D = (caja.h / 2) / (rpx * TAN_HALF);   // distancia a la que el aro mide exactamente rpx
+  pedirFrame();
+}
+addEventListener('resize', medir);
+addEventListener('orientationchange', () => setTimeout(medir, 120));
+if (window.visualViewport) visualViewport.addEventListener('resize', medir);
+
+/* ===================== Cámara ===================== */
+/* Curva suave que pasa por los fotogramas clave (Catmull-Rom, extremos en reposo) */
+function spline(keys, t) {
+  const n = keys.length;
+  if (t <= keys[0][0]) return keys[0][1];
+  if (t >= keys[n - 1][0]) return keys[n - 1][1];
+  let i = 0;
+  while (t > keys[i + 1][0]) i++;
+  const m = j => (j === 0 || j === n - 1) ? 0 : (keys[j + 1][1] - keys[j - 1][1]) / (keys[j + 1][0] - keys[j - 1][0]);
+  const [t0, v0] = keys[i], [t1, v1] = keys[i + 1];
+  const h = t1 - t0, u = (t - t0) / h, u2 = u * u, u3 = u2 * u;
+  return (2 * u3 - 3 * u2 + 1) * v0 + (u3 - 2 * u2 + u) * h * m(i) + (-2 * u3 + 3 * u2) * v1 + (u3 - u2) * h * m(i + 1);
+}
+function headAt(t) {
+  const lu = clamp((t - TL.lapStart) / TL.lapDur);
+  return lu * lu * (3 - 2 * lu) * TAU;
+}
+function camaraEn(t) {
+  const az = spline([[0.95, CAM.az0], [2.1, -0.8], [3.95, 0]], t);
+  const el = spline([[0.95, CAM.el0], [2.1, 0.12], [3.95, 0]], t);
+  const roll = spline([[0.95, CAM.roll0], [2.1, -0.05], [3.95, 0]], t);
+  let dist = Math.exp(spline([[0.95, Math.log(CAM.dist0)], [2.1, Math.log(2.1)], [TL.camEnd, Math.log(D)]], t));
+  dist *= 1 - 0.018 * heroEnv(t);
+  /* Primero sigue al arco con un poco de retraso; después suelta y centra el aro */
+  const sigue = ringPoint(headAt(t - 0.05));
+  let target = v3.lerp(CAM.target0, sigue, ease.inOutSine(clamp((t - 0.9) / 0.6)));
+  target = v3.lerp([0, 0, 0], target, 1 - ease.inOutSine(clamp((t - 2.0) / 1.3)));
+  const pulso = 1 - smooth(1.1, 3.4, t);   // cámara en mano, sólo al principio
+  if (pulso > 0) {
+    const a = 0.02 * pulso * Math.min(dist, 1.5);
+    target[0] += (noise1(t * 1.7 + 11) - 0.5) * a;
+    target[1] += (noise1(t * 1.3 + 29) - 0.5) * a;
+  }
+  const off = [Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)];
+  const pos = v3.add(target, v3.scale(off, dist));
+  const f = v3.norm(v3.sub(target, pos));
+  let r = v3.norm(v3.cross(f, [0, 1, 0]));
+  let up = v3.cross(r, f);
+  const c = Math.cos(roll), s = Math.sin(roll);
+  const r2 = v3.add(v3.scale(r, c), v3.scale(up, s));
+  const u2 = v3.add(v3.scale(up, c), v3.scale(r, -s));
+  return { pos, f, r: r2, up: u2, focus: dist };
+}
+
+function matrices(cam) {
+  const { pos, f, r, up } = cam;
+  const view = new Float32Array([
+    r[0], up[0], -f[0], 0,
+    r[1], up[1], -f[1], 0,
+    r[2], up[2], -f[2], 0,
+    -v3.dot(r, pos), -v3.dot(up, pos), v3.dot(f, pos), 1
+  ]);
+  const aspect = caja.w / caja.h;
+  const ox = 2 * (centro[0] - caja.w / 2) / caja.w;
+  const oy = 2 * (caja.h / 2 - centro[1]) / caja.h;
+  const fy = 1 / TAN_HALF;
+  const near = 0.02, far = 100;
+  const nf = 1 / (near - far);
+  const proj = new Float32Array([
+    fy / aspect, 0, 0, 0,
+    0, fy, 0, 0,
+    -ox, -oy, (far + near) * nf, -1,
+    0, 0, 2 * far * near * nf, 0
+  ]);
+  return mat4Mul(proj, view);
+}
+
+/* ===================== Estado de la secuencia ===================== */
+const FASES = [
+  ['IDLE', TL.ignite], ['ACTIVATING', TL.lapStart + 0.3], ['BUILDING', TL.lapStart + TL.lapDur],
+  ['REVEALING', TL.heroStart], ['HERO', TL.heroEnd], ['TRANSITIONING', TL.end], ['COMPLETE', Infinity]
+];
+function faseEn(t) { for (const [nombre, hasta] of FASES) if (t < hasta) return nombre; return 'COMPLETE'; }
+
+/* Intensidad del arco: chispazo al encender, chisporroteo y algún bajón, como uno real */
+function arcoEn(t) {
+  if (t < TL.ignite) return 0;
+  const closeT = TL.lapStart + TL.lapDur;
+  const flash = Math.exp(-(t - TL.ignite) / 0.09);
+  const chisporroteo = 0.8 + 0.2 * noise1(t * 57);
+  const bajon = noise1(t * 9 + 3) > 0.82 ? 0.7 : 1;
+  return (0.95 + 0.9 * flash) * chisporroteo * bajon *
+         smooth(TL.ignite, TL.ignite + 0.03, t) * (1 - smooth(closeT, TL.arcOff, t));
+}
+
+function estadoEn(t) {
+  const closeT = TL.lapStart + TL.lapDur;
+  const lu = clamp((t - TL.lapStart) / TL.lapDur);
+  const head = t < TL.ignite ? 0 : Math.max(lu * lu * (3 - 2 * lu) * TAU, 1e-4);
+  const headPos = ringPoint(head);
+  headPos[2] = 0.01;
+
+  const arc = arcoEn(t);
+
+  const hero = heroEnv(t);
+  const amps = [], mixes = [], sizes = [], cols = [];
+  const respira = t >= TL.end && !reduceMotion ? 1 : 0;
+  for (let i = 0; i < 6; i++) {
+    const sPass = i * Math.PI / 3;
+    const brasa = t >= TL.ignite ? smooth(sPass, sPass + 0.12, head) * smooth(1.4, 2.0, t) : 0;
+    const m = smooth(0, 1, (t - (TL.reveal + i * TL.tackStagger)) / TL.tackDur);
+    let a = brasa * 0.28 * (1 - m) + m * lerp(1, 0.72, smooth(TL.heroEnd, TL.end, t));
+    a *= 1 + 0.8 * hero;
+    a *= 1 + Math.sin(t * 2.6 + i * 0.9) * 0.14 * respira;
+    const activo = i === hover;
+    if (activo) a *= 1.5;
+    amps.push(a);
+    mixes.push(m);
+    sizes.push((activo ? 1.25 : 0.78) * lerp(0.75, 1, m));
+    cols.push(...accLin());
+  }
+
+  let pulse = 0, pulseAmp = 0;
+  if (t >= TL.heroStart) {
+    const u = t - TL.heroStart;
+    pulse = (PULSE_IDLE * u + PULSE_A * (1 - Math.exp(-u / PULSE_TAU))) % TAU;
+    pulseAmp = reduceMotion && t >= TL.end ? 0.2 : 0.22 + 0.75 * Math.exp(-u / 0.35);
+  }
+
+  const ignFlash = t >= TL.ignite ? Math.exp(-(t - TL.ignite) / 0.06) : 0;
+  return {
+    head, headPos, arc,
+    close: t - closeT,
+    cool: smooth(3.4, 4.4, t),
+    tube: lerp(0.014, 0.009, smooth(4.4, 5.3, t)),
+    amps, mixes, sizes, cols, pulse, pulseAmp,
+    exposure: 1 + 0.3 * hero + 0.35 * ignFlash,
+    bgMix: smooth(TL.uiStart - 0.2, TL.end, t),
+    grain: t < TL.end ? 0.028 : 0.016
+  };
+}
+
+/* ===================== Reloj y control ===================== */
+let t = 0;
+let fade = 1;
+let tween = null;          // { de, a, inicio, dur, fin }
+let fase = '';
+let pendiente = true;
+let ultimo = performance.now();
+let reloj = 0;
+
+function pedirFrame() { pendiente = true; }
+
+function fundido(a, dur, fin) { tween = { de: fade, a, inicio: reloj, dur, fin }; }
+
+function saltar() {
+  if (t >= TL.end || tween) return;
+  fundido(0, 0.18, () => { t = TL.end; fundido(1, 0.4, null); });
+}
+function repetir() {
+  mostrarUI(false);
+  marcar(-1);
+  fundido(0, 0.25, () => { t = 0; fade = 1; tween = null; });
+}
+btnSaltar.addEventListener('click', saltar);
+
+const veloFotos = document.getElementById('veloFotos');
+const ficheroFondo = document.getElementById('ficheroFondo');
+let ranuraActiva = null;
+function pintarRanuras() {
+  const caja = document.getElementById('ranuras');
+  const g = guardadas();
+  caja.innerHTML = '';
+  RANURAS.forEach(([clave, texto]) => {
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = texto + (g[clave] ? '  ·  cambiar' : '  ·  añadir');
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      ranuraActiva = clave;
+      ficheroFondo.click();
+    });
+    caja.appendChild(a);
+  });
+}
+document.getElementById('btnFotos').addEventListener('click', () => {
+  pintarRanuras();
+  veloFotos.hidden = false;
+  document.getElementById('cerrarFotos').focus();
+});
+document.getElementById('cerrarFotos').addEventListener('click', () => { veloFotos.hidden = true; });
+veloFotos.addEventListener('click', e => { if (e.target === veloFotos) veloFotos.hidden = true; });
+ficheroFondo.addEventListener('change', e => {
+  const f = e.target.files[0];
+  if (!f || !ranuraActiva) return;
+  const lector = new FileReader();
+  lector.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      /* se reduce antes de guardar: el almacenamiento del navegador es pequeño */
+      const max = 1400;
+      const k = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.width * k);
+      c.height = Math.round(img.height * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      const dato = c.toDataURL('image/jpeg', 0.72);
+      const g = guardadas();
+      g[ranuraActiva] = dato;
+      try { localStorage.setItem('fondos', JSON.stringify(g)); }
+      catch (err) { alert('No cabe en el almacenamiento del navegador: prueba con una foto más ligera.'); return; }
+      pintarFondos();
+      pintarRanuras();
+      if (hover >= 0) ponerTelon(itemDe(hover).telon || null);
+    };
+    img.src = lector.result;
+  };
+  lector.readAsDataURL(f);
+  e.target.value = '';
+});
+
+const btnSonido = document.getElementById('sonido');
+const SONIDO_KEY = 'intro-sonido';
+function pintarSonido() {
+  btnSonido.classList.toggle('on', Sonido.activo());
+  btnSonido.setAttribute('aria-pressed', String(Sonido.activo()));
+}
+btnSonido.addEventListener('click', () => {
+  if (Sonido.activo()) Sonido.desactivar(); else Sonido.activar();
+  try { localStorage.setItem(SONIDO_KEY, Sonido.activo() ? '1' : '0'); } catch (e) { /* sin almacenamiento */ }
+  pintarSonido();
+});
+let quiereSonido = false;
+try { quiereSonido = localStorage.getItem(SONIDO_KEY) === '1'; } catch (e) { quiereSonido = false; }
+if (quiereSonido) {
+  /* Si lo dejó activado, suena desde el primer toque: antes el navegador no lo permite */
+  const primerGesto = e => {
+    if (btnSonido.contains(e.target)) return;
+    Sonido.activar();
+    pintarSonido();
+    removeEventListener('pointerdown', primerGesto, true);
+    removeEventListener('keydown', primerGesto, true);
+  };
+  addEventListener('pointerdown', primerGesto, true);
+  addEventListener('keydown', primerGesto, true);
+}
+
+/* Los sonidos se disparan cuando el reloj cruza cada momento de la secuencia */
+function eventosSonido(t0, t1) {
+  if (!Sonido.activo()) return;
+  if (t1 < t0 || t1 - t0 > 0.25) { Sonido.arco(0); return; }   // saltos: no disparar todo de golpe
+  const cruza = x => t0 < x && x <= t1;
+  if (cruza(0.05)) Sonido.ambiente();
+  if (cruza(TL.ignite)) Sonido.encendido();
+  const h0 = headAt(t0), h1 = headAt(t1);
+  for (let i = 1; i < 6; i++) { const sp = i * Math.PI / 3; if (h0 < sp && sp <= h1) Sonido.punto(); }
+  if (cruza(TL.lapStart + TL.lapDur)) Sonido.cierre();
+  if (cruza(TL.heroStart)) Sonido.hero();
+  for (let i = 0; i < 6; i++) if (cruza(TL.unfoldStart + i * TL.unfoldStagger + 0.08)) Sonido.gajo(i);
+  Sonido.arco(arcoEn(t1));
+}
+btnRepetir.addEventListener('click', repetir);
+
+function actualizarFase() {
+  const nueva = faseEn(t);
+  if (nueva !== fase) {
+    fase = nueva;
+    root.dataset.fase = nueva;
+    if (nueva === 'COMPLETE' && !PREVIEW) { try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) { /* sin almacenamiento */ } }
+  }
+  const ui = t >= TL.uiStart;
+  if (ui !== root.classList.contains('lista-ui')) mostrarUI(ui);
+  btnSaltar.classList.toggle('visible', t >= 0.8 && t < TL.heroEnd && !reduceMotion);
+}
+
+/* ===================== Dibujo ===================== */
+function dibujar() {
+  const cam = camaraEn(t);
+  const st = estadoEn(t);
+
+  gl.viewport(0, 0, W, H);
+  gl.clearColor(0, 0, 0, 0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.enable(gl.BLEND);
+  gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+  gl.useProgram(escena.p);
+  const u = escena.u;
+  gl.uniform2f(u('uRes'), W, H);
+  gl.uniform2f(u('uCenter'), centro[0] * escala, (caja.h - centro[1]) * escala);
+  gl.uniform1f(u('uTanHalf'), TAN_HALF);
+  gl.uniform3fv(u('uCamPos'), cam.pos);
+  gl.uniform3fv(u('uCamRight'), cam.r);
+  gl.uniform3fv(u('uCamUp'), cam.up);
+  gl.uniform3fv(u('uCamFwd'), cam.f);
+  gl.uniform1f(u('uFocus'), cam.focus);
+  gl.uniform1f(u('uTime'), t);
+  gl.uniform1i(u('uSteps'), tier.steps);
+  gl.uniform1f(u('uMaxStep'), tier.maxStep);
+  gl.uniform1f(u('uHead'), st.head);
+  gl.uniform3fv(u('uHeadPos'), st.headPos);
+  gl.uniform1f(u('uArc'), st.arc);
+  gl.uniform1f(u('uClose'), st.close);
+  gl.uniform1f(u('uCool'), st.cool);
+  gl.uniform1f(u('uTube'), st.tube);
+  gl.uniform1f(u('uSelS'), selIdx * Math.PI / 3);
+  gl.uniform3fv(u('uSelCol'), accLin());
+  gl.uniform1f(u('uSelAmp'), selAmp * smooth(TL.uiStart, TL.end, t));
+  gl.uniform3fv(u('uLightCol'), st.cols);
+  gl.uniform1fv(u('uLightAmp'), st.amps);
+  gl.uniform1fv(u('uLightMix'), st.mixes);
+  gl.uniform1fv(u('uLightSize'), st.sizes);
+  gl.uniform1f(u('uPulse'), st.pulse);
+  gl.uniform1f(u('uPulseAmp'), st.pulseAmp);
+  gl.uniform3fv(u('uTint'), accLin());
+  gl.uniform3f(u('uBgA'), fondoA[0] / 255, fondoA[1] / 255, fondoA[2] / 255);
+  gl.uniform3f(u('uBgB'), fondoB[0] / 255, fondoB[1] / 255, fondoB[2] / 255);
+  gl.uniform1f(u('uBgK'), fondoK * smooth(TL.uiStart, TL.end, t));
+  gl.uniform1f(u('uTintAmp'), 0.035 * tintK * smooth(TL.uiStart, TL.end, t));
+  gl.uniform1f(u('uBgMix'), st.bgMix);
+  gl.uniform1f(u('uOpaco'), opacoFondo);
+  gl.uniform1f(u('uExposure'), st.exposure);
+  gl.uniform1f(u('uFade'), fade);
+  gl.uniform1f(u('uGrain'), st.grain);
+  gl.bindVertexArray(vaoPantalla);
+  gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+  const vivas = t > TL.ignite - 0.05 && t < TL.lapStart + TL.lapDur + 1.1;
+  if (vivas) {
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE);
+    gl.useProgram(chispas.p);
+    const c = chispas.u;
+    gl.uniformMatrix4fv(c('uVP'), false, matrices(cam));
+    gl.uniform2f(c('uRes'), W, H);
+    gl.uniform1f(c('uTime'), t);
+    gl.uniform1f(c('uLapStart'), TL.lapStart);
+    gl.uniform1f(c('uLapDur'), TL.lapDur);
+    gl.uniform1f(c('uFade'), fade);
+    gl.bindVertexArray(vaoChispas);
+    const n = Math.round(N_SPARKS * tier.sparks);
+    gl.uniform1f(c('uThick'), 6.0 * escala);   // pasada ancha y tenue: resplandor
+    gl.uniform1f(c('uGain'), 0.12);
+    gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n);
+    gl.uniform1f(c('uThick'), 1.7 * escala);   // pasada fina: la chispa
+    gl.uniform1f(c('uGain'), 1.25);
+    gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n);
+  }
+  gl.bindVertexArray(null);
+}
+
+/* Si el dispositivo no llega, se baja un nivel de calidad durante la intro */
+function adaptar(dt) {
+  if (forcedTier || t < TL.ignite || t > TL.heroEnd) return;
+  muestras.push(dt);
+  if (muestras.length < 40) return;
+  const media = muestras.reduce((a, b) => a + b, 0) / muestras.length;
+  muestras = [];
+  const i = ORDER.indexOf(nivel);
+  if (media > 0.026 && i > 0) { nivel = ORDER[i - 1]; tier = TIERS[nivel]; medir(); }
+}
+
+function bucle(ahora) {
+  const real = Math.max((ahora - ultimo) / 1000, 0);
+  const dt = Math.min(real, 0.05);   // la secuencia no salta aunque se pierdan fotogramas
+  ultimo = ahora;
+  reloj += real;                     // los fundidos de la interfaz van en tiempo real
+  if (!document.hidden) {
+    if (tween) {
+      const k = clamp((reloj - tween.inicio) / tween.dur);
+      fade = lerp(tween.de, tween.a, k);
+      if (k >= 1) { const fin = tween.fin; tween = null; if (fin) fin(); }
+      pendiente = true;
+    }
+    const avanza = frozenAt === null && !(reduceMotion && t >= TL.end);
+    const tAntes = t;
+    if (avanza) { t += dt; pendiente = true; adaptar(dt); }
+    eventosSonido(tAntes, t);
+    const f = Math.min(1, real * 7);
+    let tiñe = false;
+    for (let k = 0; k < 3; k++) {
+      const d = accObj[k] - acc[k];
+      if (Math.abs(d) > 0.4) { acc[k] += d * f; tiñe = true; }
+      if (fondoObjK > 0) { fondoA[k] += (fondoObjA[k] - fondoA[k]) * f; fondoB[k] += (fondoObjB[k] - fondoB[k]) * f; }
+    }
+    if (Math.abs(fondoObjK - fondoK) > 0.003) { fondoK += (fondoObjK - fondoK) * f; tiñe = true; }
+    if (tiñe) { pintarAcento(); pendiente = true; }
+    if (Math.abs(opacoFondo - opacoObjetivo) > 0.004) { opacoFondo += (opacoObjetivo - opacoFondo) * Math.min(1, real * 3.2); pendiente = true; }
+    const tintObj = hover >= 0 ? 1 : 0.3;
+    if (Math.abs(tintK - tintObj) > 0.004) { tintK += (tintObj - tintK) * Math.min(1, real * 8); pendiente = true; }
+    const objetivo = hover >= 0 ? 1 : 0;
+    if (Math.abs(selAmp - objetivo) > 0.004) { selAmp += (objetivo - selAmp) * Math.min(1, real * 10); pendiente = true; }
+    if (pendiente) actualizarDial(t);
+    actualizarFase();
+    if (pendiente) { dibujar(); pendiente = false; }
+  }
+  requestAnimationFrame(bucle);
+}
+
+canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); sinWebGL(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) Sonido.arco(0); });
+
+/* ===================== Arranque ===================== */
+let yaVista = false;
+if (!PREVIEW && !params.has('intro')) { try { yaVista = localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { yaVista = false; } }
+if (frozenAt !== null) t = frozenAt;
+else if (reduceMotion || yaVista) { t = TL.end; fade = 0; fundido(1, 0.4, null); }
+medir();
+mostrarUI(t >= TL.uiStart);
+pintarNucleo(-1);
+pintarFondos();
+pintarAcento();
+actualizarDial(t);
+actualizarFase();
+dibujar();
+requestAnimationFrame(bucle);
+})();
+</script>
+</body>
+</html>
