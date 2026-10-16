@@ -241,6 +241,10 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .vl-btn[hidden]{display:none}
 .vl-tabs{display:flex;gap:6px;padding:8px 12px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;scrollbar-width:none}
 .vl-tabs[hidden]{display:none}
+.vl-aviso{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:8px 14px;font-size:12px;line-height:1.4;color:rgba(233,236,242,.62);background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08)}
+.vl-aviso[hidden]{display:none}
+.vl-cargando{margin:auto;font-size:13px;color:rgba(233,236,242,.5)}
+.vl-aviso a,.vl-aviso button{font:inherit;font-weight:600;color:#E8A060;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .vl-tab{flex:none;white-space:nowrap;font:inherit;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(233,236,242,.6);background:transparent;border:1px solid transparent;border-radius:999px;padding:6px 14px;cursor:pointer}
 .vl-tab:hover{color:#fff}
 .vl-tab[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
@@ -443,6 +447,8 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
       <button class="vl-btn" id="vlCerrar" type="button">Cerrar</button>
     </div>
     <div class="vl-tabs" id="vlTabs" role="tablist" aria-label="Proyectos" hidden></div>
+    <div class="vl-aviso" id="vlPista" hidden>Pulsa en cualquier parte de la landing para abrir la web real <span aria-hidden="true">↗</span></div>
+    <div class="vl-aviso" id="vlAviso" hidden>¿No se ve la web? <a id="vlAvisoAbrir" target="_blank" rel="noopener">Ábrela en otra pestaña ↗</a><span aria-hidden="true">·</span><button type="button" id="vlAvisoEjemplo">Ver la landing de ejemplo</button></div>
     <div class="vl-cuerpo" id="vlCuerpo"></div>
   </div>
 </div>
@@ -459,7 +465,8 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
         <h1>Reservas, TPV y stock en una sola pantalla.</h1>
         <p class="ld-sub">Reservas, ventas, inventario y clientes en una sola herramienta, pensada para usarse desde el móvil en el propio negocio.</p>
         <div class="ld-cta">
-          <a class="ld-btn pri" href="https://github.com/Ivan-Pascual/reservly" target="_blank" rel="noopener">Ver el código</a>
+          <a class="ld-btn pri" href="https://getreservly.com" target="_blank" rel="noopener">Ir a getreservly.com ↗</a>
+          <a class="ld-btn" href="https://github.com/Ivan-Pascual/reservly" target="_blank" rel="noopener">Ver el código</a>
         </div>
       </div>
       <div class="ld-panel" aria-hidden="true">
@@ -968,10 +975,10 @@ const ICONOS = {
    Reservly, Gestor deportivo y ScoutVision conservan su propio color (verde; azul y grana del club; violeta). */
 const TEMA_COBRE = { acento: [232, 160, 96], fondo: [[196, 112, 50], [150, 50, 72]] };   // cobre y vino
 
-/* Landing REAL de Reservly, la que se enseña en vivo dentro de la página.
-   Dirección completa (https://...) de la página de presentación, NO la de la app (login o panel).
-   Mientras esté vacía se enseña la landing de ejemplo. */
-const LANDING_RESERVLY = 'https://getreservly.com';
+/* OPCIONAL: dirección (https://...) de una web real para mostrarla EN VIVO dentro del visor. Muchas webs no permiten verse dentro de otra,
+   así que por defecto va vacía: el visor enseña tu copia `reservly-landing.html` (si existe junto a este archivo) o, si no, la landing de ejemplo.
+   Pulsar en la landing abre siempre la web real (`enlace` de Reservly, más abajo). */
+const LANDING_RESERVLY = '';
 /* false: el primer toque selecciona el proyecto (se ve su nombre en el centro) y la landing se abre al pulsar ahí, como en el resto del menú.
    true: la landing se abre ya con el primer toque en el sector. En escritorio no cambia nada: el ratón selecciona al pasar y abre al hacer clic. */
 const PROYECTO_A_LA_PRIMERA = false;
@@ -982,7 +989,7 @@ function hostDe(u) {
 
 const SECCIONES = [
   { id: 'proyectos', lab: 'Proyectos', icono: ICONOS.calendario, items: [
-    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, dominio: LANDING_RESERVLY ? hostDe(LANDING_RESERVLY) : 'Reservly · ejemplo', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
+    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, landingArchivo: 'reservly-landing.html', enlace: 'https://getreservly.com', vistaUrl: 'https://getreservly.com', dominio: 'getreservly.com', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
       stack: 'React 18 · Supabase', estado: 'Desplegada · En desarrollo',
       detalle: 'Aplicación full stack para pequeños negocios: reservas, TPV con lector de códigos de barras y descuento automático de inventario, control de stock, segmentación de clientes y estadísticas. Interfaz responsive, pensada para usarse desde el móvil.',
       enlaces: [...(vivoValido(LANDING_RESERVLY) ? [['Ver la landing · ' + hostDe(LANDING_RESERVLY), LANDING_RESERVLY]] : []),
@@ -1636,10 +1643,10 @@ let tVisorAbierto = 0;
    se ignoran los clics de los primeros 0,4 s para que no pulse sin querer un enlace ni abra el visor. */
 velo.addEventListener('click', e => { if (performance.now() - tFichaAbierta < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
 visorLd.addEventListener('click', e => { if (performance.now() - tVisorAbierto < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
-function contenidoVisor(it) {
-  if (it.vista && vivoValido(it.vivo)) return '<iframe class="vl-iframe" src="' + it.vivo + '" title="Landing de ' + it.nombre + '" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>';
+function contenidoVisor(it, ejemplo = false) {
+  if (it.vista && !ejemplo && vivoValido(it.vivo)) return '<iframe class="vl-iframe" src="' + it.vivo + '" title="Landing de ' + it.nombre + '" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>';
   if (it.vista) {
-    const foto = fotoDe(it.telon);
+    const foto = ejemplo ? null : fotoDe(it.telon);
     if (foto) return '<img class="vl-img" src="' + foto + '" alt="Captura completa de ' + it.nombre + '">';
     const plantilla = document.getElementById('ld-' + it.vista);
     return plantilla ? plantilla.innerHTML : '';
@@ -1709,17 +1716,57 @@ const INICIO_VISTA = {
   }
 };
 const vlTabs = document.getElementById('vlTabs');
+const vlAviso = document.getElementById('vlAviso');
+const vlAvisoAbrir = document.getElementById('vlAvisoAbrir');
+const vlPista = document.getElementById('vlPista');
+let itemVisor = null;
+let tokenVisor = 0;   // cancela cargas lentas si cambias de pestaña o cierras el visor
 const vlCodigo = document.getElementById('vlCodigo');
 const tieneLanding = it => !!(it.vista || (it.captura && capturasOk.has(it.captura)));
-function cargarVisor(it) {
-  const html = contenidoVisor(it);
+/* Copia estática de la landing real (un único HTML guardado con SingleFile). Es del mismo sitio, así que se puede mostrar sin bloqueos,
+   y cualquier clic dentro abre la web real. Si el archivo no existe, se enseña la landing de ejemplo. */
+async function cargarLandingArchivo(it, token) {
+  vlCuerpo.classList.add('vivo');
+  vlCuerpo.innerHTML = '<div class="vl-cargando">Cargando la landing…</div>';
+  try {
+    const r = await fetch(it.landingArchivo, { cache: 'no-cache' });
+    if (!r.ok) throw new Error('sin archivo');
+    const texto = await r.text();
+    if (token !== tokenVisor) return;
+    const f = document.createElement('iframe');
+    f.className = 'vl-iframe';
+    f.title = 'Landing de ' + it.nombre;
+    f.setAttribute('sandbox', 'allow-same-origin');              // sin scripts: es una copia
+    f.addEventListener('load', () => {
+      const d = f.contentDocument;
+      if (!d || !d.documentElement) return;
+      d.documentElement.style.cursor = 'pointer';
+      d.addEventListener('click', ev => { ev.preventDefault(); window.open(it.enlace, '_blank', 'noopener'); }, true);
+    });
+    f.srcdoc = texto;
+    vlCuerpo.innerHTML = '';
+    vlCuerpo.appendChild(f);
+    vlPista.hidden = false;
+  } catch (e) {
+    if (token === tokenVisor) cargarVisor(it, true);              // sin copia: la landing de ejemplo
+  }
+}
+function cargarVisor(it, ejemplo = false) {
+  const token = ++tokenVisor;
+  const archivo = !!(it.landingArchivo && !ejemplo && !vivoValido(it.vivo) && /^https?:$/.test(location.protocol));
+  const html = archivo ? '' : contenidoVisor(it, ejemplo);
+  itemVisor = it;
+  vlPista.hidden = true;
   document.getElementById('vlDir').textContent = it.dominio || it.nombre;
   if (limpiarVista) { limpiarVista(); limpiarVista = null; }
   vlCuerpo.innerHTML = html;
   vlCuerpo.classList.toggle('vivo', html.startsWith('<iframe'));
+  vlAviso.hidden = !html.startsWith('<iframe');          // el aviso sólo sale con una web en vivo
+  if (!vlAviso.hidden) vlAvisoAbrir.href = it.vivo;
   const inicio = it.vista && INICIO_VISTA[it.vista];
   if (inicio && vlCuerpo.querySelector('.ld')) limpiarVista = inicio(vlCuerpo) || null;
   vlCuerpo.scrollTop = 0;
+  if (archivo) cargarLandingArchivo(it, token);
   const fuera = vivoValido(it.vivo) ? it.vivo : it.vistaUrl;
   if (fuera) { vlAbrir.href = fuera; vlAbrir.hidden = false; } else { vlAbrir.hidden = true; }
   if (it.codigo) { vlCodigo.href = it.codigo; vlCodigo.hidden = false; } else { vlCodigo.hidden = true; }
@@ -1758,6 +1805,7 @@ function abrirVisor(it, i = -1) {
   document.getElementById('vlCerrar').focus({ preventScroll: true });
 }
 function cerrarVisor() {
+  tokenVisor++;
   if (limpiarVista) { limpiarVista(); limpiarVista = null; }
   visorLd.hidden = true;
   vlCuerpo.innerHTML = '';
@@ -1767,6 +1815,7 @@ document.getElementById('veloVista').addEventListener('click', e => {
   if (e.target.closest('.vp-ampliar') && itemFicha) abrirVisor(itemFicha);
 });
 document.getElementById('vlCerrar').addEventListener('click', cerrarVisor);
+document.getElementById('vlAvisoEjemplo').addEventListener('click', () => { if (itemVisor) cargarVisor(itemVisor, true); });
 visorLd.addEventListener('click', e => { if (e.target === visorLd) cerrarVisor(); });
 /* En fase de captura: con el visor abierto, el teclado es suyo (Escape lo cierra a él, no a la ficha de debajo) */
 window.addEventListener('keydown', e => {
