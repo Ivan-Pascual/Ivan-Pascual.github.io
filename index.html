@@ -244,12 +244,15 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .vl-aviso{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:8px 14px;font-size:12px;line-height:1.4;color:rgba(233,236,242,.62);background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08)}
 .vl-aviso[hidden]{display:none}
 .vl-cargando{margin:auto;font-size:13px;color:rgba(233,236,242,.5)}
+.vl-cuerpo.clicable .ld{cursor:pointer}
 .vl-aviso a,.vl-aviso button{font:inherit;font-weight:600;color:#E8A060;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .vl-tab{flex:none;white-space:nowrap;font:inherit;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(233,236,242,.6);background:transparent;border:1px solid transparent;border-radius:999px;padding:6px 14px;cursor:pointer}
 .vl-tab:hover{color:#fff}
 .vl-tab[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
 .vl-cuerpo{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .vl-img{display:block;width:100%;height:auto}
+.vl-img-enlace{display:block;cursor:pointer;text-decoration:none}
+.vl-img-landing{display:block;width:100%;max-width:480px;height:auto;margin:0 auto}
 .vl-cuerpo.vivo{overflow:hidden;display:flex;background:#04050A}
 .vl-iframe{flex:1;width:100%;height:100%;border:0;background:#04050A}
 /* Miniatura en vivo dentro de la ventanita: una pantalla de escritorio de 1280×720 reducida */
@@ -989,7 +992,7 @@ function hostDe(u) {
 
 const SECCIONES = [
   { id: 'proyectos', lab: 'Proyectos', icono: ICONOS.calendario, items: [
-    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, landingArchivo: 'reservly-landing.html', enlace: 'https://getreservly.com', vistaUrl: 'https://getreservly.com', dominio: 'getreservly.com', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
+    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, enlace: 'https://getreservly.com', vistaUrl: 'https://getreservly.com', dominio: 'getreservly.com', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
       stack: 'React 18 · Supabase', estado: 'Desplegada · En desarrollo',
       detalle: 'Aplicación full stack para pequeños negocios: reservas, TPV con lector de códigos de barras y descuento automático de inventario, control de stock, segmentación de clientes y estadísticas. Interfaz responsive, pensada para usarse desde el móvil.',
       enlaces: [...(vivoValido(LANDING_RESERVLY) ? [['Ver la landing · ' + hostDe(LANDING_RESERVLY), LANDING_RESERVLY]] : []),
@@ -1465,8 +1468,12 @@ function pintarFondos() {
     }
   }
 }
+/* Interruptor: ¿buscar fotos sueltas junto a este archivo (fondo-<clave>.jpg y captura-*.jpg)? Va apagado porque las fotos que usas ya van incrustadas
+   y, si no existe el archivo, el navegador deja errores 404 en rojo en la consola. Ponlo en true si subes fotos sueltas. */
+const BUSCAR_ARCHIVOS_SUELTOS = false;
 /* Busca los fondos que hayas subido: fondo-reservly.jpg, fondo-cantera.jpg... Si no existe, no pasa nada. */
 for (const clave of capas.keys()) {
+  if (!BUSCAR_ARCHIVOS_SUELTOS) break;
   const sonda = new Image();
   sonda.onload = () => { subidas.add(clave); conArchivo.add(clave); pintarFondos(); };
   sonda.src = rutaFondo(clave);
@@ -1550,7 +1557,7 @@ const VISTAS = {
 };
 const capturasOk = new Set();   // capturas sueltas que existen de verdad junto al index.html
 SECCIONES.forEach(sec => sec.items.forEach(it => {
-  if (!it.captura) return;
+  if (!it.captura || !BUSCAR_ARCHIVOS_SUELTOS) return;
   const sonda = new Image();
   sonda.onload = () => capturasOk.add(it.captura);
   sonda.src = it.captura;
@@ -1645,6 +1652,9 @@ velo.addEventListener('click', e => { if (performance.now() - tFichaAbierta < 40
 visorLd.addEventListener('click', e => { if (performance.now() - tVisorAbierto < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
 function contenidoVisor(it, ejemplo = false) {
   if (it.vista && !ejemplo && vivoValido(it.vivo)) return '<iframe class="vl-iframe" src="' + it.vivo + '" title="Landing de ' + it.nombre + '" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>';
+  const capturaLanding = (!ejemplo && it.landingImagen && typeof FOTOS_INCRUSTADAS !== 'undefined') ? FOTOS_INCRUSTADAS[it.landingImagen] : null;
+  if (it.vista && capturaLanding) return '<a class="vl-img-enlace" href="' + (it.enlace || '#') + '" target="_blank" rel="noopener" aria-label="Abrir ' + it.nombre + ' (web real)">'
+    + '<img class="vl-img-landing" src="' + capturaLanding + '" alt="Captura de la landing de ' + it.nombre + '"></a>';
   if (it.vista) {
     const foto = ejemplo ? null : fotoDe(it.telon);
     if (foto) return '<img class="vl-img" src="' + foto + '" alt="Captura completa de ' + it.nombre + '">';
@@ -1719,6 +1729,9 @@ const vlTabs = document.getElementById('vlTabs');
 const vlAviso = document.getElementById('vlAviso');
 const vlAvisoAbrir = document.getElementById('vlAvisoAbrir');
 const vlPista = document.getElementById('vlPista');
+function pista(texto) { vlPista.textContent = texto; vlPista.hidden = false; }
+const PISTA_REAL = 'Pulsa en cualquier parte de la landing para abrir la web real ↗';
+const PISTA_EJEMPLO = 'Landing de ejemplo con datos ficticios · pulsa en ella para abrir la web real ↗';
 let itemVisor = null;
 let tokenVisor = 0;   // cancela cargas lentas si cambias de pestaña o cierras el visor
 const vlCodigo = document.getElementById('vlCodigo');
@@ -1746,14 +1759,14 @@ async function cargarLandingArchivo(it, token) {
     f.srcdoc = texto;
     vlCuerpo.innerHTML = '';
     vlCuerpo.appendChild(f);
-    vlPista.hidden = false;
+    pista(PISTA_REAL);
   } catch (e) {
     if (token === tokenVisor) cargarVisor(it, true);              // sin copia: la landing de ejemplo
   }
 }
 function cargarVisor(it, ejemplo = false) {
   const token = ++tokenVisor;
-  const archivo = !!(it.landingArchivo && !ejemplo && !vivoValido(it.vivo) && /^https?:$/.test(location.protocol));
+  const archivo = !!(it.landingArchivo && !ejemplo && !vivoValido(it.vivo) && /^https?:$/.test(location.protocol) && !(it.landingImagen && FOTOS_INCRUSTADAS[it.landingImagen]));
   const html = archivo ? '' : contenidoVisor(it, ejemplo);
   itemVisor = it;
   vlPista.hidden = true;
@@ -1761,10 +1774,14 @@ function cargarVisor(it, ejemplo = false) {
   if (limpiarVista) { limpiarVista(); limpiarVista = null; }
   vlCuerpo.innerHTML = html;
   vlCuerpo.classList.toggle('vivo', html.startsWith('<iframe'));
+  if (html.includes('vl-img-enlace')) pista(PISTA_REAL);            // captura de la landing: pista de que abre la web real
   vlAviso.hidden = !html.startsWith('<iframe');          // el aviso sólo sale con una web en vivo
   if (!vlAviso.hidden) vlAvisoAbrir.href = it.vivo;
   const inicio = it.vista && INICIO_VISTA[it.vista];
   if (inicio && vlCuerpo.querySelector('.ld')) limpiarVista = inicio(vlCuerpo) || null;
+  const clicable = !!(it.enlace && !archivo && vlCuerpo.querySelector('.ld'));
+  vlCuerpo.classList.toggle('clicable', clicable);
+  if (clicable) pista(PISTA_EJEMPLO);
   vlCuerpo.scrollTop = 0;
   if (archivo) cargarLandingArchivo(it, token);
   const fuera = vivoValido(it.vivo) ? it.vivo : it.vistaUrl;
@@ -1815,6 +1832,10 @@ document.getElementById('veloVista').addEventListener('click', e => {
   if (e.target.closest('.vp-ampliar') && itemFicha) abrirVisor(itemFicha);
 });
 document.getElementById('vlCerrar').addEventListener('click', cerrarVisor);
+vlCuerpo.addEventListener('click', ev => {                       // landing de ejemplo con enlace: un clic fuera de los botones abre la web real
+  if (!itemVisor || !itemVisor.enlace || !vlCuerpo.classList.contains('clicable') || ev.target.closest('a, button')) return;
+  window.open(itemVisor.enlace, '_blank', 'noopener');
+});
 document.getElementById('vlAvisoEjemplo').addEventListener('click', () => { if (itemVisor) cargarVisor(itemVisor, true); });
 visorLd.addEventListener('click', e => { if (e.target === visorLd) cerrarVisor(); });
 /* En fase de captura: con el visor abierto, el teclado es suyo (Escape lo cierra a él, no a la ficha de debajo) */
