@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Iván Pascual López — Junior AI &amp; FullStack Developer</title>
-<meta name="description" content="Portafolio de Iván Pascual López, Junior AI &amp; FullStack Developer: Reservly, Gestor deportivo, ScoutVision, laboratorio, stack y formación.">
+<title>IvÃ¡n Pascual LÃ³pez â€” Junior AI &amp; FullStack Developer</title>
+<meta name="description" content="Portafolio de IvÃ¡n Pascual LÃ³pez, Junior AI &amp; FullStack Developer: Reservly, Gestor deportivo, ScoutVision, laboratorio, stack y formaciÃ³n.">
 <meta name="theme-color" content="#04050A">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Iván Pascual López — Junior AI &amp; FullStack Developer">
-<meta property="og:description" content="Reservly, Gestor deportivo, ScoutVision y más: aplicaciones propias con React, Supabase y Python.">
+<meta property="og:title" content="IvÃ¡n Pascual LÃ³pez â€” Junior AI &amp; FullStack Developer">
+<meta property="og:description" content="Reservly, Gestor deportivo, ScoutVision y mÃ¡s: aplicaciones propias con React, Supabase y Python.">
 <meta property="og:url" content="https://ivan-pascual.github.io/">
-<meta property="og:image" content="https://ivan-pascual.github.io/og-imagen.jpg">
+<meta property="og:image" content="https://ivan-pascual.github.io/og-imagen-2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;500;600;700&display=swap"></noscript>
 <style>
-/* La intro es una pieza oscura por diseño: los tokens valen igual en tema claro y oscuro. */
+/* La intro es una pieza oscura por diseÃ±o: los tokens valen igual en tema claro y oscuro. */
 :root{
   --fondo:#04050A; --tinta:#E6E9F0; --tenue:rgba(230,233,240,.46); --hielo:#96C4E8; --acento:#96C4E8;
   --acento-a:rgba(150,196,232,.5);
@@ -42,7 +42,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 
 #gl{position:fixed;inset:0;z-index:1;width:100%;height:100%;display:block;touch-action:manipulation}
 
-/* ===== Telón: el fondo que cambia con la sección elegida ===== */
+/* ===== TelÃ³n: el fondo que cambia con la secciÃ³n elegida ===== */
 .telon{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--fondo)}
 .capa{position:absolute;inset:-4%;opacity:0;background-size:cover;background-position:center;
   filter:blur(3px) saturate(1.02) brightness(1.04);transform:scale(1.06);
@@ -50,7 +50,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .capa.viva{opacity:1;transform:scale(1.03)}
 .capa.maqueta{filter:blur(2px) saturate(1) brightness(1.08)}
 /* Contacto: el retrato va ENTERO (sin recortar y casi sin desenfocar). Lleva su propio halo y se desvanece por abajo.
-   En escritorio queda a la derecha del menú; en móvil, arriba, para que la cara se vea encima del menú. */
+   En escritorio queda a la derecha del menÃº; en mÃ³vil, arriba, para que la cara se vea encima del menÃº. */
 .capa[data-clave="contacto"]{inset:0;transform:none;background-repeat:no-repeat;background-size:auto 88%;background-position:97% 100%;filter:blur(.7px) saturate(1.03)}
 .capa[data-clave="contacto"].viva{transform:none}
 @media (max-aspect-ratio:1/1){.capa[data-clave="contacto"]{background-size:82% auto;background-position:50% 36px}}
@@ -61,7 +61,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
   background:linear-gradient(140deg,#0B111C,#05070D 60%,#04050A);color:rgba(230,233,240,.28);
   font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 
-/* Maquetas de fondo: no son capturas, están construidas aquí con datos inventados */
+/* Maquetas de fondo: no son capturas, estÃ¡n construidas aquÃ­ con datos inventados */
 .maq{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column;gap:3%;
   font-family:"Archivo",system-ui,sans-serif;color:#E8ECF5}
 .maq .cab{display:flex;align-items:center;justify-content:space-between;font-size:max(1.6vw,13px)}
@@ -159,7 +159,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .pistas{flex:none;margin:18px 0 0;font-size:12.5px;color:rgba(233,236,242,.45);text-align:center;
   text-shadow:0 1px 6px rgba(3,5,10,.9)}
 
-/* Aparición escalonada de la interfaz al final de la intro */
+/* ApariciÃ³n escalonada de la interfaz al final de la intro */
 .marca,.nucleo,.pistas{opacity:0;translate:0 7px;
   transition:opacity .8s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1),color .25s ease}
 .lista-ui .marca{opacity:1;translate:0 0}
@@ -255,7 +255,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .vl-img-landing{display:block;width:100%;max-width:480px;height:auto;margin:0 auto}
 .vl-cuerpo.vivo{overflow:hidden;display:flex;background:#04050A}
 .vl-iframe{flex:1;width:100%;height:100%;border:0;background:#04050A}
-/* Miniatura en vivo dentro de la ventanita: una pantalla de escritorio de 1280×720 reducida */
+/* Miniatura en vivo dentro de la ventanita: una pantalla de escritorio de 1280Ã—720 reducida */
 .vp-vivo{position:relative;aspect-ratio:16/9;overflow:hidden;background:#04050A}
 .vp-vivo iframe{position:absolute;left:0;top:0;width:1280px;height:720px;border:0;background:#04050A;transform-origin:0 0;transform:scale(var(--k,.35));pointer-events:none}
 @media (max-width:720px){
@@ -329,52 +329,52 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 .tarjeta button{font:inherit;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:0;
   border-radius:999px;padding:12px 22px;background:var(--tinta);color:#04050A;cursor:pointer}
 
-/* Sin WebGL: el menú se dibuja con CSS y no hay intro */
+/* Sin WebGL: el menÃº se dibuja con CSS y no hay intro */
 .sin-gl .orbita::before{content:"";position:absolute;inset:3%;border-radius:50%;border:1px solid rgba(127,212,255,.35)}
 </style>
 </head>
 <body>
 <noscript>
   <div style="max-width:640px;margin:0 auto;padding:36px 20px;color:#E8ECF5;font:16px/1.65 system-ui,sans-serif;background:#04050A">
-    <h1 style="margin:0 0 4px;font-size:30px">Iván Pascual López</h1>
-    <p style="margin:0 0 18px;color:#aab2c5">Junior AI &amp; FullStack Developer · Huesca, Aragón</p>
+    <h1 style="margin:0 0 4px;font-size:30px">IvÃ¡n Pascual LÃ³pez</h1>
+    <p style="margin:0 0 18px;color:#aab2c5">Junior AI &amp; FullStack Developer Â· Huesca, AragÃ³n</p>
     <p>Esta web es interactiva y necesita JavaScript. Resumen de mi trabajo:</p>
     <ul>
-      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/reservly">Reservly</a>: reservas, TPV, stock y clientes para pequeños negocios (React y Supabase).</li>
-      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/gestor-deportivo">Gestor deportivo</a>: app web para el cuerpo técnico de un equipo de cantera, con reparto de minutos y modo sin conexión.</li>
-      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/scoutvision">ScoutVision</a>: análisis de partidos de fútbol base con visión por computador, en local.</li>
+      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/reservly">Reservly</a>: reservas, TPV, stock y clientes para pequeÃ±os negocios (React y Supabase).</li>
+      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/gestor-deportivo">Gestor deportivo</a>: app web para el cuerpo tÃ©cnico de un equipo de cantera, con reparto de minutos y modo sin conexiÃ³n.</li>
+      <li><a style="color:#E8A060" href="https://github.com/Ivan-Pascual/scoutvision">ScoutVision</a>: anÃ¡lisis de partidos de fÃºtbol base con visiÃ³n por computador, en local.</li>
     </ul>
-    <p><a style="color:#E8A060" href="CV_Ivan_Pascual.pdf">CV (PDF)</a> · <a style="color:#E8A060" href="https://github.com/Ivan-Pascual">GitHub</a> · <a style="color:#E8A060" href="https://www.linkedin.com/in/ivanpascuallopez">LinkedIn</a> · <a style="color:#E8A060" href="mailto:ivanpascual100@gmail.com">ivanpascual100@gmail.com</a></p>
+    <p><a style="color:#E8A060" href="CV_Ivan_Pascual.pdf">CV (PDF)</a> Â· <a style="color:#E8A060" href="https://github.com/Ivan-Pascual">GitHub</a> Â· <a style="color:#E8A060" href="https://www.linkedin.com/in/ivanpascuallopez">LinkedIn</a> Â· <a style="color:#E8A060" href="mailto:ivanpascual100@gmail.com">ivanpascual100@gmail.com</a></p>
   </div>
 </noscript>
 <div class="telon" id="telon" aria-hidden="true">
-  <!-- Maquetas construidas aquí, con datos inventados: no son capturas de nada -->
+  <!-- Maquetas construidas aquÃ­, con datos inventados: no son capturas de nada -->
   <div class="capa maqueta" data-clave="reservly">
     <div class="maq verde">
       <div class="cab"><b>Reservly</b><span>Panel del negocio</span></div>
       <h3>Reservas, TPV y stock en una sola pantalla.</h3>
-      <div class="pista">Hoy<br><em>14 reservas · 8 recogidas</em><br><br>Caja<br><em>642,80 €</em></div>
+      <div class="pista">Hoy<br><em>14 reservas Â· 8 recogidas</em><br><br>Caja<br><em>642,80 â‚¬</em></div>
       <div class="rejilla">
         <div class="tarjeta"><small>Reservas</small><b>14</b><i>3 sin confirmar</i></div>
-        <div class="tarjeta"><small>Ticket medio</small><b>24,60 €</b><i>+8 % semana</i></div>
+        <div class="tarjeta"><small>Ticket medio</small><b>24,60 â‚¬</b><i>+8 % semana</i></div>
         <div class="tarjeta"><small>Stock bajo</small><b>6</b><i>referencias</i></div>
       </div>
       <div class="tabla">
         <div><span>Cliente</span><span>Estado</span></div>
-        <div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div>
-        <div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div>
-        <div><span>Jorge Lasaosa · 19:15</span><span>Confirmada</span></div>
+        <div><span>Marta Ferrer Â· 17:30</span><span>Confirmada</span></div>
+        <div><span>Taller Aineto Â· 18:00</span><span>Pendiente</span></div>
+        <div><span>Jorge Lasaosa Â· 19:15</span><span>Confirmada</span></div>
       </div>
     </div>
   </div>
   <div class="capa maqueta" data-clave="cuaderno">
     <div class="maq azul">
-      <div class="cab"><b>Gestor deportivo</b><span>Alevín · jornada 6</span></div>
+      <div class="cab"><b>Gestor deportivo</b><span>AlevÃ­n Â· jornada 6</span></div>
       <h3>Los minutos, repartidos con criterio.</h3>
       <div class="pista">Convocados<br><em>14 de 16</em><br><br>Media de minutos<br><em>31,5 min</em></div>
       <div class="rejilla">
-        <div class="tarjeta"><small>Asistencia</small><b>92 %</b><i>últimas 4 semanas</i></div>
-        <div class="tarjeta"><small>Minutos mínimos</small><b>24</b><i>garantizados</i></div>
+        <div class="tarjeta"><small>Asistencia</small><b>92 %</b><i>Ãºltimas 4 semanas</i></div>
+        <div class="tarjeta"><small>Minutos mÃ­nimos</small><b>24</b><i>garantizados</i></div>
         <div class="tarjeta"><small>Informes</small><b>16</b><i>uno por jugador</i></div>
       </div>
       <div class="tabla">
@@ -399,7 +399,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 
 <div class="app" id="app">
   <header class="marca">
-    <h1>Iván Pascual López</h1>
+    <h1>IvÃ¡n Pascual LÃ³pez</h1>
     <p>Junior AI &amp; FullStack Developer</p>
   </header>
   <main class="escena">
@@ -434,7 +434,7 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
 <div class="velo" id="veloFotos" hidden>
   <div class="tarjeta" role="dialog" aria-modal="true" aria-labelledby="tituloFotos">
     <h2 id="tituloFotos">Fondos con tus fotos</h2>
-    <p>Elige una imagen para cada sección. Se quedan guardadas en este dispositivo y no se suben a ningún sitio.</p>
+    <p>Elige una imagen para cada secciÃ³n. Se quedan guardadas en este dispositivo y no se suben a ningÃºn sitio.</p>
     <div class="enlaces" id="ranuras"></div>
     <p class="nota">En Reservly, Gestor deportivo y ScoutVision, tu captura sustituye a la maqueta de ejemplo. Hazla con la pantalla completa y sin barras del navegador. Si salen menores en una foto, usa una en la que no se les reconozca.</p>
     <button type="button" id="cerrarFotos">Listo</button>
@@ -445,13 +445,13 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
     <div class="vl-barra">
       <i></i><i></i><i></i>
       <span class="vl-dir" id="vlDir"></span>
-      <a class="vl-btn" id="vlCodigo" target="_blank" rel="noopener" hidden>Código ↗</a>
-      <a class="vl-btn" id="vlAbrir" target="_blank" rel="noopener" aria-label="Abrir en otra pestaña" hidden>Abrir ↗</a>
+      <a class="vl-btn" id="vlCodigo" target="_blank" rel="noopener" hidden>CÃ³digo â†—</a>
+      <a class="vl-btn" id="vlAbrir" target="_blank" rel="noopener" aria-label="Abrir en otra pestaÃ±a" hidden>Abrir â†—</a>
       <button class="vl-btn" id="vlCerrar" type="button">Cerrar</button>
     </div>
     <div class="vl-tabs" id="vlTabs" role="tablist" aria-label="Proyectos" hidden></div>
-    <div class="vl-aviso" id="vlPista" hidden>Pulsa en cualquier parte de la landing para abrir la web real <span aria-hidden="true">↗</span></div>
-    <div class="vl-aviso" id="vlAviso" hidden>¿No se ve la web? <a id="vlAvisoAbrir" target="_blank" rel="noopener">Ábrela en otra pestaña ↗</a><span aria-hidden="true">·</span><button type="button" id="vlAvisoEjemplo">Ver la landing de ejemplo</button></div>
+    <div class="vl-aviso" id="vlPista" hidden>Pulsa en cualquier parte de la landing para abrir la web real <span aria-hidden="true">â†—</span></div>
+    <div class="vl-aviso" id="vlAviso" hidden>Â¿No se ve la web? <a id="vlAvisoAbrir" target="_blank" rel="noopener">Ãbrela en otra pestaÃ±a â†—</a><span aria-hidden="true">Â·</span><button type="button" id="vlAvisoEjemplo">Ver la landing de ejemplo</button></div>
     <div class="vl-cuerpo" id="vlCuerpo"></div>
   </div>
 </div>
@@ -464,18 +464,18 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
     </nav>
     <header class="ld-hero">
       <div>
-        <p class="ld-eyebrow">Para pequeños negocios</p>
+        <p class="ld-eyebrow">Para pequeÃ±os negocios</p>
         <h1>Reservas, TPV y stock en una sola pantalla.</h1>
-        <p class="ld-sub">Reservas, ventas, inventario y clientes en una sola herramienta, pensada para usarse desde el móvil en el propio negocio.</p>
+        <p class="ld-sub">Reservas, ventas, inventario y clientes en una sola herramienta, pensada para usarse desde el mÃ³vil en el propio negocio.</p>
         <div class="ld-cta">
-          <a class="ld-btn pri" href="https://getreservly.com" target="_blank" rel="noopener">Ir a getreservly.com ↗</a>
-          <a class="ld-btn" href="https://github.com/Ivan-Pascual/reservly" target="_blank" rel="noopener">Ver el código</a>
+          <a class="ld-btn pri" href="https://getreservly.com" target="_blank" rel="noopener">Ir a getreservly.com â†—</a>
+          <a class="ld-btn" href="https://github.com/Ivan-Pascual/reservly" target="_blank" rel="noopener">Ver el cÃ³digo</a>
         </div>
       </div>
       <div class="ld-panel" aria-hidden="true">
         <div class="ld-ph"><b>Hoy</b><span>Panel del negocio</span></div>
-        <div class="ld-kpis"><div><small>Reservas</small><b>14</b></div><div><small>Ticket medio</small><b>24,60 €</b></div><div><small>Stock bajo</small><b>6</b></div></div>
-        <div class="ld-tabla"><div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div><div><span>Jorge Lasaosa · 19:15</span><span>Confirmada</span></div></div>
+        <div class="ld-kpis"><div><small>Reservas</small><b>14</b></div><div><small>Ticket medio</small><b>24,60 â‚¬</b></div><div><small>Stock bajo</small><b>6</b></div></div>
+        <div class="ld-tabla"><div><span>Marta Ferrer Â· 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto Â· 18:00</span><span>Pendiente</span></div><div><span>Jorge Lasaosa Â· 19:15</span><span>Confirmada</span></div></div>
         <p class="ld-nota">Datos ficticios.</p>
       </div>
     </header>
@@ -483,13 +483,13 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
       <h2>Todo el negocio, en una pantalla</h2>
       <div class="ld-grid">
         <article class="ld-card"><span class="ld-n">01</span><h3>Reservas</h3><p>Gestiona las reservas del negocio desde la misma herramienta con la que vendes.</p></article>
-        <article class="ld-card"><span class="ld-n">02</span><h3>TPV</h3><p>Cobra con lector de códigos de barras. Cada venta descuenta el inventario automáticamente.</p></article>
+        <article class="ld-card"><span class="ld-n">02</span><h3>TPV</h3><p>Cobra con lector de cÃ³digos de barras. Cada venta descuenta el inventario automÃ¡ticamente.</p></article>
         <article class="ld-card"><span class="ld-n">03</span><h3>Stock</h3><p>Control de stock de tus productos, integrado con el TPV.</p></article>
-        <article class="ld-card"><span class="ld-n">04</span><h3>Clientes</h3><p>Segmenta a tus clientes y consulta estadísticas con filtros por cliente.</p></article>
+        <article class="ld-card"><span class="ld-n">04</span><h3>Clientes</h3><p>Segmenta a tus clientes y consulta estadÃ­sticas con filtros por cliente.</p></article>
       </div>
     </section>
     <section class="ld-seccion ld-tech"><p>Hecho con <b>React 18</b> y <b>Supabase</b> (PostgreSQL), desplegado en <b>Vercel</b>. Interfaz totalmente responsive.</p></section>
-    <footer class="ld-pie">Proyecto personal de Iván Pascual López · Pantalla de ejemplo con datos ficticios.</footer>
+    <footer class="ld-pie">Proyecto personal de IvÃ¡n Pascual LÃ³pez Â· Pantalla de ejemplo con datos ficticios.</footer>
   </div>
 </template>
 
@@ -497,18 +497,18 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
   <div class="ld ld-azul">
     <nav class="ld-nav">
       <span class="ld-logo">Gestor deportivo<b>.</b></span>
-      <span class="ld-links"><span>Minutos</span><span>Sin conexión</span><span>Documentos</span><span>Privacidad</span></span>
+      <span class="ld-links"><span>Minutos</span><span>Sin conexiÃ³n</span><span>Documentos</span><span>Privacidad</span></span>
     </nav>
     <header class="ld-hero">
       <div>
-        <p class="ld-eyebrow">Cuerpo técnico · Cantera</p>
+        <p class="ld-eyebrow">Cuerpo tÃ©cnico Â· Cantera</p>
         <h1>Los minutos, repartidos con criterio.</h1>
-        <p class="ld-sub">App web para el cuerpo técnico de un equipo de la cantera: reparto de minutos, alineaciones y documentos en PDF, también sin conexión.</p>
-        <p class="ld-aviso">Uso real en la cantera · sin demo pública</p>
+        <p class="ld-sub">App web para el cuerpo tÃ©cnico de un equipo de la cantera: reparto de minutos, alineaciones y documentos en PDF, tambiÃ©n sin conexiÃ³n.</p>
+        <p class="ld-aviso">Uso real en la cantera Â· sin demo pÃºblica</p>
       </div>
       <div class="ld-panel" aria-hidden="true">
-        <div class="ld-ph"><b>Alevín · jornada 6</b><span>Resumen</span></div>
-        <div class="ld-kpis"><div><small>Asistencia</small><b>92 %</b></div><div><small>Mínimo</small><b>24 min</b></div><div><small>Informes</small><b>16</b></div></div>
+        <div class="ld-ph"><b>AlevÃ­n Â· jornada 6</b><span>Resumen</span></div>
+        <div class="ld-kpis"><div><small>Asistencia</small><b>92 %</b></div><div><small>MÃ­nimo</small><b>24 min</b></div><div><small>Informes</small><b>16</b></div></div>
         <div class="ld-tabla"><div><span>Dorsal 7</span><span>38 min</span></div><div><span>Dorsal 11</span><span>34 min</span></div><div><span>Dorsal 4</span><span>29 min</span></div></div>
         <p class="ld-nota">Datos ficticios.</p>
       </div>
@@ -516,14 +516,14 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
     <section class="ld-seccion">
       <h2>Pensada para el banquillo</h2>
       <div class="ld-grid">
-        <article class="ld-card"><span class="ld-n">01</span><h3>Reparto de minutos</h3><p>El 50 % a partes iguales y el otro 50 % ponderado por participación, asistencia y notas.</p></article>
-        <article class="ld-card"><span class="ld-n">02</span><h3>Sin conexión</h3><p>Funciona sin conexión y sincroniza entre dispositivos, resolviendo los conflictos por marca temporal.</p></article>
+        <article class="ld-card"><span class="ld-n">01</span><h3>Reparto de minutos</h3><p>El 50 % a partes iguales y el otro 50 % ponderado por participaciÃ³n, asistencia y notas.</p></article>
+        <article class="ld-card"><span class="ld-n">02</span><h3>Sin conexiÃ³n</h3><p>Funciona sin conexiÃ³n y sincroniza entre dispositivos, resolviendo los conflictos por marca temporal.</p></article>
         <article class="ld-card"><span class="ld-n">03</span><h3>Documentos</h3><p>26 pantallas y 10 documentos PDF generados desde la propia app.</p></article>
-        <article class="ld-card"><span class="ld-n">04</span><h3>Privacidad</h3><p>Cifrado AES-256 con PIN, y exportación y borrado completo de los datos (RGPD).</p></article>
+        <article class="ld-card"><span class="ld-n">04</span><h3>Privacidad</h3><p>Cifrado AES-256 con PIN, y exportaciÃ³n y borrado completo de los datos (RGPD).</p></article>
       </div>
     </section>
     <section class="ld-seccion ld-tech"><p>Hecho con <b>JavaScript</b>, <b>HTML5</b> y <b>CSS3</b>, con <b>Service Worker</b> y <b>Google Sheets</b>, y desplegado en <b>Netlify</b>.</p></section>
-    <footer class="ld-pie">Sin demo pública porque la aplicación maneja datos de menores. Los datos de esta pantalla son ficticios.</footer>
+    <footer class="ld-pie">Sin demo pÃºblica porque la aplicaciÃ³n maneja datos de menores. Los datos de esta pantalla son ficticios.</footer>
   </div>
 </template>
 
@@ -531,17 +531,17 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
   <div class="ld ld-violeta">
     <nav class="ld-nav">
       <span class="ld-logo">ScoutVision<b>.</b></span>
-      <span class="ld-links"><span>Detección</span><span>Seguimiento</span><span>Equipos</span><span>Informes</span></span>
+      <span class="ld-links"><span>DetecciÃ³n</span><span>Seguimiento</span><span>Equipos</span><span>Informes</span></span>
     </nav>
     <header class="ld-hero">
       <div>
-        <p class="ld-eyebrow">Análisis de partidos · Fútbol base</p>
-        <h1>Analiza un partido de fútbol base en tu propio ordenador.</h1>
-        <p class="ld-sub">Detecta y sigue a todos los jugadores del vídeo, separa los equipos por el color de la camiseta y genera un informe PDF. Ningún vídeo sale de tu ordenador.</p>
+        <p class="ld-eyebrow">AnÃ¡lisis de partidos Â· FÃºtbol base</p>
+        <h1>Analiza un partido de fÃºtbol base en tu propio ordenador.</h1>
+        <p class="ld-sub">Detecta y sigue a todos los jugadores del vÃ­deo, separa los equipos por el color de la camiseta y genera un informe PDF. NingÃºn vÃ­deo sale de tu ordenador.</p>
         <p class="ld-aviso">Sin nube, sin cuentas y sin reconocimiento facial</p>
       </div>
       <div class="ld-panel">
-        <div class="ld-ph"><b>Seguimiento</b><span>Ilustración</span></div>
+        <div class="ld-ph"><b>Seguimiento</b><span>IlustraciÃ³n</span></div>
         <svg class="sv-campo" id="svCampo" viewBox="0 0 105 68">
           <g class="lin">
             <rect x="1" y="1" width="103" height="66" rx="0.5"/>
@@ -555,20 +555,20 @@ body{margin:0;height:100%;overflow:hidden;background:var(--fondo);color:var(--ti
           <g id="svRastro"></g>
           <g id="svJug"></g>
         </svg>
-        <p class="ld-nota" id="svNota">Pulsa un jugador para seguirlo. Ilustración con datos ficticios.</p>
+        <p class="ld-nota" id="svNota">Pulsa un jugador para seguirlo. IlustraciÃ³n con datos ficticios.</p>
       </div>
     </header>
     <section class="ld-seccion">
-      <h2>Cómo funciona</h2>
+      <h2>CÃ³mo funciona</h2>
       <div class="ld-grid">
-        <article class="ld-card"><span class="ld-n">01</span><h3>Detección</h3><p>Un detector ligero localiza a los jugadores en el vídeo, también en ordenadores antiguos.</p></article>
-        <article class="ld-card"><span class="ld-n">02</span><h3>Seguimiento</h3><p>Un ByteTrack propio, con compensación del movimiento de cámara, mantiene la identidad de cada jugador.</p></article>
-        <article class="ld-card"><span class="ld-n">03</span><h3>Equipos y métricas</h3><p>Separa los equipos por el color de la camiseta y calcula tiempos, zonas y, si calibras el campo, distancias y velocidades estimadas.</p></article>
+        <article class="ld-card"><span class="ld-n">01</span><h3>DetecciÃ³n</h3><p>Un detector ligero localiza a los jugadores en el vÃ­deo, tambiÃ©n en ordenadores antiguos.</p></article>
+        <article class="ld-card"><span class="ld-n">02</span><h3>Seguimiento</h3><p>Un ByteTrack propio, con compensaciÃ³n del movimiento de cÃ¡mara, mantiene la identidad de cada jugador.</p></article>
+        <article class="ld-card"><span class="ld-n">03</span><h3>Equipos y mÃ©tricas</h3><p>Separa los equipos por el color de la camiseta y calcula tiempos, zonas y, si calibras el campo, distancias y velocidades estimadas.</p></article>
         <article class="ld-card"><span class="ld-n">04</span><h3>Informes</h3><p>Genera un informe PDF y un JSON para el gestor deportivo.</p></article>
       </div>
     </section>
     <section class="ld-seccion ld-tech"><p>Hecho con <b>Python</b>, modelos <b>ONNX</b> (SSD-MobileNet y Faster R-CNN), un <b>ByteTrack</b> propio y un servidor local con <b>Starlette</b>.</p></section>
-    <footer class="ld-pie">Proyecto personal de Iván Pascual López · La animación es una ilustración con datos ficticios, no un resultado real del sistema.</footer>
+    <footer class="ld-pie">Proyecto personal de IvÃ¡n Pascual LÃ³pez Â· La animaciÃ³n es una ilustraciÃ³n con datos ficticios, no un resultado real del sistema.</footer>
   </div>
 </template>
 
@@ -629,7 +629,7 @@ uniform vec3 uBgB;
 uniform float uBgK;
 uniform float uTintAmp;
 uniform float uBgMix;
-uniform float uOpaco;   // 1 durante la intro, 0 cuando se ve el telón
+uniform float uOpaco;   // 1 durante la intro, 0 cuando se ve el telÃ³n
 uniform float uExposure;
 uniform float uFade;
 uniform float uGrain;
@@ -667,7 +667,7 @@ float noise3(vec3 p){
              mix(mix(e, g, f.x), mix(h, k, f.x), f.y), f.z);
 }
 
-/* Color del metal según su temperatura (0 frío, 1 al rojo blanco) */
+/* Color del metal segÃºn su temperatura (0 frÃ­o, 1 al rojo blanco) */
 vec3 blackbody(float T){
   vec3 c = mix(vec3(0.55, 0.04, 0.0), vec3(1.0, 0.32, 0.04), smoothstep(0.0, 0.35, T));
   c = mix(c, vec3(1.0, 0.72, 0.32), smoothstep(0.3, 0.65, T));
@@ -693,7 +693,7 @@ float pulseAt(float s){
   return uPulseAmp * (exp(-behind * 4.0) + exp(-ahead * 30.0));
 }
 
-/* Emisión del cordón: calor detrás del arco y, al final, el aro "digital" azul hielo */
+/* EmisiÃ³n del cordÃ³n: calor detrÃ¡s del arco y, al final, el aro "digital" azul hielo */
 vec3 beadEmission(float s){
   if (uHead <= 0.0 || s > uHead) return vec3(0.0);
   float T = exp(-(uHead - s) / 0.35);
@@ -796,7 +796,7 @@ void main(){
   }
   col += glow;
 
-  /* Arco: núcleo físico y resplandor en espacio de pantalla, como el de una lente */
+  /* Arco: nÃºcleo fÃ­sico y resplandor en espacio de pantalla, como el de una lente */
   if (uArc > 0.0){
     float tt;
     float d = rayPointDist(ro, rd, uHeadPos, tt);
@@ -806,7 +806,7 @@ void main(){
     col += ARC * g * uArc * fog;
   }
 
-  /* Puntos de soldadura que se convierten en las luces del menú */
+  /* Puntos de soldadura que se convierten en las luces del menÃº */
   for (int i = 0; i < 6; i++){
     if (uLightAmp[i] <= 0.001) continue;
     vec3 lp = ringPoint(float(i) * PI / 3.0);
@@ -843,7 +843,7 @@ void main(){
   col += (uBgA * exp(-dot(pa, pa) * 1.6) + uBgB * exp(-dot(pb, pb) * 1.6)) * uBgK * 0.32;
   col += (hash12(fc + fract(uTime * 7.13) * 91.7) - 0.5) * uGrain;
   col = max(col, 0.0) * uFade;
-  /* Con telón detrás, sólo lo iluminado tapa la foto: el resto queda transparente */
+  /* Con telÃ³n detrÃ¡s, sÃ³lo lo iluminado tapa la foto: el resto queda transparente */
   float alfa = max(uOpaco, clamp(max(max(col.r, col.g), col.b) * 1.7, 0.0, 1.0));
   fragColor = vec4(col, alfa);
 }
@@ -944,7 +944,7 @@ void main(){
 }
 </script>
 
-<!-- Fotos de fondo incrustadas (Sobre mí · Cantera y Contacto): así basta con subir este único archivo.
+<!-- Fotos de fondo incrustadas (Sobre mÃ­ Â· Cantera y Contacto): asÃ­ basta con subir este Ãºnico archivo.
      Si subes un fondo-cantera.jpg o un fondo-contacto.jpg junto a este archivo, ese tiene prioridad. -->
 <script>
 const FOTOS_INCRUSTADAS = {
@@ -956,8 +956,8 @@ const FOTOS_INCRUSTADAS = {
 (() => {
 'use strict';
 
-/* ===================== Configuración ===================== */
-/* Iconos de trazo, 24×24, dibujados para el portafolio */
+/* ===================== ConfiguraciÃ³n ===================== */
+/* Iconos de trazo, 24Ã—24, dibujados para el portafolio */
 const ICONOS = {
   calendario: '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 14.8l2.2 2.2 4.3-4.6"/>',
   campo: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M3 9.5h2.8v5H3M21 9.5h-2.8v5H21"/><circle cx="12" cy="12" r="2.6"/>',
@@ -973,17 +973,17 @@ const ICONOS = {
 };
 
 /* Cada sector tiene una o varias fichas; con varias, se cambian con las flechas del propio sector.
-   "tema" tiñe toda la escena con el color de la app mientras está seleccionada. */
+   "tema" tiÃ±e toda la escena con el color de la app mientras estÃ¡ seleccionada. */
 /* Color de todos los sectores: cobre. `acento` es el color de la interfaz y `fondo` las dos manchas suaves del fondo.
    Reservly, Gestor deportivo y ScoutVision conservan su propio color (verde; azul y grana del club; violeta). */
 const TEMA_COBRE = { acento: [232, 160, 96], fondo: [[196, 112, 50], [150, 50, 72]] };   // cobre y vino
 
-/* OPCIONAL: dirección (https://...) de una web real para mostrarla EN VIVO dentro del visor. Muchas webs no permiten verse dentro de otra,
-   así que por defecto va vacía: el visor enseña tu copia `reservly-landing.html` (si existe junto a este archivo) o, si no, la landing de ejemplo.
-   Pulsar en la landing abre siempre la web real (`enlace` de Reservly, más abajo). */
+/* OPCIONAL: direcciÃ³n (https://...) de una web real para mostrarla EN VIVO dentro del visor. Muchas webs no permiten verse dentro de otra,
+   asÃ­ que por defecto va vacÃ­a: el visor enseÃ±a tu copia `reservly-landing.html` (si existe junto a este archivo) o, si no, la landing de ejemplo.
+   Pulsar en la landing abre siempre la web real (`enlace` de Reservly, mÃ¡s abajo). */
 const LANDING_RESERVLY = '';
-/* false: el primer toque selecciona el proyecto (se ve su nombre en el centro) y la landing se abre al pulsar ahí, como en el resto del menú.
-   true: la landing se abre ya con el primer toque en el sector. En escritorio no cambia nada: el ratón selecciona al pasar y abre al hacer clic. */
+/* false: el primer toque selecciona el proyecto (se ve su nombre en el centro) y la landing se abre al pulsar ahÃ­, como en el resto del menÃº.
+   true: la landing se abre ya con el primer toque en el sector. En escritorio no cambia nada: el ratÃ³n selecciona al pasar y abre al hacer clic. */
 const PROYECTO_A_LA_PRIMERA = false;
 const vivoValido = u => /^https:\/\//.test(u || '');
 function hostDe(u) {
@@ -992,80 +992,80 @@ function hostDe(u) {
 
 const SECCIONES = [
   { id: 'proyectos', lab: 'Proyectos', icono: ICONOS.calendario, items: [
-    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, enlace: 'https://getreservly.com', vistaUrl: 'https://getreservly.com', dominio: 'getreservly.com', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeños negocios',
-      stack: 'React 18 · Supabase', estado: 'Desplegada · En desarrollo',
-      detalle: 'Aplicación full stack para pequeños negocios: reservas, TPV con lector de códigos de barras y descuento automático de inventario, control de stock, segmentación de clientes y estadísticas. Interfaz responsive, pensada para usarse desde el móvil.',
-      enlaces: [...(vivoValido(LANDING_RESERVLY) ? [['Ver la landing · ' + hostDe(LANDING_RESERVLY), LANDING_RESERVLY]] : []),
-                ['Código · github.com/Ivan-Pascual/reservly', 'https://github.com/Ivan-Pascual/reservly']],
+    { nombre: 'Reservly', telon: 'reservly', vista: 'reservly', codigo: 'https://github.com/Ivan-Pascual/reservly', vivo: LANDING_RESERVLY, enlace: 'https://getreservly.com', vistaUrl: 'https://getreservly.com', dominio: 'getreservly.com', icono: ICONOS.calendario, des: 'Reservas, TPV, stock y clientes para pequeÃ±os negocios',
+      stack: 'React 18 Â· Supabase', estado: 'Desplegada Â· En desarrollo',
+      detalle: 'AplicaciÃ³n full stack para pequeÃ±os negocios: reservas, TPV con lector de cÃ³digos de barras y descuento automÃ¡tico de inventario, control de stock, segmentaciÃ³n de clientes y estadÃ­sticas. Interfaz responsive, pensada para usarse desde el mÃ³vil.',
+      enlaces: [...(vivoValido(LANDING_RESERVLY) ? [['Ver la landing Â· ' + hostDe(LANDING_RESERVLY), LANDING_RESERVLY]] : []),
+                ['CÃ³digo Â· github.com/Ivan-Pascual/reservly', 'https://github.com/Ivan-Pascual/reservly']],
       tema: { acento: [52, 201, 138], fondo: [[20, 120, 78], [12, 84, 60]] } },
-    { nombre: 'Gestor deportivo', telon: 'cuaderno', vista: 'cuaderno', codigo: 'https://github.com/Ivan-Pascual/gestor-deportivo', dominio: 'gestor-deportivo · versión privada', icono: ICONOS.campo, des: 'Gestión de un equipo de la cantera de la SD Huesca',
-      stack: 'JavaScript · Funciona sin conexión', estado: 'En producción',
-      detalle: 'App web instalable (PWA) para el cuerpo técnico de un equipo de la cantera: 26 pantallas y 10 documentos PDF. Reparto de minutos (50 % a partes iguales y 50 % según participación, asistencia y notas), sincronización entre dispositivos con resolución de conflictos, modo sin conexión y cifrado AES-256 con PIN, con exportación y borrado de datos.',
-      nota: 'Sin demo pública: la aplicación maneja datos de menores.',
+    { nombre: 'Gestor deportivo', telon: 'cuaderno', vista: 'cuaderno', codigo: 'https://github.com/Ivan-Pascual/gestor-deportivo', dominio: 'gestor-deportivo Â· versiÃ³n privada', icono: ICONOS.campo, des: 'GestiÃ³n de un equipo de la cantera de la SD Huesca',
+      stack: 'JavaScript Â· Funciona sin conexiÃ³n', estado: 'En producciÃ³n',
+      detalle: 'App web instalable (PWA) para el cuerpo tÃ©cnico de un equipo de la cantera: 26 pantallas y 10 documentos PDF. Reparto de minutos (50 % a partes iguales y 50 % segÃºn participaciÃ³n, asistencia y notas), sincronizaciÃ³n entre dispositivos con resoluciÃ³n de conflictos, modo sin conexiÃ³n y cifrado AES-256 con PIN, con exportaciÃ³n y borrado de datos.',
+      nota: 'Sin demo pÃºblica: la aplicaciÃ³n maneja datos de menores.',
       tema: { acento: [86, 136, 230], fondo: [[34, 84, 180], [150, 28, 50]] } },   // azul y grana del club
-    { nombre: 'ScoutVision', telon: 'scoutvision', vista: 'scoutvision', dominio: 'scoutvision · demo ilustrativa', icono: ICONOS.diana, codigo: 'https://github.com/Ivan-Pascual/scoutvision', des: 'Análisis de partidos de fútbol base, en tu propio ordenador',
-      stack: 'Python · ONNX · ByteTrack · Starlette', estado: 'En funcionamiento',
-      detalle: 'Detecta y sigue a todos los jugadores del vídeo de un partido de fútbol base, separa los equipos por el color de la camiseta y calcula tiempos, zonas y, si calibras el campo, distancias y velocidades estimadas. Genera un informe PDF y un JSON. Todo en local: ningún vídeo sale del ordenador y no hay reconocimiento facial.',
+    { nombre: 'ScoutVision', telon: 'scoutvision', vista: 'scoutvision', dominio: 'scoutvision Â· demo ilustrativa', icono: ICONOS.diana, codigo: 'https://github.com/Ivan-Pascual/scoutvision', des: 'AnÃ¡lisis de partidos de fÃºtbol base, en tu propio ordenador',
+      stack: 'Python Â· ONNX Â· ByteTrack Â· Starlette', estado: 'En funcionamiento',
+      detalle: 'Detecta y sigue a todos los jugadores del vÃ­deo de un partido de fÃºtbol base, separa los equipos por el color de la camiseta y calcula tiempos, zonas y, si calibras el campo, distancias y velocidades estimadas. Genera un informe PDF y un JSON. Todo en local: ningÃºn vÃ­deo sale del ordenador y no hay reconocimiento facial.',
       tema: { acento: [167, 139, 250], fondo: [[88, 60, 200], [40, 30, 110]] } }   // violeta
   ] },
   { id: 'laboratorio', lab: 'Laboratorio', icono: ICONOS.matraz, items: [
-    { nombre: 'ARCHIVO 90', telon: 'laboratorio', captura: 'captura-archivo90.jpg', tema: TEMA_COBRE, des: 'Tienda online ficticia de camisetas retro de fútbol',
-      stack: 'React · Vite', estado: 'En desarrollo',
-      detalle: 'Tienda ficticia de camisetas retro de fútbol con un vestidor virtual. De momento, el front con React y Vite.' },
-    { nombre: 'El Alcoraz City', telon: 'laboratorio', captura: 'captura-alcoraz.jpg', tema: TEMA_COBRE, des: 'Simulación isométrica para el área internacional',
-      stack: 'Isométrico · 3D', estado: 'En desarrollo',
-      detalle: 'Simulación isométrica, tipo videojuego, del SD Huesca: estadio, ciudad deportiva y residencia. Está pensada como producto para vender al área internacional, y se está llevando a 3D real por fases: escenario, personas y partido, e interiores.' },
-    { nombre: 'Orgatwo', telon: 'laboratorio', captura: 'captura-orgatwo.jpg', tema: TEMA_COBRE, icono: ICONOS.movil, des: 'App móvil de organización personal y compartida',
-      stack: 'App iOS', estado: 'En diseño',
-      detalle: 'App para iPhone para organizarse en pareja, en familia o en un piso compartido. El nombre es provisional y ahora mismo está en fase de diseño.' }
+    { nombre: 'ARCHIVO 90', telon: 'laboratorio', captura: 'captura-archivo90.jpg', tema: TEMA_COBRE, des: 'Tienda online ficticia de camisetas retro de fÃºtbol',
+      stack: 'React Â· Vite', estado: 'En desarrollo',
+      detalle: 'Tienda ficticia de camisetas retro de fÃºtbol con un vestidor virtual. De momento, el front con React y Vite.' },
+    { nombre: 'El Alcoraz City', telon: 'laboratorio', captura: 'captura-alcoraz.jpg', tema: TEMA_COBRE, des: 'SimulaciÃ³n isomÃ©trica para el Ã¡rea internacional',
+      stack: 'IsomÃ©trico Â· 3D', estado: 'En desarrollo',
+      detalle: 'SimulaciÃ³n isomÃ©trica, tipo videojuego, del SD Huesca: estadio, ciudad deportiva y residencia. EstÃ¡ pensada como producto para vender al Ã¡rea internacional, y se estÃ¡ llevando a 3D real por fases: escenario, personas y partido, e interiores.' },
+    { nombre: 'Orgatwo', telon: 'laboratorio', captura: 'captura-orgatwo.jpg', tema: TEMA_COBRE, icono: ICONOS.movil, des: 'App mÃ³vil de organizaciÃ³n personal y compartida',
+      stack: 'App iOS', estado: 'En diseÃ±o',
+      detalle: 'App para iPhone para organizarse en pareja, en familia o en un piso compartido. El nombre es provisional y ahora mismo estÃ¡ en fase de diseÃ±o.' }
   ] },
   { id: 'stack', lab: 'Stack', icono: ICONOS.capas, items: [
     { nombre: 'Lenguajes', telon: 'stack', tema: TEMA_COBRE, chips: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL', 'HTML5', 'CSS3'] },
     { nombre: 'Frontend', telon: 'stack', tema: TEMA_COBRE, chips: ['React 18', 'Vite', 'React Native', 'Expo', 'Zustand', 'React Navigation', 'PWA', 'Service Workers'] },
-    { nombre: 'Gráficos y audio', telon: 'stack', tema: TEMA_COBRE, chips: ['WebGL 2', 'GLSL', 'CSS 3D', 'SVG', 'Canvas', 'Web Audio API', 'Canva'] },
+    { nombre: 'GrÃ¡ficos y audio', telon: 'stack', tema: TEMA_COBRE, chips: ['WebGL 2', 'GLSL', 'CSS 3D', 'SVG', 'Canvas', 'Web Audio API', 'Canva'] },
     { nombre: 'Backend y datos', telon: 'stack', tema: TEMA_COBRE, chips: ['Supabase', 'PostgreSQL', 'MySQL', 'Spring Framework', 'Google Sheets'] },
-    { nombre: 'IA y automatización', telon: 'stack', tema: TEMA_COBRE, chips: ['ONNX', 'ByteTrack', 'YOLO', 'scikit-learn', 'ReportLab', 'Claude'] },
+    { nombre: 'IA y automatizaciÃ³n', telon: 'stack', tema: TEMA_COBRE, chips: ['ONNX', 'ByteTrack', 'YOLO', 'scikit-learn', 'ReportLab', 'Claude'] },
     { nombre: 'CMS y e-commerce', telon: 'stack', tema: TEMA_COBRE, chips: ['WordPress', 'Odoo', 'Shopify', 'Liquid'] },
     { nombre: 'Herramientas', telon: 'stack', tema: TEMA_COBRE, chips: ['Git', 'GitHub', 'GitHub Pages', 'VS Code', 'npm', 'Vercel', 'Netlify', 'RunPod', 'NacSport'] },
-    { nombre: 'Seguridad y sistemas', telon: 'stack', tema: TEMA_COBRE, chips: ['Cifrado AES-256', 'RGPD', 'TPV', 'Redes Wi-Fi', 'Soporte técnico'] }
+    { nombre: 'Seguridad y sistemas', telon: 'stack', tema: TEMA_COBRE, chips: ['Cifrado AES-256', 'RGPD', 'TPV', 'Redes Wi-Fi', 'Soporte tÃ©cnico'] }
   ] },
-  { id: 'formacion', lab: 'Formación', icono: ICONOS.birrete, items: [
-    { nombre: 'Máster · Evolve', telon: 'evolve', des: 'Product Engineering & AI', stack: 'Oct 2026 – May 2027', estado: 'En curso',
-      detalle: 'Formación orientada al desarrollo de producto con inteligencia artificial.', tema: TEMA_COBRE },
-    { nombre: 'Técnico Superior DAW', telon: 'daw', des: 'Desarrollo de Aplicaciones Web · FP Pirámide, Huesca', stack: '2021 – 2023',
-      detalle: 'Ciclo formativo de grado superior. Las prácticas las realicé en IZTIDATA.', tema: TEMA_COBRE },
-    { nombre: 'Prácticas · IZTIDATA', telon: 'practicas', des: 'Programador web en las prácticas del DAW',
-      stack: 'React · WordPress · Odoo · MySQL · Python', estado: 'Mar – Jun 2023',
-      detalle: 'Desarrollo y mantenimiento de aplicaciones web con React, sitios con WordPress, adaptación de funcionalidades en Odoo, consultas y vistas en MySQL, scripts de automatización con Python y puesta en marcha de TPV, redes y equipos.', tema: TEMA_COBRE }
+  { id: 'formacion', lab: 'FormaciÃ³n', icono: ICONOS.birrete, items: [
+    { nombre: 'MÃ¡ster Â· Evolve', telon: 'evolve', des: 'Product Engineering & AI', stack: 'Oct 2026 â€“ May 2027', estado: 'En curso',
+      detalle: 'FormaciÃ³n orientada al desarrollo de producto con inteligencia artificial.', tema: TEMA_COBRE },
+    { nombre: 'TÃ©cnico Superior DAW', telon: 'daw', des: 'Desarrollo de Aplicaciones Web Â· FP PirÃ¡mide, Huesca', stack: '2021 â€“ 2023',
+      detalle: 'Ciclo formativo de grado superior. Las prÃ¡cticas las realicÃ© en IZTIDATA.', tema: TEMA_COBRE },
+    { nombre: 'PrÃ¡cticas Â· IZTIDATA', telon: 'practicas', des: 'Programador web en las prÃ¡cticas del DAW',
+      stack: 'React Â· WordPress Â· Odoo Â· MySQL Â· Python', estado: 'Mar â€“ Jun 2023',
+      detalle: 'Desarrollo y mantenimiento de aplicaciones web con React, sitios con WordPress, adaptaciÃ³n de funcionalidades en Odoo, consultas y vistas en MySQL, scripts de automatizaciÃ³n con Python y puesta en marcha de TPV, redes y equipos.', tema: TEMA_COBRE }
   ] },
-  { id: 'sobremi', lab: 'Sobre mí', icono: ICONOS.persona, items: [
-    { nombre: 'Iván Pascual López', telon: 'sobremi', icono: ICONOS.persona,
-      des: 'Técnico Superior en DAW, de Huesca.',
-      stack: 'Huesca, Aragón',
-      detalle: 'Mi camino hasta el desarrollo de producto no está siendo en línea recta: he pasado por el reparto, una granja y un taller de ferralla, y en paralelo no he dejado de programar. Tres años de formación autodidacta convertida en proyectos propios.', tema: TEMA_COBRE },
+  { id: 'sobremi', lab: 'Sobre mÃ­', icono: ICONOS.persona, items: [
+    { nombre: 'IvÃ¡n Pascual LÃ³pez', telon: 'sobremi', icono: ICONOS.persona,
+      des: 'TÃ©cnico Superior en DAW, de Huesca.',
+      stack: 'Huesca, AragÃ³n',
+      detalle: 'Mi camino hasta el desarrollo de producto no estÃ¡ siendo en lÃ­nea recta: he pasado por el reparto, una granja y un taller de ferralla, y en paralelo no he dejado de programar. Tres aÃ±os de formaciÃ³n autodidacta convertida en proyectos propios.', tema: TEMA_COBRE },
     { nombre: 'Cantera SD Huesca', telon: 'cantera', icono: ICONOS.silbato, des: 'Tres temporadas como entrenador en la cantera, en distintos cargos',
-      stack: 'Licencia UEFA C · Máster en Fútbol de Alto Rendimiento (UCAV)', estado: 'Desde 2024',
-      detalle: 'El fútbol es mi pasión de siempre. En la cantera he aprendido a planificar, a trabajar dentro de la metodología de un club y a hacerme entender por un grupo de niños. Además, curso de analista táctico.', tema: TEMA_COBRE }
+      stack: 'Licencia UEFA C Â· MÃ¡ster en FÃºtbol de Alto Rendimiento (UCAV)', estado: 'Desde 2024',
+      detalle: 'El fÃºtbol es mi pasiÃ³n de siempre. En la cantera he aprendido a planificar, a trabajar dentro de la metodologÃ­a de un club y a hacerme entender por un grupo de niÃ±os. AdemÃ¡s, curso de analista tÃ¡ctico.', tema: TEMA_COBRE }
   ] },
   { id: 'contacto', lab: 'Contacto', icono: ICONOS.sobre, items: [
-    { nombre: 'Contacto', telon: 'contacto', des: 'Escríbeme por LinkedIn o por correo', stack: 'LinkedIn · Correo · GitHub · CV', sinChips: true,
-      enlaces: [['LinkedIn · linkedin.com/in/ivanpascuallopez', 'https://www.linkedin.com/in/ivanpascuallopez'],
-                ['Correo · ivanpascual100@gmail.com', 'mailto:ivanpascual100@gmail.com'],
-                ['GitHub · github.com/Ivan-Pascual', 'https://github.com/Ivan-Pascual'],
+    { nombre: 'Contacto', telon: 'contacto', des: 'EscrÃ­beme por LinkedIn o por correo', stack: 'LinkedIn Â· Correo Â· GitHub Â· CV', sinChips: true,
+      enlaces: [['LinkedIn Â· linkedin.com/in/ivanpascuallopez', 'https://www.linkedin.com/in/ivanpascuallopez'],
+                ['Correo Â· ivanpascual100@gmail.com', 'mailto:ivanpascual100@gmail.com'],
+                ['GitHub Â· github.com/Ivan-Pascual', 'https://github.com/Ivan-Pascual'],
                 ['Descargar CV (PDF)', 'CV_Ivan_Pascual.pdf']],
       tema: TEMA_COBRE }
   ] }
 ];
 
-/* Tiempos de la secuencia, en segundos. Toda la intro se deriva de aquí. */
+/* Tiempos de la secuencia, en segundos. Toda la intro se deriva de aquÃ­. */
 const TL = {
   ignite: 0.60,        // se enciende el arco
   lapStart: 0.70,      // el arco empieza a recorrer el aro
   lapDur: 2.60,        // vuelta completa: cierra en 3.30
   arcOff: 3.38,        // el arco se apaga
-  camStart: 1.10,      // la cámara empieza a retirarse
-  camEnd: 4.00,        // la cámara llega al encuadre del menú
-  reveal: 3.42,        // los puntos toman el color de su sección
+  camStart: 1.10,      // la cÃ¡mara empieza a retirarse
+  camEnd: 4.00,        // la cÃ¡mara llega al encuadre del menÃº
+  reveal: 3.42,        // los puntos toman el color de su secciÃ³n
   tackStagger: 0.07,
   tackDur: 0.35,
   heroStart: 4.00,
@@ -1083,11 +1083,11 @@ const TAN_HALF = Math.tan(FOV_Y / 2);
 const RING_FRAC = 0.47;              // el aro es el borde exterior del dial
 const R_OUT = 46.2, R_IN = 23.6;     // radios de los sectores, en unidades del viewBox (0-100)
 const R_MID = (R_OUT + R_IN) / 2;
-const GAP = 1.5;                     // separación entre sectores, de ancho constante
+const GAP = 1.5;                     // separaciÃ³n entre sectores, de ancho constante
 const PULSE_IDLE = 1.15;             // rad/s, igual que el portafolio actual
 const PULSE_A = 5.3;
 const PULSE_TAU = 0.25;
-const ACENTO = [150, 196, 232];      // único color de acento (#96C4E8)
+const ACENTO = [150, 196, 232];      // Ãºnico color de acento (#96C4E8)
 const N_SPARKS = 1600;
 
 const TIERS = {
@@ -1097,7 +1097,7 @@ const TIERS = {
 };
 const ORDER = ['low', 'medium', 'high'];
 
-/* En la vista previa la intro se ve siempre. En producción se recuerda si ya se vio. */
+/* En la vista previa la intro se ve siempre. En producciÃ³n se recuerda si ya se vio. */
 const PREVIEW = false;
 const STORAGE_KEY = 'intro-vista';
 
@@ -1148,7 +1148,7 @@ function mat4Mul(a, b) {
 
 /* ===================== Sonido ===================== */
 /* Todo sintetizado en el momento: no hay archivos que descargar. Apagado por defecto;
-   los navegadores no dejan sonar nada hasta que el usuario toca la página. */
+   los navegadores no dejan sonar nada hasta que el usuario toca la pÃ¡gina. */
 const Sonido = (() => {
   let ctx = null, salida = null, ruido = null, siseo = null, zumbido = null, activo = false;
   function crear() {
@@ -1245,7 +1245,7 @@ const Sonido = (() => {
   };
 })();
 
-/* ===================== Parámetros de la URL ===================== */
+/* ===================== ParÃ¡metros de la URL ===================== */
 const params = new URLSearchParams(location.search);
 const frozenAt = params.has('t') ? parseFloat(params.get('t')) : null;
 const forcedTier = params.get('q');
@@ -1290,7 +1290,7 @@ const accLin = () => acc.map(c => Math.pow(c / 255, 2.2));
 
 document.getElementById('pistas').textContent = TACTIL
   ? 'Toca un sector para ver su ficha, usa sus flechas para cambiar y vuelve a tocarlo para abrirlo.'
-  : 'Pasa por un sector para ver su ficha y haz clic para abrirlo. Con el teclado: ← → cambian dentro del sector, ↑ ↓ entre sectores.';
+  : 'Pasa por un sector para ver su ficha y haz clic para abrirlo. Con el teclado: â† â†’ cambian dentro del sector, â†‘ â†“ entre sectores.';
 
 /* Sector anular con huecos de ancho constante, como las separaciones de un dial de juego */
 function sector(i, rOut, rIn) {
@@ -1312,7 +1312,7 @@ const formas = SECCIONES.map(() => {
 const FLECHA_IZQ = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg>';
 const FLECHA_DER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg>';
 
-/* Cada sector: botón real para teclado y lectores de pantalla, y flechas para cambiar de ficha */
+/* Cada sector: botÃ³n real para teclado y lectores de pantalla, y flechas para cambiar de ficha */
 const gajos = SECCIONES.map((sec, i) => {
   const a = (-90 + i * 60) * Math.PI / 180;
   const multi = sec.items.length > 1;
@@ -1388,7 +1388,7 @@ function pintarNucleo(i) {
   d.textContent = it.des || '';
   e.textContent = it.stack || '';
   (it.chips || []).forEach(c => { const el = document.createElement('span'); el.textContent = c; chips.appendChild(el); });
-  (it.estado ? it.estado.split(' · ') : []).forEach(t => { const el = document.createElement('i'); el.textContent = t; x.appendChild(el); });
+  (it.estado ? it.estado.split(' Â· ') : []).forEach(t => { const el = document.createElement('i'); el.textContent = t; x.appendChild(el); });
 }
 
 function marcar(i) {
@@ -1404,17 +1404,17 @@ function marcar(i) {
   pedirFrame();
 }
 
-/* ===== Telón: fondo por ficha, con las fotos que cargue el usuario ===== */
+/* ===== TelÃ³n: fondo por ficha, con las fotos que cargue el usuario ===== */
 const telon = document.getElementById('telon');
 const capas = new Map();
 telon.querySelectorAll('.capa').forEach(c => capas.set(c.dataset.clave, c));
-/* Dónde está el sujeto de cada foto, en % del ancho y del alto (x% y%). En móvil sólo se ve una franja central de la foto,
-   y con esto esa franja se centra en ti. En escritorio apenas cambia nada. Las que no figuren aquí se centran. */
-const FOCOS = { sobremi: '78% 35%', cantera: '27% 40%' };   // Contacto no está aquí: su retrato va entero y lo coloca el CSS
+/* DÃ³nde estÃ¡ el sujeto de cada foto, en % del ancho y del alto (x% y%). En mÃ³vil sÃ³lo se ve una franja central de la foto,
+   y con esto esa franja se centra en ti. En escritorio apenas cambia nada. Las que no figuren aquÃ­ se centran. */
+const FOCOS = { sobremi: '78% 35%', cantera: '27% 40%' };   // Contacto no estÃ¡ aquÃ­: su retrato va entero y lo coloca el CSS
 const RANURAS = [
-  ['reservly', 'Proyectos · Reservly'], ['cuaderno', 'Proyectos · Gestor deportivo'], ['scoutvision', 'Proyectos · ScoutVision'],
-  ['evolve', 'Formación · Máster Evolve'], ['daw', 'Formación · DAW'], ['practicas', 'Formación · Prácticas'],
-  ['cantera', 'Sobre mí · Cantera'], ['sobremi', 'Sobre mí · Quién soy'], ['contacto', 'Contacto'], ['laboratorio', 'Laboratorio'], ['stack', 'Stack']
+  ['reservly', 'Proyectos Â· Reservly'], ['cuaderno', 'Proyectos Â· Gestor deportivo'], ['scoutvision', 'Proyectos Â· ScoutVision'],
+  ['evolve', 'FormaciÃ³n Â· MÃ¡ster Evolve'], ['daw', 'FormaciÃ³n Â· DAW'], ['practicas', 'FormaciÃ³n Â· PrÃ¡cticas'],
+  ['cantera', 'Sobre mÃ­ Â· Cantera'], ['sobremi', 'Sobre mÃ­ Â· QuiÃ©n soy'], ['contacto', 'Contacto'], ['laboratorio', 'Laboratorio'], ['stack', 'Stack']
 ];
 let opacoObjetivo = 1;
 
@@ -1425,8 +1425,8 @@ const ficheroDe = clave => (subidas.has(clave) || !FOTOS_INCRUSTADAS[clave]) ? r
 const conArchivo = new Set(Object.keys(FOTOS_INCRUSTADAS));   // claves con foto: las incrustadas y las que subas
 
 /* Sin foto ni maqueta, cada ficha con tema se queda con dos manchas suaves de su color.
-   La posición cambia con la ficha, para que se note al pasar de una a otra con las flechas. */
-const temaDeCapa = new Map();   // clave del telón → [tema, posición dentro de su sector]
+   La posiciÃ³n cambia con la ficha, para que se note al pasar de una a otra con las flechas. */
+const temaDeCapa = new Map();   // clave del telÃ³n â†’ [tema, posiciÃ³n dentro de su sector]
 SECCIONES.forEach(sec => sec.items.forEach((it, k) => {
   if (it.telon && it.tema && it.tema.fondo && !temaDeCapa.has(it.telon)) temaDeCapa.set(it.telon, [it.tema, k]);
 }));
@@ -1453,7 +1453,7 @@ function aplicarFoto(capa, url) {
   if (hueco) hueco.remove();
 }
 function pintarFondos() {
-  const g = EDITAR ? guardadas() : {};          // las pruebas en el navegador sólo cuentan con ?editar
+  const g = EDITAR ? guardadas() : {};          // las pruebas en el navegador sÃ³lo cuentan con ?editar
   for (const [clave, capa] of capas) {
     const maqueta = capa.querySelector('.maq');
     if (g[clave]) { aplicarFoto(capa, g[clave]); continue; }
@@ -1463,12 +1463,12 @@ function pintarFondos() {
     if (EDITAR && capa.dataset.foto && !capa.firstElementChild) {
       const h = document.createElement('div');
       h.className = 'hueco-foto';
-      h.textContent = 'Tu foto aquí';
+      h.textContent = 'Tu foto aquÃ­';
       capa.appendChild(h);
     }
   }
 }
-/* Interruptor: ¿buscar fotos sueltas junto a este archivo (fondo-<clave>.jpg y captura-*.jpg)? Va apagado porque las fotos que usas ya van incrustadas
+/* Interruptor: Â¿buscar fotos sueltas junto a este archivo (fondo-<clave>.jpg y captura-*.jpg)? Va apagado porque las fotos que usas ya van incrustadas
    y, si no existe el archivo, el navegador deja errores 404 en rojo en la consola. Ponlo en true si subes fotos sueltas. */
 const BUSCAR_ARCHIVOS_SUELTOS = false;
 /* Busca los fondos que hayas subido: fondo-reservly.jpg, fondo-cantera.jpg... Si no existe, no pasa nada. */
@@ -1483,7 +1483,7 @@ function ponerTelon(clave) {
   for (const [k, capa] of capas) {
     const viva = k === clave;
     capa.classList.toggle('viva', viva);
-    /* sólo se aparta el fondo del lienzo si esa ficha tiene de verdad algo que enseñar detrás */
+    /* sÃ³lo se aparta el fondo del lienzo si esa ficha tiene de verdad algo que enseÃ±ar detrÃ¡s */
     if (viva && (capa.style.backgroundImage || capa.querySelector('.maq'))) hay = true;
   }
   opacoObjetivo = hay ? 0.06 : 1;
@@ -1491,7 +1491,7 @@ function ponerTelon(clave) {
 }
 if (!EDITAR) document.getElementById('btnFotos').style.display = 'none';
 
-/* Qué hay bajo el puntero: sector (0-5), centro (-2) o nada (-1) */
+/* QuÃ© hay bajo el puntero: sector (0-5), centro (-2) o nada (-1) */
 function zonaEn(e) {
   const r = orbita.getBoundingClientRect();
   const dx = e.clientX - (r.left + r.width / 2);
@@ -1518,7 +1518,7 @@ orbita.addEventListener('pointermove', e => {
   const z = zonaEn(e);
   if (inicio) {
     if (Math.hypot(e.clientX - inicio[0], e.clientY - inicio[1]) > 8) arrastre = true;
-    if (z >= 0) marcar(z);                    // arrastrando se elige por ángulo, como con un joystick
+    if (z >= 0) marcar(z);                    // arrastrando se elige por Ã¡ngulo, como con un joystick
   } else if (e.pointerType === 'mouse') {
     marcar(z >= 0 ? z : -1);
   }
@@ -1536,22 +1536,22 @@ orbita.addEventListener('pointercancel', () => { inicio = null; });
 orbita.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && !inicio) marcar(-1); });
 
 /* ===== Vista previa del proyecto en la ficha =====
-   Reservly, Gestor deportivo y ScoutVision enseñan una pantalla de ejemplo con datos ficticios; si subes tu captura
-   (fondo-reservly.jpg, fondo-cuaderno.jpg, fondo-scoutvision.jpg) se usa esa. El resto de proyectos sólo la enseñan
+   Reservly, Gestor deportivo y ScoutVision enseÃ±an una pantalla de ejemplo con datos ficticios; si subes tu captura
+   (fondo-reservly.jpg, fondo-cuaderno.jpg, fondo-scoutvision.jpg) se usa esa. El resto de proyectos sÃ³lo la enseÃ±an
    si subes su captura (captura-*.jpg): no se inventa una pantalla de algo que no existe. */
 const VISTAS = {
   reservly:
     '<div class="vp-cuerpo vp-verde" aria-hidden="true"><div class="vp-int">' +
     '<div class="vp-cab"><b>Reservly</b><span>Panel del negocio</span></div>' +
     '<h4>Reservas, TPV y stock<br>en una sola pantalla.</h4>' +
-    '<div class="vp-rejilla"><div><small>Reservas</small><b>14</b></div><div><small>Ticket</small><b>24,60 €</b></div><div><small>Stock bajo</small><b>6</b></div></div>' +
-    '<div class="vp-tabla"><div><span>Marta Ferrer · 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto · 18:00</span><span>Pendiente</span></div></div>' +
+    '<div class="vp-rejilla"><div><small>Reservas</small><b>14</b></div><div><small>Ticket</small><b>24,60 â‚¬</b></div><div><small>Stock bajo</small><b>6</b></div></div>' +
+    '<div class="vp-tabla"><div><span>Marta Ferrer Â· 17:30</span><span>Confirmada</span></div><div><span>Taller Aineto Â· 18:00</span><span>Pendiente</span></div></div>' +
     '</div></div>',
   cuaderno:
     '<div class="vp-cuerpo vp-azul" aria-hidden="true"><div class="vp-int">' +
-    '<div class="vp-cab"><b>Gestor deportivo</b><span>Alevín · jornada 6</span></div>' +
+    '<div class="vp-cab"><b>Gestor deportivo</b><span>AlevÃ­n Â· jornada 6</span></div>' +
     '<h4>Los minutos, repartidos<br>con criterio.</h4>' +
-    '<div class="vp-rejilla"><div><small>Asistencia</small><b>92 %</b></div><div><small>Mínimo</small><b>24</b></div><div><small>Informes</small><b>16</b></div></div>' +
+    '<div class="vp-rejilla"><div><small>Asistencia</small><b>92 %</b></div><div><small>MÃ­nimo</small><b>24</b></div><div><small>Informes</small><b>16</b></div></div>' +
     '<div class="vp-tabla"><div><span>Dorsal 7</span><span>38 min</span></div><div><span>Dorsal 11</span><span>34 min</span></div></div>' +
     '</div></div>'
 };
@@ -1573,11 +1573,11 @@ function vistaPrevia(it) {
     pie = 'Landing real, en vivo.';
   } else if (it.vista) {
     const foto = fotoDe(it.telon);
-    if (foto) { cuerpo = '<img class="vp-img" src="' + foto + '" alt="Captura de ' + it.nombre + '">'; pie = 'Captura de la aplicación.'; }
+    if (foto) { cuerpo = '<img class="vp-img" src="' + foto + '" alt="Captura de ' + it.nombre + '">'; pie = 'Captura de la aplicaciÃ³n.'; }
     else { cuerpo = VISTAS[it.vista]; pie = 'Ejemplo con datos ficticios.'; }
   } else if (it.captura && capturasOk.has(it.captura)) {
     cuerpo = '<img class="vp-img" src="' + it.captura + '" alt="Captura de ' + it.nombre + '">';
-    pie = 'Captura de la aplicación.';
+    pie = 'Captura de la aplicaciÃ³n.';
   } else {
     return '';
   }
@@ -1599,10 +1599,10 @@ function abrir(i) {
   document.getElementById('veloSeccion').textContent = it.nombre === sec.lab ? '' : sec.lab;
   document.getElementById('veloTitulo').textContent = it.nombre;
   document.getElementById('veloVista').innerHTML = vistaPrevia(it);
-  document.getElementById('veloTexto').textContent = (it.des || '') + (it.estado ? ' · ' + it.estado : '');
+  document.getElementById('veloTexto').textContent = (it.des || '') + (it.estado ? ' Â· ' + it.estado : '');
   const chips = document.getElementById('veloChips');
   chips.textContent = '';
-  (it.chips || (it.sinChips ? [] : (it.stack || '').split(' · ').filter(Boolean))).forEach(c => {
+  (it.chips || (it.sinChips ? [] : (it.stack || '').split(' Â· ').filter(Boolean))).forEach(c => {
     const el = document.createElement('span');
     el.textContent = c;
     chips.appendChild(el);
@@ -1646,7 +1646,7 @@ function ajustarVivo() {
 }
 addEventListener('resize', ajustarVivo);
 let tVisorAbierto = 0;
-/* En móvil, el toque que abre una capa genera un clic que cae sobre lo que acaba de aparecer bajo el dedo:
+/* En mÃ³vil, el toque que abre una capa genera un clic que cae sobre lo que acaba de aparecer bajo el dedo:
    se ignoran los clics de los primeros 0,4 s para que no pulse sin querer un enlace ni abra el visor. */
 velo.addEventListener('click', e => { if (performance.now() - tFichaAbierta < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
 visorLd.addEventListener('click', e => { if (performance.now() - tVisorAbierto < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
@@ -1672,7 +1672,7 @@ const INICIO_VISTA = {
     if (!grupo || !rastro) return null;
     const NS = 'http://www.w3.org/2000/svg';
     const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
-    // Dos equipos en un campo de 105 × 68: 4-4-2 y 4-3-3. Todo es ilustración con movimientos inventados.
+    // Dos equipos en un campo de 105 Ã— 68: 4-4-2 y 4-3-3. Todo es ilustraciÃ³n con movimientos inventados.
     const A = [[6, 34], [22, 12], [20, 26], [20, 42], [22, 56], [42, 10], [38, 26], [38, 42], [42, 58], [60, 26], [60, 42]];
     const B = [[99, 34], [83, 12], [85, 26], [85, 42], [83, 56], [70, 20], [72, 34], [70, 48], [58, 14], [56, 34], [58, 54]];
     const jug = [];
@@ -1705,7 +1705,7 @@ const INICIO_VISTA = {
       sel = sel === i ? -1 : i;
       jug.forEach((j, k) => j.g.classList.toggle('on', k === sel));
       grupo.parentNode.classList.toggle('sv-sel', sel >= 0);
-      if (nota) nota.textContent = (sel >= 0 ? 'Siguiendo al jugador n.º ' + jug[sel].n + '.' : 'Pulsa un jugador para seguirlo.') + ' Ilustración con datos ficticios.';
+      if (nota) nota.textContent = (sel >= 0 ? 'Siguiendo al jugador n.Âº ' + jug[sel].n + '.' : 'Pulsa un jugador para seguirlo.') + ' IlustraciÃ³n con datos ficticios.';
       if (quieto) dibujar(14);
     }
     jug.forEach((j, i) => {
@@ -1730,17 +1730,17 @@ const vlAviso = document.getElementById('vlAviso');
 const vlAvisoAbrir = document.getElementById('vlAvisoAbrir');
 const vlPista = document.getElementById('vlPista');
 function pista(texto) { vlPista.textContent = texto; vlPista.hidden = false; }
-const PISTA_REAL = 'Pulsa en cualquier parte de la landing para abrir la web real ↗';
-const PISTA_EJEMPLO = 'Landing de ejemplo con datos ficticios · pulsa en ella para abrir la web real ↗';
+const PISTA_REAL = 'Pulsa en cualquier parte de la landing para abrir la web real â†—';
+const PISTA_EJEMPLO = 'Landing de ejemplo con datos ficticios Â· pulsa en ella para abrir la web real â†—';
 let itemVisor = null;
-let tokenVisor = 0;   // cancela cargas lentas si cambias de pestaña o cierras el visor
+let tokenVisor = 0;   // cancela cargas lentas si cambias de pestaÃ±a o cierras el visor
 const vlCodigo = document.getElementById('vlCodigo');
 const tieneLanding = it => !!(it.vista || (it.captura && capturasOk.has(it.captura)));
-/* Copia estática de la landing real (un único HTML guardado con SingleFile). Es del mismo sitio, así que se puede mostrar sin bloqueos,
-   y cualquier clic dentro abre la web real. Si el archivo no existe, se enseña la landing de ejemplo. */
+/* Copia estÃ¡tica de la landing real (un Ãºnico HTML guardado con SingleFile). Es del mismo sitio, asÃ­ que se puede mostrar sin bloqueos,
+   y cualquier clic dentro abre la web real. Si el archivo no existe, se enseÃ±a la landing de ejemplo. */
 async function cargarLandingArchivo(it, token) {
   vlCuerpo.classList.add('vivo');
-  vlCuerpo.innerHTML = '<div class="vl-cargando">Cargando la landing…</div>';
+  vlCuerpo.innerHTML = '<div class="vl-cargando">Cargando la landingâ€¦</div>';
   try {
     const r = await fetch(it.landingArchivo, { cache: 'no-cache' });
     if (!r.ok) throw new Error('sin archivo');
@@ -1775,7 +1775,7 @@ function cargarVisor(it, ejemplo = false) {
   vlCuerpo.innerHTML = html;
   vlCuerpo.classList.toggle('vivo', html.startsWith('<iframe'));
   if (html.includes('vl-img-enlace')) pista(PISTA_REAL);            // captura de la landing: pista de que abre la web real
-  vlAviso.hidden = !html.startsWith('<iframe');          // el aviso sólo sale con una web en vivo
+  vlAviso.hidden = !html.startsWith('<iframe');          // el aviso sÃ³lo sale con una web en vivo
   if (!vlAviso.hidden) vlAvisoAbrir.href = it.vivo;
   const inicio = it.vista && INICIO_VISTA[it.vista];
   if (inicio && vlCuerpo.querySelector('.ld')) limpiarVista = inicio(vlCuerpo) || null;
@@ -1838,7 +1838,7 @@ vlCuerpo.addEventListener('click', ev => {                       // landing de e
 });
 document.getElementById('vlAvisoEjemplo').addEventListener('click', () => { if (itemVisor) cargarVisor(itemVisor, true); });
 visorLd.addEventListener('click', e => { if (e.target === visorLd) cerrarVisor(); });
-/* En fase de captura: con el visor abierto, el teclado es suyo (Escape lo cierra a él, no a la ficha de debajo) */
+/* En fase de captura: con el visor abierto, el teclado es suyo (Escape lo cierra a Ã©l, no a la ficha de debajo) */
 window.addEventListener('keydown', e => {
   if (visorLd.hidden) return;
   if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cerrarVisor(); return; }
@@ -1931,8 +1931,8 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STAT
 gl.enableVertexAttribArray(0);
 gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
-/* Chispas: una tira de 4 vértices instanciada; el nacimiento de cada chispa es aleatorio,
-   así dibujar sólo las primeras N instancias da un subconjunto uniforme para la calidad baja. */
+/* Chispas: una tira de 4 vÃ©rtices instanciada; el nacimiento de cada chispa es aleatorio,
+   asÃ­ dibujar sÃ³lo las primeras N instancias da un subconjunto uniforme para la calidad baja. */
 vaoChispas = gl.createVertexArray();
 gl.bindVertexArray(vaoChispas);
 const bufEsquinas = gl.createBuffer();
@@ -1978,7 +1978,7 @@ let nivel = detectarNivel();
 let tier = TIERS[nivel];
 let muestras = [];
 
-/* ===================== Tamaño y encuadre ===================== */
+/* ===================== TamaÃ±o y encuadre ===================== */
 let W = 1, H = 1, escala = 1, centro = [0, 0], D = 8;
 let caja = { x: 0, y: 0, w: 1, h: 1 };
 function medir() {
@@ -2001,7 +2001,7 @@ addEventListener('resize', medir);
 addEventListener('orientationchange', () => setTimeout(medir, 120));
 if (window.visualViewport) visualViewport.addEventListener('resize', medir);
 
-/* ===================== Cámara ===================== */
+/* ===================== CÃ¡mara ===================== */
 /* Curva suave que pasa por los fotogramas clave (Catmull-Rom, extremos en reposo) */
 function spline(keys, t) {
   const n = keys.length;
@@ -2024,11 +2024,11 @@ function camaraEn(t) {
   const roll = spline([[0.95, CAM.roll0], [2.1, -0.05], [3.95, 0]], t);
   let dist = Math.exp(spline([[0.95, Math.log(CAM.dist0)], [2.1, Math.log(2.1)], [TL.camEnd, Math.log(D)]], t));
   dist *= 1 - 0.018 * heroEnv(t);
-  /* Primero sigue al arco con un poco de retraso; después suelta y centra el aro */
+  /* Primero sigue al arco con un poco de retraso; despuÃ©s suelta y centra el aro */
   const sigue = ringPoint(headAt(t - 0.05));
   let target = v3.lerp(CAM.target0, sigue, ease.inOutSine(clamp((t - 0.9) / 0.6)));
   target = v3.lerp([0, 0, 0], target, 1 - ease.inOutSine(clamp((t - 2.0) / 1.3)));
-  const pulso = 1 - smooth(1.1, 3.4, t);   // cámara en mano, sólo al principio
+  const pulso = 1 - smooth(1.1, 3.4, t);   // cÃ¡mara en mano, sÃ³lo al principio
   if (pulso > 0) {
     const a = 0.02 * pulso * Math.min(dist, 1.5);
     target[0] += (noise1(t * 1.7 + 11) - 0.5) * a;
@@ -2075,7 +2075,7 @@ const FASES = [
 ];
 function faseEn(t) { for (const [nombre, hasta] of FASES) if (t < hasta) return nombre; return 'COMPLETE'; }
 
-/* Intensidad del arco: chispazo al encender, chisporroteo y algún bajón, como uno real */
+/* Intensidad del arco: chispazo al encender, chisporroteo y algÃºn bajÃ³n, como uno real */
 function arcoEn(t) {
   if (t < TL.ignite) return 0;
   const closeT = TL.lapStart + TL.lapDur;
@@ -2167,7 +2167,7 @@ function pintarRanuras() {
   RANURAS.forEach(([clave, texto]) => {
     const a = document.createElement('a');
     a.href = '#';
-    a.textContent = texto + (g[clave] ? '  ·  cambiar' : '  ·  añadir');
+    a.textContent = texto + (g[clave] ? '  Â·  cambiar' : '  Â·  aÃ±adir');
     a.addEventListener('click', e => {
       e.preventDefault();
       ranuraActiva = clave;
@@ -2190,7 +2190,7 @@ ficheroFondo.addEventListener('change', e => {
   lector.onload = () => {
     const img = new Image();
     img.onload = () => {
-      /* se reduce antes de guardar: el almacenamiento del navegador es pequeño */
+      /* se reduce antes de guardar: el almacenamiento del navegador es pequeÃ±o */
       const max = 1400;
       const k = Math.min(1, max / Math.max(img.width, img.height));
       const c = document.createElement('canvas');
@@ -2201,7 +2201,7 @@ ficheroFondo.addEventListener('change', e => {
       const g = guardadas();
       g[ranuraActiva] = dato;
       try { localStorage.setItem('fondos', JSON.stringify(g)); }
-      catch (err) { alert('No cabe en el almacenamiento del navegador: prueba con una foto más ligera.'); return; }
+      catch (err) { alert('No cabe en el almacenamiento del navegador: prueba con una foto mÃ¡s ligera.'); return; }
       pintarFondos();
       pintarRanuras();
       if (hover >= 0) ponerTelon(itemDe(hover).telon || null);
@@ -2226,7 +2226,7 @@ btnSonido.addEventListener('click', () => {
 let quiereSonido = false;
 try { quiereSonido = localStorage.getItem(SONIDO_KEY) === '1'; } catch (e) { quiereSonido = false; }
 if (quiereSonido) {
-  /* Si lo dejó activado, suena desde el primer toque: antes el navegador no lo permite */
+  /* Si lo dejÃ³ activado, suena desde el primer toque: antes el navegador no lo permite */
   const primerGesto = e => {
     if (btnSonido.contains(e.target)) return;
     Sonido.activar();
@@ -2369,14 +2369,14 @@ function bucle(ahora) {
     if (avanza) { t += dt; pendiente = true; adaptar(dt); }
     eventosSonido(tAntes, t);
     const f = Math.min(1, real * 7);
-    let tiñe = false;
+    let tiÃ±e = false;
     for (let k = 0; k < 3; k++) {
       const d = accObj[k] - acc[k];
-      if (Math.abs(d) > 0.4) { acc[k] += d * f; tiñe = true; }
+      if (Math.abs(d) > 0.4) { acc[k] += d * f; tiÃ±e = true; }
       if (fondoObjK > 0) { fondoA[k] += (fondoObjA[k] - fondoA[k]) * f; fondoB[k] += (fondoObjB[k] - fondoB[k]) * f; }
     }
-    if (Math.abs(fondoObjK - fondoK) > 0.003) { fondoK += (fondoObjK - fondoK) * f; tiñe = true; }
-    if (tiñe) { pintarAcento(); pendiente = true; }
+    if (Math.abs(fondoObjK - fondoK) > 0.003) { fondoK += (fondoObjK - fondoK) * f; tiÃ±e = true; }
+    if (tiÃ±e) { pintarAcento(); pendiente = true; }
     if (Math.abs(opacoFondo - opacoObjetivo) > 0.004) { opacoFondo += (opacoObjetivo - opacoFondo) * Math.min(1, real * 3.2); pendiente = true; }
     const tintObj = hover >= 0 ? 1 : 0.3;
     if (Math.abs(tintK - tintObj) > 0.004) { tintK += (tintObj - tintK) * Math.min(1, real * 8); pendiente = true; }
@@ -2410,3 +2410,4 @@ requestAnimationFrame(bucle);
 </script>
 </body>
 </html>
+
